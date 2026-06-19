@@ -28,13 +28,32 @@
   </head>
   <body>
     <main class="page">
-      <header class="hero">
-        <p class="eyebrow">Academic profile</p>
-        <h1>Alessandro Balbina</h1>
-        <p class="lead">
-          PhD student in Economics and Business at the University of Cagliari
-          (Italy).
-        </p>
+      <header class="topbar card" aria-label="Site navigation">
+        <nav>
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="other-projects.html">Other Projects</a>
+        </nav>
+      </header>
+
+      <header class="hero card">
+        <div class="hero-layout">
+          <div>
+            <img
+              src="assets/unica-logo.svg"
+              alt="Università degli Studi di Cagliari"
+              class="unica-logo"
+            />
+            <p class="eyebrow">Academic profile</p>
+            <h1>Alessandro Balbina</h1>
+            <p class="lead">
+              PhD student in Economics and Business at the University of Cagliari
+              (Italy).
+            </p>
+          </div>
+          <aside class="profile-photo" aria-label="Profile photo placeholder">
+            <span>Add your photo</span>
+          </aside>
+        </div>
       </header>
 
       <section aria-labelledby="about-title" class="card">
@@ -47,6 +66,20 @@
           At Sinergie-SIMA 2026, I received an award as Outstanding Young
           Scholar Reviewer.
         </p>
+      </section>
+
+      <section aria-labelledby="publications-title" class="card">
+        <h2 id="publications-title">Publications</h2>
+        <div class="publication-groups">
+          <article>
+            <h3>Publications</h3>
+            <p class="empty-state">No publications added yet.</p>
+          </article>
+          <article>
+            <h3>Book Chapters</h3>
+            <p class="empty-state">No book chapters added yet.</p>
+          </article>
+        </div>
       </section>
 
       <section aria-labelledby="contact-title" class="card">
