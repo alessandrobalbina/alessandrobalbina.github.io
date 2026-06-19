@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Alessandro Balbina favicon">
+  <defs>
+    <linearGradient id="bg" x1="96" y1="32" x2="416" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#17345f" />
+      <stop offset="1" stop-color="#0f2748" />
+    </linearGradient>
+    <linearGradient id="shine" x1="128" y1="96" x2="384" y2="416" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.26" />
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="124" fill="url(#bg)" />
+  <circle cx="384" cy="132" r="96" fill="#c8a86d" fill-opacity="0.16" />
+  <circle cx="132" cy="388" r="92" fill="#ffffff" fill-opacity="0.08" />
+  <path d="M146 382L246 128h56l104 254h-58l-22-58h-105l-22 58zm99-98h72l-36-95z" fill="#ffffff" />
+  <path d="M254 144c36 0 63 19 63 50 0 22-14 38-34 44 24 5 43 22 43 50 0 34-28 58-72 58h-99V144zm-23 84h32c21 0 33-9 33-26 0-17-12-26-33-26h-32zm0 103h39c23 0 36-11 36-29 0-19-13-30-36-30h-39z" fill="#ffffff" fill-opacity="0.12" />
+  <rect x="96" y="96" width="320" height="320" rx="94" fill="url(#shine)" />
+</svg>
