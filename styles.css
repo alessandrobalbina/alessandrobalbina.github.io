@@ -44,6 +44,13 @@ body {
   margin-top: 1rem;
 }
 
+.site-footer {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
 .topbar {
   margin-bottom: 1rem;
   padding-block: 0.75rem;
