@@ -1,168 +1,375 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests"
-    />
-    <meta
-      name="description"
-      content="Personal website of Alessandro Balbina, PhD student in Economics and Business at the University of Cagliari, focused on tourism economics, sustainability, and AI applications in tourism."
-    />
-    <meta name="author" content="Alessandro Balbina" />
-    <meta name="robots" content="index, follow, noimageindex" />
-    <meta name="googlebot" content="index, follow, noimageindex" />
-    <meta name="theme-color" content="#11213f" />
-    <link rel="canonical" href="https://alessandrobalbina.github.io/" />
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Alessandro Balbina" />
-    <meta
-      property="og:description"
-      content="PhD student in Economics and Business at the University of Cagliari. Research interests: tourism economics, sustainability, and AI in tourism."
-    />
-    <meta property="og:url" content="https://alessandrobalbina.github.io/" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Alessandro Balbina" />
-    <meta
-      name="twitter:description"
-      content="PhD student in Economics and Business focused on tourism economics, sustainability, and AI in tourism."
-    />
-    <title>Alessandro Balbina</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main class="page">
-      <header class="topbar card" aria-label="Site navigation">
-        <nav>
-          <a href="index.html" aria-current="page">Home</a>
-          <a href="other-projects.html">Other Projects</a>
-        </nav>
-      </header>
 
-      <header class="hero card">
-        <div class="hero-layout">
-          <div class="hero-copy">
-            <img
-              src="assets/unica-logo.svg"
-              alt="Università degli Studi di Cagliari"
-              class="unica-logo"
-            />
-            <p class="eyebrow">Academic profile</p>
-            <h1>Alessandro Balbina</h1>
-            <p class="lead">
-              PhD student in Economics and Business at the University of Cagliari
-              (Italy).
-            </p>
-            <div class="focus-list" aria-label="Research focus">
-              <span>Tourism economics</span>
-              <span>Sustainability</span>
-              <span>AI in tourism</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="description"
+    content="Personal website of Alessandro Balbina, PhD student in Economics and Business at the University of Cagliari, focused on tourism economics, sustainability, and AI applications in tourism." />
+  <meta name="author" content="Alessandro Balbina" />
+  <meta name="robots" content="index, follow, noimageindex" />
+  <meta name="googlebot" content="index, follow, noimageindex" />
+  <meta name="theme-color" content="#11213f" />
+  <link rel="canonical" href="https://alessandrobalbina.github.io/" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap"
+    rel="stylesheet" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Alessandro Balbina" />
+  <meta property="og:description"
+    content="PhD student in Economics and Business at the University of Cagliari. Research interests: tourism economics, sustainability, and AI in tourism." />
+  <meta property="og:url" content="https://alessandrobalbina.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Alessandro Balbina" />
+  <meta name="twitter:description"
+    content="PhD student in Economics and Business focused on tourism economics, sustainability, and AI in tourism." />
+  <title>Alessandro Balbina</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="theme.js"></script>
+  <link rel="preload" href="assets/profile_photo.webp" as="image" fetchpriority="high" />
+</head>
+
+<body>
+  <main class="page">
+    <header class="topbar card" aria-label="Site navigation">
+      <nav>
+        <div class="topbar-links">
+          <a href="./" aria-current="page">Home</a>
+          <a href="other-projects/">
+            <span class="nav-desktop">Other Projects</span>
+            <span class="nav-mobile">Projects</span>
+          </a>
+          <a href="assets/CV%20Alessandro%20Balbina.pdf" target="_blank" rel="noopener noreferrer" class="cv-link">
+            <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+              <polyline points="14 2 14 8 20 8"></polyline>
+              <line x1="16" y1="13" x2="8" y2="13"></line>
+              <line x1="16" y1="17" x2="8" y2="17"></line>
+            </svg>
+            <span class="nav-desktop">CV / Resume</span>
+            <span class="nav-mobile">CV</span>
+          </a>
+        </div>
+        <div class="topbar-actions">
+          <a href="contact/" class="btn-contact">
+            <span class="nav-desktop">Contact me</span>
+            <span class="nav-mobile">Contact</span>
+          </a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <header class="hero card">
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <img src="assets/unica-logo.svg" alt="Università degli Studi di Cagliari" class="unica-logo" width="320"
+            height="51" loading="eager" />
+          <h1>Alessandro Balbina</h1>
+          <p class="lead">
+            PhD student in Economics and Business at the University of Cagliari
+            (Italy).
+          </p>
+          <div class="focus-list" aria-label="Research focus">
+            <span>Tourism economics</span>
+            <span>Sustainability</span>
+            <span>AI in tourism</span>
+          </div>
+
+        </div>
+        <div class="profile-photo" aria-label="Profile photo of Alessandro Balbina">
+          <img src="assets/profile_photo.webp" alt="Alessandro Balbina" draggable="false" width="240" height="240"
+            fetchpriority="high" />
+        </div>
+      </div>
+    </header>
+
+    <section aria-labelledby="about-title" class="card">
+      <h2 id="about-title">About</h2>
+      <p>
+        I am a Ph.D. student in Economics and Business Administration (41st cycle) at the University of Cagliari. <br>
+        My academic journey is driven by a passion for data-driven sustainability. In 2025, I earned my Master’s
+        degree in Management and Monitoring of Sustainable Tourism, defending a thesis that explored tourism data and
+        estimated the underground tourism economy in the city of Cagliari. That same year, I merged research with
+        practical impact by contributing to the "Sardinian Roots" project (e.INS), designing tailored tourism
+        experiences for the global Sardinian diaspora.
+      </p>
+      <p>
+        Currently, my research focuses on the intersection of sustainable tourism and the transformative
+        implications of artificial intelligence within the industry.
+      </p>
+      <p>
+        At Sinergie-SIMA 2026, I received an award as Outstanding Young Scholar Reviewer.
+      </p>
+    </section>
+
+    <section aria-labelledby="publications-title" class="card">
+      <h2 id="publications-title">Research &amp; Publications</h2>
+      <div class="publications-layout">
+        <div class="pub-category">
+          <h3>Conference Papers (Forthcoming)</h3>
+          <ul class="pub-list">
+            <li>
+              <span class="pub-authors">Vincis, A., Tedde, D., <strong>Balbina, A.</strong>, &amp; Dessì, C.
+                (2026).</span>
+              <span class="pub-title">"AI Literacy as a Hiring Signal in Project Management Recruitment."</span>
+              <span class="pub-venue"><em>Sinergie-SIMA Management Conference 2026</em> (Short Paper,
+                forthcoming).</span>
+            </li>
+            <li>
+              <span class="pub-authors">Vincis, A., Dessì, C., <strong>Balbina, A.</strong>, &amp; Succa, A.
+                (2026).</span>
+              <span class="pub-title">"Productivity patterns of family vs non-family firms under stability and
+                crisis."</span>
+              <span class="pub-venue"><em>Sinergie-SIMA Management Conference 2026</em> (Short Paper,
+                forthcoming).</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-category">
+          <h3>Working Papers &amp; Book Chapters</h3>
+          <ul class="pub-list">
+            <li>
+              <span class="pub-authors">Dessì, C., Vincis, A., &amp; <strong>Balbina, A.</strong></span>
+              <span class="pub-title">"People Management in AI-Enabled SMEs: A Human-Centered Capability
+                Perspective."</span>
+              <span class="pub-venue">Book chapter to appear in the series <em>Innovation in Human Centered
+                  Sustainability: Human Centered Sustainability in the AI Age</em>.</span>
+            </li>
+            <li>
+              <span class="pub-authors"><strong>Balbina, A.</strong></span>
+              <span class="pub-title">"Adoption of Artificial Intelligence by Tourists: A Literature Review."</span>
+              <span class="pub-venue">Working paper/In progress, exploring AI applications in trip planning, destination
+                research, and travel bookings.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="pub-category">
+          <h3>Presentations &amp; Talks</h3>
+          <ul class="pub-list">
+            <li>
+              <span class="pub-authors">Dessì, C. &amp; <strong>Balbina, A.</strong> (2026).</span>
+              <span class="pub-title">"Cineturismo, immaginario audiovisivo e territorio: dalla letteratura
+                internazionale al caso locale de L'Isola di Pietro."</span>
+              <span class="pub-venue">Talk presented at the event <em>Ogni film è un viaggio</em>, Società Umanitaria,
+                Cagliari, Italy.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="education-title" class="card">
+      <h2 id="education-title">Education</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Ph.D. in Economics and Business (41st Cycle)</h3>
+              <span class="timeline-org">University of Cagliari, Italy</span>
+            </div>
+            <span class="timeline-time">2025 - Present</span>
+          </div>
+          <div class="timeline-details">
+            <p>Department of Economics and Business</p>
+            <p>Focus: Intersection of sustainable tourism and artificial intelligence.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">M.Sc. in Sustainable Tourism Management and Monitoring</h3>
+              <span class="timeline-org">University of Cagliari, Italy</span>
+            </div>
+            <span class="timeline-time">2022 - 2025</span>
+          </div>
+          <div class="timeline-details">
+            <p>Graduation Grade: 110/110 cum laude</p>
+            <p>Thesis: <em>Tourism data, sustainability and shadow tourism estimates. Case study of the municipality of
+                Cagliari.</em></p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">B.Sc. in Communication Sciences</h3>
+              <span class="timeline-org">University of Cagliari, Italy</span>
+            </div>
+            <span class="timeline-time">2017 - 2022</span>
+          </div>
+          <div class="timeline-details">
+            <p>Graduation Grade: 106/110</p>
+            <p>Thesis: <em>Rebrand and social media strategy: The case of the agricultural company "Opuntia".</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="experience-title" class="card">
+      <h2 id="experience-title">Professional Experience</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Consultant for Local Development and Tourism (Apprenticeship)</h3>
+              <span class="timeline-org">Rete Gaia, Sardinia, Italy (Hybrid)</span>
+            </div>
+            <span class="timeline-time">Apr 2025 - Jan 2026</span>
+          </div>
+          <div class="timeline-details">
+            <ul>
+              <li>Provided consultancy in the design and implementation of sustainable local development initiatives.
+              </li>
+              <li>Carried out territorial economic animation activities.</li>
+              <li>Conducted demand analysis and developed tourism offer products.</li>
+              <li>Provided consultancy, territorial development, and marketing support for <em>Sardinian Roots</em>, a
+                project focused on diaspora/roots tourism.</li>
+              <li>Provided marketing consultancy and created online and offline content for Italea Sardegna.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Research Contributor</h3>
+              <span class="timeline-org">Sardinian Roots Project (e.INS)</span>
+            </div>
+            <span class="timeline-time">2025</span>
+          </div>
+          <div class="timeline-details">
+            <p>Contributed to designing tailored tourism experiences for the global Sardinian diaspora, merging local
+              heritage promotion with sustainable tourism strategies.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Data Analyst (Internship)</h3>
+              <span class="timeline-org">Comune di Cagliari, Italy</span>
+            </div>
+            <span class="timeline-time">Sep 2024 - Dec 2024</span>
+          </div>
+          <div class="timeline-details">
+            <p>Curricular internship at the Tourism Office of the Municipality of Cagliari.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">University Tutor - B.Sc. in Economics and Business Management</h3>
+              <span class="timeline-org">University of Cagliari, Italy (Hybrid)</span>
+            </div>
+            <span class="timeline-time">Nov 2023 - Sep 2024</span>
+          </div>
+          <div class="timeline-details">
+            <ul>
+              <li>Tutorial, didactic-integrative, preparatory, and remedial activities, as defined under Art. 3 of
+                Ministerial Decree No. 1047/2017.</li>
+              <li>Organized and supervised TOLC admission testing.</li>
+              <li>Automated enrollment, course-transfer, and CFU (credit) certification processes.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-header">
+            <div>
+              <h3 class="timeline-title">Airport Ground Handling Agent (Addetto di scalo aeroportuale - Seasonal)</h3>
+              <span class="timeline-org">SOGAERDYN Società per Azioni, Cagliari, Italy</span>
+            </div>
+            <span class="timeline-time">Jun 2018 - Oct 2022</span>
+          </div>
+          <div class="timeline-details">
+            <p>Provided passenger reception and assistance, check-in procedures, boarding operations, and finalization
+              of airport operations (4 years and 5 months total over 4 seasonal periods).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="skills-title" class="card">
+      <h2 id="skills-title">Skills &amp; Certifications</h2>
+      <div class="skills-grid">
+        <div class="skills-category">
+          <h3>Programming &amp; Data Analysis</h3>
+          <div class="tag-list">
+            <span class="tag">Python</span>
+            <span class="tag">Data Scraping</span>
+            <span class="tag">Econometrics</span>
+            <span class="tag">GIS</span>
+            <span class="tag">Open Data Mapping</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>Languages</h3>
+          <div class="tag-list">
+            <span class="tag">Italian (Native)</span>
+            <span class="tag">Sardinian (Native)</span>
+            <span class="tag">English (Fluent)</span>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <h3>Certifications &amp; Licenses</h3>
+          <div class="cert-list">
+            <div class="cert-item">
+              <span class="cert-name">IBSEN Entrepreneurship Workshop Series</span><br>
+              <span class="cert-issuer">IBSEN Network</span>
+              <span class="cert-meta">(Feb 2025)</span>
+            </div>
+            <div class="cert-item">
+              <span class="cert-name">BLSD (Basic Life Support Defibrillation)</span><br>
+              <span class="cert-issuer">Ircomunità A.p.s.</span>
+              <span class="cert-meta">(Issued: Jun 2022 · Expires: Jun 2026)</span>
             </div>
           </div>
-          <aside
-            class="profile-photo"
-            aria-label="Profile photo of Alessandro Balbina"
-          >
-            <img
-              src="assets/profile_photo.png"
-              alt="Alessandro Balbina"
-              draggable="false"
-            />
-          </aside>
         </div>
-      </header>
+      </div>
+    </section>
 
-      <section aria-labelledby="about-title" class="card">
-        <h2 id="about-title">About</h2>
-        <p>
-          My research focuses on tourism economics, tourism sustainability, and
-          applications of AI in the tourism sector.
-        </p>
-        <p>
-          At Sinergie-SIMA 2026, I received an award as Outstanding Young
-          Scholar Reviewer.
-        </p>
-      </section>
+    <footer class="card site-footer">
+      © Alessandro Balbina (2026) | Last updated 22 June 2026
+    </footer>
+  </main>
+</body>
 
-      <section aria-labelledby="publications-title" class="card">
-        <h2 id="publications-title">Publications</h2>
-        <div class="publication-groups">
-          <article>
-            <h3>Publications</h3>
-            <p class="empty-state">No publications added yet.</p>
-          </article>
-          <article>
-            <h3>Book Chapters</h3>
-            <p class="empty-state">No book chapters added yet.</p>
-          </article>
-        </div>
-      </section>
-
-      <section aria-labelledby="contact-title" class="card">
-        <h2 id="contact-title">Contact</h2>
-        <p>
-          Email:
-          <a href="mailto:alessandro.balbina@unica.it"
-            >alessandro.balbina@unica.it</a
-          >
-        </p>
-      </section>
-
-      <section aria-labelledby="profiles-title" class="card">
-        <h2 id="profiles-title">Profiles</h2>
-        <ul>
-          <li>
-            <a href="https://orcid.org/0009-0008-4824-4107" class="profile-link">
-              <span class="profile-icon profile-icon--orcid" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                  <circle cx="12" cy="12" r="11" fill="currentColor" opacity="0.18" />
-                  <path d="M8.1 7.2h1.8v9.6H8.1zM14.8 8.1c-1.2 0-2.3.5-3.1 1.5v-1.3H10v9.6h1.8v-1.3c.8 1 1.9 1.5 3.1 1.5 2.3 0 4-1.8 4-4.5s-1.7-5.5-4.1-5.5zm-.3 8.2c-1.5 0-2.8-1.2-2.8-3.1s1.3-3.1 2.8-3.1c1.6 0 2.8 1.2 2.8 3.1s-1.1 3.1-2.8 3.1z" fill="currentColor" />
-                </svg>
-              </span>
-              <span>ORCID</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://scholar.google.com/citations?user=_nKG67gAAAAJ&amp;hl=it"
-              class="profile-link"
-            >
-              <span class="profile-icon profile-icon--scholar" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                  <path d="M12 4 3.5 9l8.5 5 8.5-5L12 4z" fill="currentColor" opacity="0.2" />
-                  <path d="M12 6.2 5.1 10l6.9 4 6.9-4L12 6.2z" fill="currentColor" />
-                  <path d="M6.2 11.3V15l5.8 3.4 5.8-3.4v-3.7L12 14.7z" fill="currentColor" opacity="0.62" />
-                </svg>
-              </span>
-              <span>Google Scholar</span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.linkedin.com/in/alessandrobalbina/" class="profile-link">
-              <span class="profile-icon profile-icon--linkedin" aria-hidden="true">
-                <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="4" fill="currentColor" opacity="0.18" />
-                  <path d="M8.1 9.3H6.2V17h1.9V9.3zm-.9-1c.7 0 1.2-.5 1.2-1.1S7.9 6 7.2 6 6 6.5 6 7.1s.5 1.2 1.2 1.2zm3.1 1H12v1.1h.1c.3-.6 1.1-1.2 2.2-1.2 2.3 0 2.7 1.5 2.7 3.4V17h-1.9v-4c0-1-.2-1.8-1.3-1.8s-1.4.8-1.4 1.8v4h-1.9V9.3z" fill="currentColor" />
-                </svg>
-              </span>
-              <span>LinkedIn</span>
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <footer class="card site-footer">
-        © Alessandro Balbina (2026) | Last updated 19 June 2026
-      </footer>
-    </main>
-  </body>
 </html>
