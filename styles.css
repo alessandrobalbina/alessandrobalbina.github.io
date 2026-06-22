@@ -77,6 +77,14 @@ body {
   border: 1px solid var(--border);
 }
 
+.site-footer-quote {
+  display: block;
+  font-size: 0.8rem;
+  margin-top: 0.4rem;
+  opacity: 0.85;
+  font-style: italic;
+}
+
 .topbar {
   position: sticky;
   top: 1rem;
@@ -86,7 +94,7 @@ body {
   background: var(--surface-glass) !important;
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s ease;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.45s ease;
 }
 
 .topbar--hidden {
@@ -809,12 +817,15 @@ li a {
 [data-theme="dark"] .contact-card-icon--orcid {
   background: rgba(166, 206, 57, 0.2);
 }
+
 [data-theme="dark"] .contact-card-icon--scholar {
   background: rgba(66, 133, 244, 0.2);
 }
+
 [data-theme="dark"] .contact-card-icon--linkedin {
   background: rgba(10, 102, 194, 0.2);
 }
+
 .nav-mobile {
   display: none;
 }
@@ -841,7 +852,7 @@ li a {
     flex-wrap: nowrap;
     gap: 0.25rem;
   }
-  
+
   .topbar-links {
     gap: 0.25rem;
   }
@@ -885,4 +896,41 @@ li a {
       color 180ms ease;
   }
 
+  .topbar {
+    transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.45s ease;
+  }
+
+}
+
+/* Scout Section Layout */
+.scout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.9rem;
+}
+
+.scout-header h2 {
+  margin: 0;
+}
+
+.agesci-logo {
+  height: 2.2rem;
+  width: auto;
+}
+
+.agesci-logo--light {
+  display: block;
+}
+
+.agesci-logo--dark {
+  display: none;
+}
+
+[data-theme="dark"] .agesci-logo--light {
+  display: none;
+}
+
+[data-theme="dark"] .agesci-logo--dark {
+  display: block;
 }
