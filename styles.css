@@ -934,3 +934,125 @@ li a {
 [data-theme="dark"] .agesci-logo--dark {
   display: block;
 }
+
+/* ==========================================================================
+   CV Dropdown Navigation Menu
+   ========================================================================== */
+
+.dropdown {
+  position: relative;
+  display: inline-flex;
+}
+
+/* Inherit header link styling on trigger button */
+.dropdown-trigger {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 0.55rem 0.95rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  color: var(--text);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  transition: transform 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.dropdown-trigger:hover,
+.dropdown-trigger:focus-visible {
+  background: var(--accent-light);
+  transform: translateY(-1px);
+}
+
+.dropdown-arrow {
+  width: 14px;
+  height: 14px;
+  margin-left: 6px;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 195px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+}
+
+/* Hover and Focus within trigger visibility */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(4px);
+}
+
+.dropdown:hover .dropdown-arrow,
+.dropdown:focus-within .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown links formatting */
+.dropdown-menu a {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  padding: 0.6rem 0.8rem !important;
+  font-size: 0.9rem;
+  font-weight: 600 !important;
+  color: var(--text) !important;
+  border-radius: calc(var(--radius) - 2px);
+  text-decoration: none !important;
+  transition: background-color 150ms ease, color 150ms ease;
+  width: 100%;
+  white-space: nowrap;
+}
+
+.dropdown-menu a:hover,
+.dropdown-menu a:focus-visible {
+  background-color: var(--accent-light) !important;
+  color: var(--accent) !important;
+  transform: none !important; /* Resets hero link float animations */
+}
+
+/* Responsive details for mobile view matching topbar rules */
+@media (max-width: 860px) {
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0 0 0 1rem;
+    display: none; /* Hide on mobile navbar to collapse list, or let it hover */
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .dropdown:hover .dropdown-menu,
+  .dropdown:focus-within .dropdown-menu {
+    display: flex;
+    transform: none;
+  }
+  
+  .dropdown-trigger {
+    width: 100%;
+  }
+}
