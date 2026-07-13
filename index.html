@@ -35,6 +35,19 @@
     content="PhD student in Economics and Business focused on tourism economics, sustainability, and AI in tourism." />
   <title>Alessandro Balbina</title>
   <link rel="stylesheet" href="styles.css?v=2" />
+  <script>
+    (function () {
+      const prefLang = localStorage.getItem('pref-lang');
+      if (prefLang === 'it') {
+        window.location.replace('./it/');
+      } else if (!prefLang) {
+        const userLang = navigator.language || navigator.userLanguage;
+        if (userLang && userLang.toLowerCase().startsWith('it')) {
+          window.location.replace('./it/');
+        }
+      }
+    })();
+  </script>
   <script src="theme.js"></script>
   <link rel="preload" href="assets/profile_photo.webp" as="image" fetchpriority="high" />
   <script type="application/ld+json">

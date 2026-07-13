@@ -9,6 +9,18 @@
 })();
 
 document.addEventListener('DOMContentLoaded', () => {
+  // Save language preference on toggle click
+  document.querySelectorAll('.lang-toggle').forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const href = toggle.getAttribute('href');
+      if (href && (href.includes('/it') || href.includes('it/'))) {
+        localStorage.setItem('pref-lang', 'it');
+      } else {
+        localStorage.setItem('pref-lang', 'en');
+      }
+    });
+  });
+
   const toggleButton = document.getElementById('theme-toggle');
   if (!toggleButton) return;
 
