@@ -5,44 +5,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; frame-ancestors 'none'; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests" />
-  <meta name="description" content="Other projects and passions of Alessandro Balbina." />
+    content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests" />
+  <meta name="description" content="Other projects, volunteering in AGESCI scouting, and passions of Alessandro Balbina." />
   <meta name="author" content="Alessandro Balbina" />
   <meta name="robots" content="index, follow" />
   <meta name="theme-color" content="#11213f" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Alessandro Balbina | Other Projects" />
-  <meta property="og:description" content="Other projects and passions of Alessandro Balbina." />
+  <meta property="og:title" content="Other Projects &amp; Passions | Alessandro Balbina" />
+  <meta property="og:description" content="Other projects, volunteering in AGESCI scouting, and passions of Alessandro Balbina." />
   <meta property="og:url" content="https://alessandrobalbina.github.io/other-projects/" />
-  <meta property="og:image" content="https://alessandrobalbina.github.io/assets/unica-logo.png" />
+  <meta property="og:image" content="https://alessandrobalbina.github.io/assets/og-preview.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="1200" />
+  <meta property="og:image:height" content="630" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="it_IT" />
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Alessandro Balbina | Other Projects" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Other Projects &amp; Passions | Alessandro Balbina" />
   <meta name="twitter:description" content="Other projects and passions of Alessandro Balbina." />
-  <meta name="twitter:image" content="https://alessandrobalbina.github.io/assets/unica-logo.png" />
-  <title>Alessandro Balbina | Other Projects</title>
+  <meta name="twitter:image" content="https://alessandrobalbina.github.io/assets/og-preview.png" />
+  <title>Other Projects &amp; Passions | Alessandro Balbina</title>
   <link rel="canonical" href="https://alessandrobalbina.github.io/other-projects/" />
   <link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/other-projects/" />
   <link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/other-projects/" />
   <link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/other-projects/" />
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../assets/favicon-48x48.png" sizes="48x48" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180" />
+  <link rel="shortcut icon" href="../assets/favicon.ico" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Sora:wght@600;700;800&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="../styles.css?v=2" />
+  <link rel="stylesheet" href="../styles.css?v=3" />
   <script src="../theme.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    "name": "Other Projects and Passions of Alessandro Balbina",
+    "url": "https://alessandrobalbina.github.io/other-projects/",
+    "mainEntity": {
+      "@type": "Person",
+      "name": "Alessandro Balbina",
+      "jobTitle": "PhD Student in Economics and Business",
+      "worksFor": {
+        "@type": "EducationalOrganization",
+        "name": "University of Cagliari"
+      }
+    }
+  }
+  </script>
 </head>
 
 <body>
-  <main class="page">
-    <header class="topbar card" aria-label="Site navigation">
-      <nav>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="page">
+    <header class="topbar card" role="banner">
+      <nav aria-label="Main navigation">
         <div class="topbar-links">
           <a href="../">Home</a>
           <a href="./" aria-current="page">
@@ -50,7 +71,7 @@
             <span class="nav-mobile">Projects</span>
           </a>
           <div class="dropdown">
-            <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+            <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="cv-dropdown-menu">
               <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -65,8 +86,8 @@
                 <polyline points="6 9 12 15 18 9"></polyline>
               </svg>
             </button>
-            <div class="dropdown-menu">
-              <a href="../assets/CV%20Alessandro%20Balbina.pdf" target="_blank" rel="nofollow noopener noreferrer">
+            <div class="dropdown-menu" id="cv-dropdown-menu">
+              <a href="../assets/CV%20Alessandro%20Balbina.pdf" target="_blank" rel="noopener noreferrer">
                 <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                   <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
@@ -76,7 +97,7 @@
                 </svg>
                 <span>CV Standard (EN)</span>
               </a>
-              <a href="../assets/CV%20Alessandro%20Balbina%20Europeo.pdf" target="_blank" rel="nofollow noopener noreferrer">
+              <a href="../assets/CV%20Alessandro%20Balbina%20Europeo.pdf" target="_blank" rel="noopener noreferrer">
                 <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
                   <rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect>
@@ -115,48 +136,56 @@
       </nav>
     </header>
 
-    <header class="hero card hero--full-width">
-      <div class="hero-copy hero-copy--wide">
-        <img src="../assets/unica-logo.svg" alt="Logo Università degli Studi di Cagliari" class="unica-logo" width="320" height="51" loading="eager" />
-        <h1>Other Projects and Passions</h1>
-        <p class="lead">
-          This page is dedicated to non-academic experiences and initiatives.
+    <main id="main-content">
+      <header class="hero card hero--full-width">
+        <div class="hero-copy hero-copy--wide">
+          <img src="../assets/unica-logo.svg" alt="Logo Università degli Studi di Cagliari" class="unica-logo" width="320" height="51" loading="eager" />
+          <h1>Other Projects and Passions</h1>
+          <p class="lead">
+            This page is dedicated to non-academic experiences, volunteering, and personal initiatives.
+          </p>
+        </div>
+      </header>
+
+      <section class="card" aria-labelledby="scout-title">
+        <div class="scout-header">
+          <h2 id="scout-title">AGESCI</h2>
+          <img src="../assets/AGESCI%20logo.svg" alt="Logo AGESCI (Associazione Guide e Scout Cattolici Italiani)" class="agesci-logo agesci-logo--light" width="38" height="43" loading="lazy" />
+          <img src="../assets/AGESCI_white.svg" alt="Logo AGESCI (Associazione Guide e Scout Cattolici Italiani)" class="agesci-logo agesci-logo--dark" width="38" height="43" loading="lazy" />
+        </div>
+        <p>
+          I have been an active member of AGESCI (Italian Catholic Guides and Scouts Association) since 2007, when I joined as a ten-year-old scout. My journey began with the <strong>Cagliari 5</strong> group, located in the neighborhood where I was born and raised, and to which I still belong today.
         </p>
-      </div>
-    </header>
+        <p>
+          In 2018, I transitioned into leadership. After completing the rigorous three-stage basic training course, in 2025 I was awarded the <strong>Wood Badge</strong>, a globally recognized symbol of leadership completion in the scouting movement. My training is always in progress, and I am committed to improving as a leader for young generations.
+        </p>
+        <p>
+          My commitment to AGESCI has grown to include regional and local leadership responsibilities. Since October 2025, I have served as the group leader for Cagliari 5, as well as the Chief Communication Officer for AGESCI Sardegna. Looking ahead, I am excited to participate in the upcoming <strong>26th World Scout Jamboree</strong> in Gdańsk, Poland, in 2027.
+        </p>
+      </section>
 
-    <section class="card" aria-labelledby="scout-title">
-      <div class="scout-header">
-        <h2 id="scout-title">AGESCI</h2>
-        <img src="../assets/AGESCI%20logo.svg" alt="Logo AGESCI (Associazione Guide e Scout Cattolici Italiani)" class="agesci-logo agesci-logo--light" width="38" height="43" loading="lazy" />
-        <img src="../assets/AGESCI_white.svg" alt="Logo AGESCI (Associazione Guide e Scout Cattolici Italiani)" class="agesci-logo agesci-logo--dark" width="38" height="43" loading="lazy" />
-      </div>
-      <p>
-        I have been an active member of AGESCI (Italian Catholic Guides and Scouts Association) since 2007, when I joined as a ten-year-old scout. My journey began with the <strong>Cagliari 5</strong> group, located in the neighborhood where I was born and raised, and to which I still belong today.
-      </p>
-      <p>
-        In 2018, I transitioned into leadership. After completing the rigorous three-stage basic training course, in 2025 I was awarded the <strong>Wood Badge</strong>, a globally recognized symbol of leadership completion in the scouting movement. My training is always in progress, and I am committed to improving as a leader for young generations.
-      </p>
-      <p>
-        My commitment to AGESCI has grown to include regional and local leadership responsibilities. Since October 2025, I have served as the group leader for Cagliari 5, as well as the Chief Communication Officer for AGESCI Sardegna. Looking ahead, I am excited to participate in the upcoming <strong>26th World Scout Jamboree</strong> in Gdańsk, Poland, in 2027.
-      </p>
-    </section>
+      <section class="card" aria-labelledby="passions-title">
+        <h2 id="passions-title">Passions &amp; Personal Projects</h2>
+        <p>
+          Since childhood, I have been passionate about hiking and outdoor activities in general, as well as photography, which keeps me company on every trail. I have explored numerous corners of Sardinia, with a strong preference for mountain trails—the gorge of Pischina Urtadala and the Sa Giuntura waterfall are undoubtedly my favorite spots. Beyond my home region, I have hiked through the trails of Val Codera, the Brenta Dolomites, and the Circeo National Park.
+        </p>
+        <p>
+          In my free time, I enjoy diving into <em>vibe coding</em>, exploring programming in a creative and dynamic way. Currently, I am drafting the concept for a digital tool that allows local businesses to network and manage a collaborative online "natural shopping center." I also own a 3D printer and try to design and print things of my own—though sometimes with questionable results.
+        </p>
+      </section>
 
-    <section class="card" aria-labelledby="passions-title">
-      <h2 id="passions-title">Passions &amp; Personal Projects</h2>
-      <p>
-        Since childhood, I have been passionate about hiking and outdoor activities in general, as well as photography, which keeps me company on every trail. I have explored numerous corners of Sardinia, with a strong preference for mountain trails—the gorge of Pischina Urtadala and the Sa Giuntura waterfall are undoubtedly my favorite spots. Beyond my home region, I have hiked through the trails of Val Codera, the Brenta Dolomites, and the Circeo National Park.
-      </p>
-      <p>
-        In my free time, I enjoy diving into <em>vibe coding</em>, exploring programming in a creative and dynamic way. Currently, I am drafting the concept for a digital tool that allows local businesses to network and manage a collaborative online "natural shopping center." I also own a 3D printer and try to design and print things of my own—though sometimes with questionable results.
-      </p>
-    </section>
+      <footer class="card site-footer" role="contentinfo">
+        <div>© Alessandro Balbina (2026) | Last updated 13 July 2026</div>
+        <span class="site-footer-quote">Vibe-coded with Antigravity. Paid in cache.</span>
+      </footer>
+    </main>
+  </div>
 
-    <footer class="card site-footer">
-      <div>© Alessandro Balbina (2026) | Last updated 13 July 2026</div>
-      <span class="site-footer-quote">Vibe-coded with Antigravity. Paid in cache.</span>
-    </footer>
-  </main>
+  <button class="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
 </body>
 
 </html>
