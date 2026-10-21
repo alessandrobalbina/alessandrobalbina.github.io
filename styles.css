@@ -770,6 +770,41 @@ li a {
   display: block;
 }
 
+.pub-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+  padding: 0.32rem 0.75rem;
+  background: var(--accent);
+  color: var(--surface-strong) !important;
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  transition: background-color 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  width: fit-content;
+}
+
+.pub-btn:hover,
+.pub-btn:focus-visible {
+  background: var(--accent-strong);
+  color: var(--surface-strong) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+}
+
+.pub-btn svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  transition: transform 160ms ease;
+}
+
+.pub-btn:hover svg {
+  transform: translateX(3px);
+}
+
 /* Contact Grid styles */
 .contact-grid {
   display: grid;
