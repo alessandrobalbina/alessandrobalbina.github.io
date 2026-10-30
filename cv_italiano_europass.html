@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Curriculum Vitae - Alessandro Balbina (Formato Europeo Europass)</title>
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 15mm 10mm 15mm;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      font-size: 9pt;
+      line-height: 1.34;
+      color: #1a1a1a;
+      background: #ffffff;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: #0d5ca6;
+      text-decoration: none;
+    }
+
+    /* HEADER */
+    .europass-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      margin-bottom: 8px;
+    }
+
+    .header-logo {
+      height: 38px;
+      width: auto;
+      display: block;
+    }
+
+    .header-title {
+      text-align: right;
+      font-size: 10.5pt;
+      font-weight: bold;
+      color: #0d5ca6;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    /* CV TABLE / GRID STRUCTURE */
+    .cv-table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .cv-table tr {
+      page-break-inside: avoid;
+    }
+
+    .col-left {
+      width: 31%;
+      text-align: right;
+      vertical-align: top;
+      padding: 2.6px 14px 2.6px 0;
+      font-size: 8.7pt;
+      color: #333333;
+      line-height: 1.32;
+    }
+
+    .col-right {
+      width: 69%;
+      vertical-align: top;
+      padding: 2.6px 0 2.6px 14px;
+      border-left: 1px solid #a0a0a0;
+      font-size: 9pt;
+      line-height: 1.34;
+      color: #111111;
+    }
+
+    /* SECTION HEADER ROW */
+    .row-section-header td.col-left {
+      padding-top: 10px;
+      padding-bottom: 4px;
+      font-size: 9.3pt;
+      font-weight: bold;
+      color: #0d5ca6;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      page-break-after: avoid;
+    }
+
+    .row-section-header td.col-right {
+      padding-top: 10px;
+      padding-bottom: 4px;
+      border-left: 1px solid #a0a0a0;
+      position: relative;
+    }
+
+    .row-section-header td.col-right::before {
+      content: "";
+      position: absolute;
+      top: 21px;
+      left: 14px;
+      right: 0;
+      border-top: 1px solid #0d5ca6;
+    }
+
+    /* FIRST SECTION HEADER */
+    .row-section-header-first td.col-left {
+      padding-top: 2px;
+      padding-bottom: 5px;
+      font-size: 9.3pt;
+      font-weight: bold;
+      color: #0d5ca6;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .row-section-header-first td.col-right {
+      padding-top: 2px;
+      padding-bottom: 5px;
+      border-left: 1px solid #a0a0a0;
+      position: relative;
+    }
+
+    .row-section-header-first td.col-right::before {
+      content: "";
+      position: absolute;
+      top: 9px;
+      left: 14px;
+      right: 0;
+      border-top: 1px solid #0d5ca6;
+    }
+
+    /* ENTRY SEPARATOR ROW */
+    .row-entry-space td {
+      padding-top: 4px;
+    }
+
+    .org-title {
+      font-weight: bold;
+      color: #000000;
+    }
+
+    .role-title {
+      font-weight: bold;
+      color: #0d5ca6;
+    }
+
+    .date-val {
+      font-weight: bold;
+      color: #111111;
+    }
+
+    /* LISTS IN RIGHT COLUMN */
+    ul.eu-list {
+      margin: 2px 0 2px 14px;
+      padding: 0;
+      list-style-type: disc;
+    }
+
+    ul.eu-list li {
+      margin-bottom: 2.5px;
+      font-size: 8.8pt;
+      line-height: 1.32;
+    }
+
+    /* LANGUAGE TABLE (Official Europass Format) */
+    .lang-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 6px 0 3px 0;
+      font-size: 8pt;
+      text-align: center;
+    }
+
+    .lang-table th, .lang-table td {
+      border: 1px solid #c0c0c0;
+      padding: 3.5px 2px;
+    }
+
+    .lang-table th {
+      background-color: #f2f5f9;
+      font-weight: bold;
+      color: #0d5ca6;
+      font-size: 7.6pt;
+    }
+
+    .lang-table .th-main {
+      background-color: #e4edf7;
+    }
+
+    .lang-table td.lang-name {
+      text-align: left;
+      font-weight: bold;
+      padding-left: 6px;
+      background-color: #fafbfc;
+    }
+
+    .lang-level {
+      font-weight: bold;
+      color: #111111;
+    }
+
+    .lang-desc {
+      display: block;
+      font-size: 7pt;
+      color: #555555;
+      font-weight: normal;
+    }
+
+    .privacy-notice {
+      font-size: 7.8pt;
+      color: #555555;
+      line-height: 1.3;
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    .page-break {
+      page-break-before: always;
+      break-before: page;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER EUROPASS -->
+  <header class="europass-header">
+    <img src="assets/europass_logo.png" class="header-logo" alt="Europass Logo">
+    <div class="header-title">
+      FORMATO EUROPEO<br>PER IL CURRICULUM VITAE
+    </div>
+  </header>
+
+  <table class="cv-table">
+    <!-- INFORMAZIONI PERSONALI -->
+    <tr class="row-section-header-first">
+      <td class="col-left">INFORMAZIONI PERSONALI</td>
+      <td class="col-right"></td>
+    </tr>
+
+    <tr>
+      <td class="col-left">Nome e Cognome</td>
+      <td class="col-right org-title" style="font-size: 10.5pt; color: #0d5ca6;">Alessandro Balbina</td>
+    </tr>
+    <tr>
+      <td class="col-left">Indirizzo</td>
+      <td class="col-right">Viale Sant'Ignazio 72, 09122 Cagliari, Italia</td>
+    </tr>
+    <tr>
+      <td class="col-left">E-mail istituzionale</td>
+      <td class="col-right"><a href="mailto:alessandro.balbina@unica.it">alessandro.balbina@unica.it</a></td>
+    </tr>
+    <tr>
+      <td class="col-left">Sito Web & Portfolio</td>
+      <td class="col-right"><a href="https://alessandrobalbina.github.io/">https://alessandrobalbina.github.io</a></td>
+    </tr>
+    <tr>
+      <td class="col-left">Identificativi Scientifici</td>
+      <td class="col-right">
+        ORCID: <a href="https://orcid.org/0009-0008-4824-4107">0009-0008-4824-4107</a> |
+        <a href="https://scholar.google.com/citations?user=_nKG67gAAAAJ&hl=it">Google Scholar</a> |
+        <a href="https://www.linkedin.com/in/alessandrobalbina/">LinkedIn</a> |
+        <a href="https://github.com/alessandrobalbina">GitHub</a>
+      </td>
+    </tr>
+    <tr>
+      <td class="col-left">Nazionalità</td>
+      <td class="col-right">Italiana</td>
+    </tr>
+
+    <!-- ISTRUZIONE E FORMAZIONE -->
+    <tr class="row-section-header">
+      <td class="col-left">ISTRUZIONE E FORMAZIONE</td>
+      <td class="col-right"></td>
+    </tr>
+
+    <!-- Ph.D. -->
+    <tr>
+      <td class="col-left">• Date (da – a)</td>
+      <td class="col-right date-val">Novembre 2025 – In corso</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Nome e tipo di istituto di istruzione o formazione</td>
+      <td class="col-right org-title">Università degli Studi di Cagliari, Dipartimento di Scienze Economiche e Aziendali</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Principali materie / abilità professionali oggetto dello studio</td>
+      <td class="col-right">
+        Corso di Dottorato di Ricerca in Scienze Economiche e Aziendali (41° Ciclo).<br>
+        <strong>Progetto di Ricerca:</strong> Adozione dell'Intelligenza Artificiale generativa e dei chatbot conversazionali da parte dei viaggiatori, comportamenti decisionali di prenotazione turistica, destination management sostenibile e metodologie microeconometriche.<br>
+        <strong>Collegio docenti & Supervisori:</strong> Prof.ssa Cinzia Dessì (Supervisor), Prof. Ivan Etzo (Co-supervisor).
+      </td>
+    </tr>
+    <tr>
+      <td class="col-left">• Qualifica conseguita</td>
+      <td class="col-right role-title">Dottorando di Ricerca in Scienze Economiche e Aziendali</td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <!-- Laurea Magistrale -->
+    <tr>
+      <td class="col-left">• Date (da – a)</td>
+      <td class="col-right date-val">2022 – 2025</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Nome e tipo di istituto di istruzione o formazione</td>
+      <td class="col-right org-title">Università degli Studi di Cagliari</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Principali materie / abilità professionali oggetto dello studio</td>
+      <td class="col-right">
+        Corso di Laurea Magistrale in Management e Monitoraggio del Turismo Sostenibile.<br>
+        <strong>Tesi di Laurea:</strong> <em>"Dati del turismo, sostenibilità e stima del sommerso turistico. Il caso di studio del comune di Cagliari"</em>.
+      </td>
+    </tr>
+    <tr>
+      <td class="col-left">• Qualifica conseguita</td>
+      <td class="col-right role-title">Laurea Magistrale in Gestione e Monitoraggio del Turismo Sostenibile</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Livello nella classificazione nazionale</td>
+      <td class="col-right"><strong>110/110 con lode (cum laude)</strong></td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <!-- Laurea Triennale -->
+    <tr>
+      <td class="col-left">• Date (da – a)</td>
+      <td class="col-right date-val">2017 – 2022</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Nome e tipo di istituto di istruzione o formazione</td>
+      <td class="col-right org-title">Università degli Studi di Cagliari</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Principali materie / abilità professionali oggetto dello studio</td>
+      <td class="col-right">
+        Corso di Laurea in Scienze della Comunicazione.<br>
+        <strong>Tesi di Laurea:</strong> <em>"Rebrand and social media strategy: The case of the agricultural company 'Opuntia'"</em>.
+      </td>
+    </tr>
+    <tr>
+      <td class="col-left">• Qualifica conseguita</td>
+      <td class="col-right role-title">Laurea Triennale in Scienze della Comunicazione</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Livello nella classificazione nazionale</td>
+      <td class="col-right"><strong>106/110</strong></td>
+    </tr>
+
+    <!-- ESPERIENZA LAVORATIVA (STARTS ON PAGE 1 TO FILL THE LOWER HALF!) -->
+    <tr class="row-section-header">
+      <td class="col-left">ESPERIENZA LAVORATIVA</td>
+      <td class="col-right"></td>
+    </tr>
+
+    <!-- Rete Gaia -->
+    <tr>
+      <td class="col-left">• Date (da – a)</td>
+      <td class="col-right date-val">Aprile 2025 – Dicembre 2025</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Nome e indirizzo del datore di lavoro</td>
+      <td class="col-right org-title">Rete Gaia | Sardegna, Italia (Ibrido)</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di azienda o settore</td>
+      <td class="col-right">Sviluppo Locale, Turismo Sostenibile e Strategia Territoriale</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di impiego</td>
+      <td class="col-right role-title">Consulente per lo Sviluppo Locale e il Turismo (Apprendistato di Alta Formazione e Ricerca)</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Principali mansioni e responsabilità</td>
+      <td class="col-right">
+        <ul class="eu-list">
+          <li>Consulenza strategica nella progettazione e attuazione di interventi di sviluppo locale e animazione economica per i comuni sardi.</li>
+          <li>Analisi quantitativa e qualitativa della domanda/offerta turistica; ricerche di mercato e content management per il progetto <em>Sardinian Roots</em> e <em>Italea Sardegna</em> (turismo delle radici).</li>
+          <li>Sviluppo di script Python per l'estrazione dati (data scraping) e analisi comparativa delle tariffe e dei flussi ricettivi regionali.</li>
+        </ul>
+      </td>
+    </tr>
+    <tr class="page-break"><td colspan="2" style="padding:0; border:none; height:0;"></td></tr>
+
+    <!-- Comune di Cagliari (PAGE BREAK OR AFTER?) -->
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <tr>
+      <td class="col-left">• Date (da – a)</td>
+      <td class="col-right date-val">Settembre 2024 – Dicembre 2024</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Nome e indirizzo del datore di lavoro</td>
+      <td class="col-right org-title">Comune di Cagliari – Ufficio del Turismo | Cagliari, Italia</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di azienda o settore</td>
+      <td class="col-right">Pubblica Amministrazione / Monitoraggio Turistico</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di impiego</td>
+      <td class="col-right role-title">Data Analyst (Tirocinio Formativo Curriculare)</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Principali mansioni e responsabilità</td>
+      <td class="col-right">
+        <ul class="eu-list">
+          <li>Elaborazione statistica e data mining sui dataset ufficiali dei flussi turistici comunali, locazioni brevi (Airbnb/OTA) e indici di stagionalità.</li>
+          <li>Sviluppo di report analitici quantitativi a supporto delle politiche comunali per la governance turistica e la stima del sommerso ricettivo.</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <!-- Tutor Universitario -->
+    <tr>
+      <td class="col-left">• Date (da – a)</td>
+      <td class="col-right date-val">Novembre 2023 – Settembre 2024</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Nome e indirizzo del datore di lavoro</td>
+      <td class="col-right org-title">Università degli Studi di Cagliari | Cagliari, Italia (Ibrido)</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di azienda o settore</td>
+      <td class="col-right">Istruzione Universitaria e Ricerca</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di impiego</td>
+      <td class="col-right role-title">Tutor Universitario – Corso di Laurea in Economia e Gestione Aziendale</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Principali mansioni e responsabilità</td>
+      <td class="col-right">
+        <ul class="eu-list">
+          <li>Attività di tutorato didattico-integrativo e propedeutico per oltre 300+ studenti universitari del dipartimento (ex Art. 3 D.M. 1047/2017).</li>
+          <li>Presidio, supervisione e coordinamento operativo delle sessioni di test formali di ammissione nazionale CISIA / TOLC.</li>
+          <li>Ottimizzazione dei flussi amministrativi di convalida esami, passaggi di corso e certificazione CFU.</li>
+        </ul>
+      </td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <!-- Research Contributor -->
+    <tr>
+      <td class="col-left">• Date (da – a)</td>
+      <td class="col-right date-val">2025</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Nome e indirizzo del datore di lavoro</td>
+      <td class="col-right org-title">Progetto Sardinian Roots (e.INS) | Cagliari, Italia</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di azienda o settore</td>
+      <td class="col-right">Ricerca Applicata e Valorizzazione Territoriale</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di impiego</td>
+      <td class="col-right role-title">Collaboratore di Ricerca (Research Contributor)</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Principali mansioni e responsabilità</td>
+      <td class="col-right">
+        Supporto scientifico alla ricerca applicata per la mappatura dell'offerta territoriale e la co-progettazione di percorsi turistici sostenibili dedicati alla diaspora sarda nel mondo.
+      </td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <!-- SOGAERDYN -->
+    <tr>
+      <td class="col-left">• Date (da – a)</td>
+      <td class="col-right date-val">Giugno 2018 – Ottobre 2022 (Stagionale)</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Nome e indirizzo del datore di lavoro</td>
+      <td class="col-right org-title">SOGAERDYN S.p.A. – Aeroporto Internazionale di Cagliari-Elmas (CAG)</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di azienda o settore</td>
+      <td class="col-right">Trasporto Aereo / Ground Handling Aeroportuale</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Tipo di impiego</td>
+      <td class="col-right role-title">Addetto di Scalo Aeroportuale (Stagionale)</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Principali mansioni e responsabilità</td>
+      <td class="col-right">
+        <ul class="eu-list">
+          <li>Gestione operativa dei flussi passeggeri, procedure di accettazione check-in, verifica documentale e controllo imbarchi per voli nazionali e internazionali.</li>
+          <li>Servizio continuativo distribuito su 4 stagioni estive ad altissima densità (complessivi 4 anni e 5 mesi di servizio).</li>
+          <li>Utilizzo quotidiano dei sistemi informativi aeroportuali di departure control: <strong>Altéa Departure Control System (Amadeus)</strong> e <strong>iPort</strong>.</li>
+        </ul>
+      </td>
+    </tr>
+
+    <!-- LEADERSHIP & SERVIZIO ALLA COMUNITÀ -->
+    <tr class="row-section-header">
+      <td class="col-left">LEADERSHIP E SERVIZIO ALLA COMUNITÀ</td>
+      <td class="col-right"></td>
+    </tr>
+
+    <tr>
+      <td class="col-left">• Date (da – a)</td>
+      <td class="col-right date-val">2018 – In corso</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Nome e indirizzo dell'ente</td>
+      <td class="col-right org-title">AGESCI (Associazione Guide e Scout Cattolici Italiani) | Cagliari, Italia</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Ruolo svolto</td>
+      <td class="col-right role-title">Capo Scout ed Educatore di Giovani (Volontariato educativo continuativo)</td>
+    </tr>
+    <tr>
+      <td class="col-left">• Principali mansioni e responsabilità</td>
+      <td class="col-right">
+        <ul class="eu-list">
+          <li>Oltre 18 anni di esperienza attiva nello scautismo. Coordinamento formativo ed educativo di gruppi giovanili (fascia 8-19 anni).</li>
+          <li>Conduzione e pianificazione logistica di campi estivi comunitari residenziali e itineranti, gestione del rischio e sicurezza in contesti montani e impervi.</li>
+          <li>Educazione alla cittadinanza attiva, alla vita di comunità e alla sostenibilità ambientale.</li>
+        </ul>
+      </td>
+    </tr>
+
+    <!-- CAPACITÀ E COMPETENZE PERSONALI -->
+    <tr class="page-break"><td colspan="2" style="padding:0; border:none; height:0;"></td></tr>
+    <tr class="row-section-header">
+      <td class="col-left">CAPACITÀ E COMPETENZE PERSONALI</td>
+      <td class="col-right"></td>
+    </tr>
+
+    <tr>
+      <td class="col-left">MADRELINGUA</td>
+      <td class="col-right"><strong>Italiano, Sardo</strong></td>
+    </tr>
+
+    <tr>
+      <td class="col-left">ALTRE LINGUE</td>
+      <td class="col-right">
+        <!-- Official Europass CEFR Self-Assessment Grid -->
+        <table class="lang-table">
+          <thead>
+            <tr>
+              <th rowspan="2" class="th-main" style="width: 25%;">Lingua</th>
+              <th colspan="2" class="th-main">COMPRENSIONE</th>
+              <th colspan="2" class="th-main">PARLATO</th>
+              <th class="th-main">SCRITTO</th>
+            </tr>
+            <tr>
+              <th>Ascolto</th>
+              <th>Lettura</th>
+              <th>Interazione</th>
+              <th>Produzione</th>
+              <th>Scrittura</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="lang-name">Inglese</td>
+              <td><span class="lang-level">C1</span><span class="lang-desc">Avanzato</span></td>
+              <td><span class="lang-level">C1</span><span class="lang-desc">Avanzato</span></td>
+              <td><span class="lang-level">C1</span><span class="lang-desc">Avanzato</span></td>
+              <td><span class="lang-level">C1</span><span class="lang-desc">Avanzato</span></td>
+              <td><span class="lang-level">C1</span><span class="lang-desc">Avanzato</span></td>
+            </tr>
+            <tr>
+              <td class="lang-name">Spagnolo</td>
+              <td><span class="lang-level">A2</span><span class="lang-desc">Elementare</span></td>
+              <td><span class="lang-level">A2</span><span class="lang-desc">Elementare</span></td>
+              <td><span class="lang-level">A2</span><span class="lang-desc">Elementare</span></td>
+              <td><span class="lang-level">A2</span><span class="lang-desc">Elementare</span></td>
+              <td><span class="lang-level">A2</span><span class="lang-desc">Elementare</span></td>
+            </tr>
+            <tr>
+              <td class="lang-name">Olandese</td>
+              <td><span class="lang-level">A1</span><span class="lang-desc">Base</span></td>
+              <td><span class="lang-level">A1</span><span class="lang-desc">Base</span></td>
+              <td><span class="lang-level">A1</span><span class="lang-desc">Base</span></td>
+              <td><span class="lang-level">A1</span><span class="lang-desc">Base</span></td>
+              <td><span class="lang-level">A1</span><span class="lang-desc">Base</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="font-size: 7pt; color: #666; margin-top: 2px;">
+          (*) Quadro Comune Europeo di Riferimento per le Lingue (QCER / CEFR)
+        </div>
+      </td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <tr>
+      <td class="col-left">CAPACITÀ E COMPETENZE INFORMATICHE E STATISTICHE</td>
+      <td class="col-right">
+        <strong>Linguaggi e analisi quantitativa:</strong> Python (Pandas, NumPy, Scikit-learn, Matplotlib, Data Scraping), R (Tidyverse, plm, ggplot2), Stata, SQL, Microsoft Excel Avanzato, Git/GitHub.<br>
+        <strong>Sistemi Informativi Geografici & DCS:</strong> QGIS (Geographic Information Systems), Open Data Mapping, Amadeus Altéa Departure Control System, iPort.
+      </td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <tr>
+      <td class="col-left">CERTIFICAZIONI E LICENZE</td>
+      <td class="col-right">
+        • <strong>IBSEN Entrepreneurship Workshop Series</strong> | IBSEN Network (Febbraio 2025).<br>
+        • <strong>BLSD – Basic Life Support Defibrillation</strong> | Ircomunità A.p.s. (ID credenziale: 20220000235718, validità Giugno 2022 – Giugno 2026).
+      </td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <tr>
+      <td class="col-left">PATENTE O PATENTI</td>
+      <td class="col-right"><strong>Patente A, Patente B</strong> (Automunito e Motomunito)</td>
+    </tr>
+
+    <!-- PUBBLICAZIONI E ULTERIORI INFORMAZIONI -->
+    <tr class="row-section-header">
+      <td class="col-left">PUBBLICAZIONI E RICONOSCIMENTI</td>
+      <td class="col-right"></td>
+    </tr>
+
+    <tr>
+      <td class="col-left">Atti di Conferenza Internazionale</td>
+      <td class="col-right">
+        • <strong>Balbina, A.</strong>, Vincis, A., & Dessì, C. (2026). <em>"Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia"</em>. <strong>6th ICEM Conference 2026</strong>, Valencia, Spagna.<br><br>
+        • Vincis, A., Tedde, D., <strong>Balbina, A.</strong>, & Dessì, C. (2026). <em>"AI Literacy as a Hiring Signal in Project Management Recruitment"</em>. <strong>Sinergie-SIMA Management Conference 2026 Proceedings</strong>, Università di Pavia, ISBN: 979-12-243-4261-8.<br><br>
+        • Dessì, C., Vincis, A., <strong>Balbina, A.</strong>, & Succa, A. (2026). <em>"Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same"</em>. <strong>Sinergie-SIMA Management Conference 2026 Proceedings</strong>, Università di Pavia, ISBN: 979-12-243-4261-8.
+      </td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <tr>
+      <td class="col-left">Capitoli di Libri & Working Papers</td>
+      <td class="col-right">
+        • Dessì, C., Vincis, A., & <strong>Balbina, A.</strong> (In corso di stampa). <em>"People Management in AI-Enabled SMEs: A Human-Centered Capability Perspective"</em>. Capitolo di libro nella collana <em>Innovation in Human Centered Sustainability: Human Centered Sustainability in the AI Age</em>.<br><br>
+        • <strong>Balbina, A.</strong> (Working Paper). <em>"Adoption of Artificial Intelligence by Tourists: A Literature Review"</em>. Working paper in corso sull'adozione dell'IA nella pianificazione e prenotazione dei viaggi.
+      </td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <tr>
+      <td class="col-left">Presentazioni & Relazioni su Invito</td>
+      <td class="col-right">
+        • Dessì, C. & <strong>Balbina, A.</strong> (2026). <em>"Cineturismo, immaginario audiovisivo e territorio: dalla letteratura internazionale al caso locale de L'Isola di Pietro"</em>. Relazione presentata all'evento <em>Ogni film è un viaggio</em>, Società Umanitaria, Cagliari.
+      </td>
+    </tr>
+
+    <tr class="row-entry-space"><td class="col-left"></td><td class="col-right"></td></tr>
+
+    <tr>
+      <td class="col-left">Premi e Riconoscimenti Scientifici</td>
+      <td class="col-right">
+        • <strong>Outstanding Young Scholar Reviewer Award (2026)</strong> · Sinergie-SIMA Management Conference.
+      </td>
+    </tr>
+
+    <!-- TRATTAMENTO DATI -->
+    <tr class="row-section-header">
+      <td class="col-left">TRATTAMENTO DATI PERSONALI</td>
+      <td class="col-right"></td>
+    </tr>
+
+    <tr>
+      <td class="col-left">Dichiarazione di Consenso</td>
+      <td class="col-right privacy-notice">
+        Autorizzo il trattamento dei miei dati personali ai sensi del Dlgs 196 del 30 giugno 2003 e dell'art. 13 GDPR (Regolamento UE 2016/679) ai fini della ricerca e selezione del personale.
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
