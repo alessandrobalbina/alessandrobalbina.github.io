@@ -1,3 +1,8 @@
+// Frame-busting defense against Clickjacking / UI Redressing
+if (window.top !== window.self) {
+  window.top.location = window.self.location;
+}
+
 (function () {
   const savedTheme = localStorage.getItem('theme');
   const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
