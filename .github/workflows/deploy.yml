@@ -23,21 +23,38 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
 
       - name: Normalize OIDC audience
         run: |
           CLEAN_URL="$(echo "${ACTIONS_ID_TOKEN_REQUEST_URL}" | sed -E 's/([?&])audience=[^&]*&?/\1/g' | sed -E 's/[?&]$//')"
           echo "ACTIONS_ID_TOKEN_REQUEST_URL=${CLEAN_URL}&audience=https://github.com/${GITHUB_REPOSITORY_OWNER}" >> "$GITHUB_ENV"
 
+      - name: Prepare site directory
+        run: |
+          mkdir -p _site
+          rsync -av \
+            --exclude='.git*' \
+            --exclude='_site' \
+            --exclude='*.tex' \
+            --exclude='*.md' \
+            --exclude='cv_english_academic.html' \
+            --exclude='cv_italiano_europass.html' \
+            --exclude='.DS_Store' \
+            ./ _site/
+          # Ensure search console verification file is retained
+          if [ -f googleec8dc95242d137a6.html ]; then
+            cp googleec8dc95242d137a6.html _site/
+          fi
+
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v5
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5

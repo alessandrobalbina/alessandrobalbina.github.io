@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 5. Discrete Language Suggestion Banner (replaces aggressive auto-redirect)
+  // 5. Discrete Language Suggestion Banner (Safe DOM Creation without innerHTML)
   const isEnglishHome = window.location.pathname.endsWith('/') && !window.location.pathname.includes('/it');
   if (isEnglishHome) {
     const prefLang = localStorage.getItem('pref-lang');
@@ -116,32 +116,66 @@ document.addEventListener('DOMContentLoaded', () => {
       toast.className = 'lang-toast';
       toast.setAttribute('role', 'region');
       toast.setAttribute('aria-label', 'Selezione lingua');
-      toast.innerHTML = `
-        <p class="lang-toast-text">Preferisci visualizzare il sito in <strong>Italiano</strong>?</p>
-        <div class="lang-toast-actions">
-          <a href="./it/" class="lang-toast-btn" id="lang-toast-accept">Passa all'italiano</a>
-          <button class="lang-toast-close" id="lang-toast-dismiss" aria-label="Chiudi avviso lingua">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
-          </button>
-        </div>
-      `;
+
+      const p = document.createElement('p');
+      p.className = 'lang-toast-text';
+      p.appendChild(document.createTextNode('Preferisci visualizzare il sito in '));
+      const strong = document.createElement('strong');
+      strong.textContent = 'Italiano';
+      p.appendChild(strong);
+      p.appendChild(document.createTextNode('?'));
+
+      const actions = document.createElement('div');
+      actions.className = 'lang-toast-actions';
+
+      const acceptBtn = document.createElement('a');
+      acceptBtn.href = './it/';
+      acceptBtn.className = 'lang-toast-btn';
+      acceptBtn.id = 'lang-toast-accept';
+      acceptBtn.textContent = "Passa all'italiano";
+
+      const closeBtn = document.createElement('button');
+      closeBtn.className = 'lang-toast-close';
+      closeBtn.id = 'lang-toast-dismiss';
+      closeBtn.setAttribute('aria-label', 'Chiudi avviso lingua');
+
+      const svgNs = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(svgNs, 'svg');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      svg.setAttribute('fill', 'none');
+      svg.setAttribute('stroke', 'currentColor');
+      svg.setAttribute('stroke-width', '2');
+      svg.setAttribute('stroke-linecap', 'round');
+      svg.setAttribute('stroke-linejoin', 'round');
+
+      const line1 = document.createElementNS(svgNs, 'line');
+      line1.setAttribute('x1', '18'); line1.setAttribute('y1', '6');
+      line1.setAttribute('x2', '6'); line1.setAttribute('y2', '18');
+      const line2 = document.createElementNS(svgNs, 'line');
+      line2.setAttribute('x1', '6'); line2.setAttribute('y1', '6');
+      line2.setAttribute('x2', '18'); line2.setAttribute('y2', '18');
+      svg.appendChild(line1);
+      svg.appendChild(line2);
+      closeBtn.appendChild(svg);
+
+      actions.appendChild(acceptBtn);
+      actions.appendChild(closeBtn);
+      toast.appendChild(p);
+      toast.appendChild(actions);
       document.body.appendChild(toast);
 
-      document.getElementById('lang-toast-accept')?.addEventListener('click', () => {
+      acceptBtn.addEventListener('click', () => {
         localStorage.setItem('pref-lang', 'it');
       });
 
-      document.getElementById('lang-toast-dismiss')?.addEventListener('click', () => {
+      closeBtn.addEventListener('click', () => {
         localStorage.setItem('pref-lang', 'en');
         toast.remove();
       });
     }
   }
 
-  // 6. Security: Protected Email decoding
+  // 6. Security: Protected Email decoding (Safe DOM manipulation)
   document.querySelectorAll('.protected-email').forEach(el => {
     const user = el.getAttribute('data-user');
     const domain = el.getAttribute('data-domain');
@@ -154,23 +188,26 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // 7. 1-Click Citation Copy (Academic UX)
+  // 7. 1-Click Citation Copy (Academic UX - Safe DOM manipulation without innerHTML)
   document.querySelectorAll('.pub-btn--cite').forEach(btn => {
     btn.addEventListener('click', async () => {
       const citation = btn.getAttribute('data-citation');
       if (!citation) return;
       try {
         await navigator.clipboard.writeText(citation);
-        const originalHtml = btn.innerHTML;
+        const textSpan = btn.querySelector('span');
+        const originalText = textSpan ? textSpan.textContent : '';
         const isItalian = document.documentElement.lang === 'it' || window.location.pathname.includes('/it');
+        
         btn.classList.add('is-copied');
-        btn.innerHTML = `
-          <svg class="pub-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
-          <span>${isItalian ? 'Copiato!' : 'Copied!'}</span>
-        `;
+        if (textSpan) {
+          textSpan.textContent = isItalian ? 'Copiato!' : 'Copied!';
+        }
         setTimeout(() => {
           btn.classList.remove('is-copied');
-          btn.innerHTML = originalHtml;
+          if (textSpan) {
+            textSpan.textContent = originalText;
+          }
         }, 2200);
       } catch (err) {
         console.error('Clipboard copy failed:', err);
