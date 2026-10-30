@@ -4,7 +4,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://alessandrobalbina.github.io/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/" />
@@ -17,7 +17,7 @@
   </url>
   <url>
     <loc>https://alessandrobalbina.github.io/it/</loc>
-    <lastmod>2026-10-21</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/" />
@@ -30,7 +30,7 @@
   </url>
   <url>
     <loc>https://alessandrobalbina.github.io/other-projects/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/other-projects/" />
@@ -39,7 +39,7 @@
   </url>
   <url>
     <loc>https://alessandrobalbina.github.io/it/other-projects/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/other-projects/" />
@@ -48,7 +48,7 @@
   </url>
   <url>
     <loc>https://alessandrobalbina.github.io/contact/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/contact/" />
@@ -57,11 +57,23 @@
   </url>
   <url>
     <loc>https://alessandrobalbina.github.io/it/contact/</loc>
-    <lastmod>2026-09-16</lastmod>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/contact/" />
     <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/contact/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/contact/" />
+  </url>
+  <url>
+    <loc>https://alessandrobalbina.github.io/assets/CV%20Alessandro%20Balbina.pdf</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://alessandrobalbina.github.io/assets/CV%20Alessandro%20Balbina%20Europeo.pdf</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

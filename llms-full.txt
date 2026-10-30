@@ -1,0 +1,117 @@
+# Alessandro Balbina – Complete Academic Profile & Research Corpus
+
+> Complete structured knowledge representation of Alessandro Balbina, Ph.D. Student in Economics and Business at the University of Cagliari.
+
+## 1. Personal & Institutional Information
+- Full Name: Alessandro Balbina
+- Academic Title: Ph.D. Student in Economics and Business (Dottorando di Ricerca in Scienze Economiche e Aziendali, XLI Ciclo)
+- Current Institution: University of Cagliari (Università degli Studi di Cagliari), Department of Economics and Business Sciences
+- Institutional Address: Cagliari, Sardinia, Italy
+- Official Website: https://alessandrobalbina.github.io/
+- Official Italian Website: https://alessandrobalbina.github.io/it/
+- ORCID: https://orcid.org/0009-0008-4824-4107
+- Google Scholar: https://scholar.google.com/citations?user=_nKG67gAAAAJ&hl=it
+- LinkedIn: https://www.linkedin.com/in/alessandrobalbina/
+- GitHub: https://github.com/alessandrobalbina
+- University of Cagliari Wikidata: https://www.wikidata.org/wiki/Q2067315
+
+## 2. Research Focus & Methodologies
+- Primary Fields:
+  - Tourism Economics
+  - Artificial Intelligence and Algorithmic Decision-Making in Tourism
+  - Sustainable Destination Management & Monitoring
+  - SME Digital Transformation & Innovation
+  - Applied Econometrics & Data Analytics
+- Current PhD Focus:
+  - Tourist adoption and decision-making with Generative AI and conversational chatbots.
+  - Investigating how travelers interact with conversational AI agents for itinerary planning, booking behaviors, and sustainable destination discovery.
+  - Formulating evidence-based economic policies for regional tourism dispersion and seasonality mitigation in island ecosystems like Sardinia.
+- Methodological Toolbox:
+  - Quantitative econometrics, regression analysis, panel data models.
+  - Data mining, NLP (Natural Language Processing) and sentiment analysis applied to online visitor reviews and travel platforms.
+  - Qualitative inquiry, semi-structured interviews with SME managers, survey design and stratified sampling.
+
+## 3. Academic Conferences & Scientific Publications
+1. **VI International Conference on Entrepreneurial Motivation (ICEM 2026)**
+   - Paper Title: "Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia"
+   - Authors: Balbina, Alessandro; Vincis, A.; Dessì, C.
+   - Year: 2026
+   - Modality: Attended & Presented Remotely (Valencia, Spain)
+   - Status: Conference Abstract / Presentation
+2. **Sinergie-SIMA 2026 Management Conference**
+   - Paper Title 1: "AI Literacy as a Hiring Signal in Project Management Recruitment"
+   - Authors: Vincis, A.; Tedde, D.; Balbina, Alessandro; Dessì, C.
+   - Publication: *Sinergie-SIMA Management Conference 2026 Proceedings*, University of Pavia
+   - ISBN: 979-12-243-4261-8
+   - Year: 2026
+3. **Sinergie-SIMA 2026 Management Conference**
+   - Paper Title 2: "Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same"
+   - Authors: Dessì, C.; Vincis, A.; Balbina, Alessandro; Succa, A.
+   - Publication: *Sinergie-SIMA Management Conference 2026 Proceedings*, University of Pavia
+   - ISBN: 979-12-243-4261-8
+   - Year: 2026
+4. **Book Chapter (In Press / Forthcoming)**
+   - Chapter Title: "People Management in AI-Enabled SMEs: A Human-Centered Capability Perspective"
+   - Authors: Dessì, C.; Vincis, A.; Balbina, Alessandro
+   - Publication: Book chapter to appear in the series *Innovation in Human Centered Sustainability: Human Centered Sustainability in the AI Age*
+5. **Working Paper (In Progress)**
+   - Title: "Adoption of Artificial Intelligence by Tourists: A Literature Review"
+   - Author: Balbina, Alessandro
+   - Description: Literature review exploring AI applications in trip planning, destination research, and travel bookings.
+
+## 4. Higher Education Background
+1. **Ph.D. in Economics and Business (41st Cycle)**
+   - Institution: University of Cagliari
+   - Period: 2024 – Present
+   - Focus: Tourism economics, digital transformation, and applied artificial intelligence.
+2. **M.Sc. in Sustainable Tourism Management and Monitoring**
+   - Institution: University of Cagliari
+   - Period: 2021 – 2024
+   - Grade: 110/110 cum laude (with honors)
+   - Thesis: Quantitative analysis and indicator frameworks for sustainable tourism impact in coastal areas.
+3. **B.Sc. in Communication Sciences**
+   - Institution: University of Cagliari
+   - Period: 2017 – 2021
+   - Focus: Communication strategies, organizational dynamics, media analysis.
+
+## 5. Professional & Research Experience
+1. **Consultant for Local Development and Tourism (Higher Apprenticeship / Apprendistato di Alta Formazione)**
+   - Period: 2023 – 2024
+   - Responsibilities: Analysis of territorial tourism supply, data collection for regional tourism development plans, stakeholder engagement.
+2. **Research Contributor**
+   - Institution: University of Cagliari
+   - Period: 2023
+   - Responsibilities: Collaborative empirical research on regional tourism statistics, database structuring, econometric support.
+3. **Data Analyst (Internship)**
+   - Period: 2022 – 2023
+   - Responsibilities: Market research, survey data processing, tourism performance KPI dashboards.
+4. **University Tutor – B.Sc. in Economics and Business Management**
+   - Institution: University of Cagliari
+   - Period: 2022 – 2023
+   - Responsibilities: Academic support, tutoring in business and management courses.
+5. **Airport Ground Handling Agent (Seasonal)**
+   - Location: Cagliari-Elmas Airport (CAG)
+   - Period: 2019 – 2021
+   - Responsibilities: Passenger coordination, boarding operations, flight turn-around management in high-density seasonal periods.
+
+## 6. Technical Proficiencies & Certifications
+- **Programming & Data Analysis:** Python (Pandas, NumPy, Scikit-learn, Matplotlib), R (Tidyverse, plm, ggplot2), Stata, SQL, Advanced Microsoft Excel, Git/GitHub.
+- **Languages:**
+  - Italian: Native speaker (C2)
+  - English: Professional working proficiency (C1)
+  - Spanish: Elementary proficiency (CEFR A2)
+  - Dutch: Basic breakthrough proficiency (CEFR A1)
+- **Certifications & Driving:**
+  - Driving Licenses: A and B
+  - Applied Data Analytics and Econometrics coursework.
+
+## 7. Beyond Research: Community & Leadership
+- **AGESCI (Associazione Guide e Scout Cattolici Italiani):** 18+ years of active involvement.
+  - Roles: Scout Leader, youth educator, community project coordinator.
+  - Skills demonstrated: Team leadership, logistical management in challenging outdoor environments, conflict resolution, active citizenship education.
+  - Dedicated page: https://alessandrobalbina.github.io/other-projects/
+
+## 8. Direct Contact Details
+- Primary Email: alessandro.balbina@unica.it
+- Office: Department of Economics and Business Sciences, University of Cagliari, Italy
+- Contact Form & Profiles: https://alessandrobalbina.github.io/contact/

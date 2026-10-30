@@ -1,0 +1,39 @@
+# Alessandro Balbina
+
+> Ph.D. Student in Economics and Business at the University of Cagliari (UniCa), specializing in Tourism Economics, Artificial Intelligence in Tourism, and Sustainable Destination Management.
+
+## Overview & Academic Identity
+Alessandro Balbina is an Italian academic researcher and doctoral student (Cycle XLI, 2024–Present) at the Department of Economics and Business Sciences, University of Cagliari, Sardinia, Italy. His research investigates the impact of generative artificial intelligence on tourism business models, tourist decision-making and adoption of conversational AI, digital transformation of local tourism SMEs, and human-centered management.
+
+- **Current Position:** Ph.D. Student in Economics and Business (41st Cycle, 2024–Present)
+- **Institution:** Department of Economics and Business Sciences, University of Cagliari, Sardinia, Italy
+- **Primary Research Domains:** Tourism Economics, Artificial Intelligence in Tourism, Sustainable Destination Management, SME Digital Transformation, Data Analytics
+- **Methodological Approaches:** Qualitative & quantitative surveys, spatial analysis, econometric modeling, text mining & NLP on tourism reviews
+
+## Key Pages & Resources
+- Homepage: https://alessandrobalbina.github.io/
+- Italian Version: https://alessandrobalbina.github.io/it/
+- Research & Publications: https://alessandrobalbina.github.io/#publications
+- Academic Conferences: https://alessandrobalbina.github.io/#conferences
+- Full Academic CV (English, PDF): https://alessandrobalbina.github.io/assets/CV%20Alessandro%20Balbina.pdf
+- Europass Curriculum Vitae (Italian, PDF): https://alessandrobalbina.github.io/assets/CV%20Alessandro%20Balbina%20Europeo.pdf
+- Other Projects & Volunteering: https://alessandrobalbina.github.io/other-projects/
+- Contact Page: https://alessandrobalbina.github.io/contact/
+
+## Profiles & Authoritative Disambiguation
+- ORCID: https://orcid.org/0009-0008-4824-4107
+- Google Scholar: https://scholar.google.com/citations?user=_nKG67gAAAAJ&hl=it
+- LinkedIn: https://www.linkedin.com/in/alessandrobalbina/
+- GitHub: https://github.com/alessandrobalbina
+- Institutional Affiliation (UniCa Wikidata): https://www.wikidata.org/wiki/Q2067315
+
+## Selected Scientific Contributions & Publications
+- **Conference Abstract / Presentation (ICEM 2026):** Balbina, A., Vincis, A., & Dessì, C. (2026). "Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia." VI International Conference on Entrepreneurial Motivation (ICEM 2026), Valencia, Spain (Presented remotely).
+- **Conference Paper (Sinergie-SIMA 2026):** Vincis, A., Tedde, D., Balbina, A., & Dessì, C. (2026). "AI Literacy as a Hiring Signal in Project Management Recruitment." Sinergie-SIMA Management Conference 2026 Proceedings, ISBN 979-12-243-4261-8.
+- **Conference Paper (Sinergie-SIMA 2026):** Dessì, C., Vincis, A., Balbina, A., & Succa, A. (2026). "Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same." Sinergie-SIMA Management Conference 2026 Proceedings, ISBN 979-12-243-4261-8.
+- **Book Chapter (In press):** Dessì, C., Vincis, A., & Balbina, A. "People Management in AI-Enabled SMEs: A Human-Centered Capability Perspective." In: *Innovation in Human Centered Sustainability: Human Centered Sustainability in the AI Age*.
+- **Working Paper:** Balbina, A. "Adoption of Artificial Intelligence by Tourists: A Literature Review."
+
+## Extended Corpus & Details
+For complete academic background, past degrees, professional positions, technical proficiencies, languages, and scouting leadership, see:
+https://alessandrobalbina.github.io/llms-full.txt

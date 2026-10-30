@@ -1,660 +1,1648 @@
 <!doctype html>
 <html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests"
+    />
+    <meta
+      name="description"
+      content="Sito web personale di Alessandro Balbina, dottorando in Scienze economiche e aziendali presso l'Università degli Studi di Cagliari, incentrato su economia del turismo, sostenibilità e applicazioni di IA nel turismo."
+    />
+    <meta name="author" content="Alessandro Balbina" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      name="google-site-verification"
+      content="xRsEwk36gwl6PzKumDc8SZb-I3y7C72jhflVtUg58p4"
+    />
+    <meta name="theme-color" content="#11213f" />
+    <link rel="canonical" href="https://alessandrobalbina.github.io/it/" />
+    <link
+      rel="alternate"
+      hreflang="en"
+      href="https://alessandrobalbina.github.io/"
+    />
+    <link
+      rel="alternate"
+      hreflang="it"
+      href="https://alessandrobalbina.github.io/it/"
+    />
+    <link
+      rel="alternate"
+      hreflang="x-default"
+      href="https://alessandrobalbina.github.io/"
+    />
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      href="../assets/favicon-48x48.png"
+      sizes="48x48"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="../assets/apple-touch-icon.png"
+      sizes="180x180"
+    />
+    <link rel="shortcut icon" href="../assets/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Sora:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Alessandro Balbina" />
+    <meta
+      property="og:title"
+      content="Alessandro Balbina | Dottorando in Scienze Economiche e Aziendali"
+    />
+    <meta
+      property="og:description"
+      content="Dottorando di ricerca in Scienze economiche e aziendali presso l'Università di Cagliari. Interessi di ricerca: economia del turismo, sostenibilità e IA nel turismo."
+    />
+    <meta property="og:url" content="https://alessandrobalbina.github.io/it/" />
+    <meta
+      property="og:image"
+      content="https://alessandrobalbina.github.io/assets/og-preview.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Alessandro Balbina | Dottorando in Scienze Economiche e Aziendali"
+    />
+    <meta
+      name="twitter:description"
+      content="Dottorando in Scienze economiche e aziendali focalizzato su economia del turismo, sostenibilità e IA nel turismo."
+    />
+    <meta
+      name="twitter:image"
+      content="https://alessandrobalbina.github.io/assets/og-preview.png"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; img-src 'self' data:; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; base-uri 'self'; form-action 'none'; object-src 'none'; upgrade-insecure-requests" />
-  <meta name="description"
-    content="Sito web personale di Alessandro Balbina, dottorando in Scienze economiche e aziendali presso l'Università degli Studi di Cagliari, incentrato su economia del turismo, sostenibilità e applicazioni di IA nel turismo." />
-  <meta name="author" content="Alessandro Balbina" />
-  <meta name="robots" content="index, follow" />
-  <meta name="google-site-verification" content="xRsEwk36gwl6PzKumDc8SZb-I3y7C72jhflVtUg58p4" />
-  <meta name="theme-color" content="#11213f" />
-  <link rel="canonical" href="https://alessandrobalbina.github.io/it/" />
-  <link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/" />
-  <link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/" />
-  <link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/" />
-  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="../assets/favicon-48x48.png" sizes="48x48" type="image/png" />
-  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180" />
-  <link rel="shortcut icon" href="../assets/favicon.ico" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Sora:wght@600;700;800&display=swap"
-    rel="stylesheet" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Alessandro Balbina | Dottorando in Scienze Economiche e Aziendali" />
-  <meta property="og:description"
-    content="Dottorando di ricerca in Scienze economiche e aziendali presso l'Università di Cagliari. Interessi di ricerca: economia del turismo, sostenibilità e IA nel turismo." />
-  <meta property="og:url" content="https://alessandrobalbina.github.io/it/" />
-  <meta property="og:image" content="https://alessandrobalbina.github.io/assets/og-preview.png" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="it_IT" />
-  <meta property="og:locale:alternate" content="en_US" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Alessandro Balbina | Dottorando in Scienze Economiche e Aziendali" />
-  <meta name="twitter:description"
-    content="Dottorando in Scienze economiche e aziendali focalizzato su economia del turismo, sostenibilità e IA nel turismo." />
-  <meta name="twitter:image" content="https://alessandrobalbina.github.io/assets/og-preview.png" />
-  <title>Alessandro Balbina | Dottorando in Scienze Economiche e Aziendali – Università di Cagliari</title>
-  <link rel="stylesheet" href="../styles.css?v=3" />
-  <script src="../theme.js"></script>
-  <link rel="preload" href="../assets/profile_photo.webp" as="image" fetchpriority="high" />
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Alessandro Balbina",
-    "jobTitle": "PhD Student in Economics and Business",
-    "worksFor": {
-      "@type": "EducationalOrganization",
-      "name": "University of Cagliari",
-      "url": "https://www.unica.it/"
-    },
-    "alumniOf": [
+    <!-- Academic & Citation Metadata for Google Scholar & Reference Managers -->
+    <meta name="citation_author" content="Balbina, Alessandro" />
+    <meta
+      name="citation_author_institution"
+      content="Università degli Studi di Cagliari"
+    />
+    <meta
+      name="citation_author_orcid"
+      content="https://orcid.org/0009-0008-4824-4107"
+    />
+    <meta
+      name="citation_title"
+      content="Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia"
+    />
+    <meta
+      name="citation_conference_title"
+      content="VI International Conference on Entrepreneurial Motivation (ICEM 2026)"
+    />
+    <meta name="citation_publication_date" content="2026" />
+
+    <title>
+      Alessandro Balbina | Dottorando in Scienze Economiche e Aziendali –
+      Università di Cagliari
+    </title>
+    <link rel="stylesheet" href="../styles.css?v=3" />
+    <script src="../theme.js"></script>
+    <link
+      rel="preload"
+      href="../assets/profile_photo.webp"
+      as="image"
+      fetchpriority="high"
+    />
+    <script type="application/ld+json">
       {
-        "@type": "EducationalOrganization",
-        "name": "University of Cagliari"
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://alessandrobalbina.github.io/#website",
+            "url": "https://alessandrobalbina.github.io/",
+            "name": "Alessandro Balbina",
+            "description": "Sito personale di Alessandro Balbina, dottorando in Scienze economiche e aziendali presso l'Università degli Studi di Cagliari.",
+            "publisher": {
+              "@id": "https://alessandrobalbina.github.io/#person"
+            },
+            "inLanguage": ["it", "en"]
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://alessandrobalbina.github.io/it/#profilepage",
+            "url": "https://alessandrobalbina.github.io/it/",
+            "name": "Alessandro Balbina | Dottorando in Scienze Economiche e Aziendali – Università di Cagliari",
+            "isPartOf": {
+              "@id": "https://alessandrobalbina.github.io/#website"
+            },
+            "mainEntity": {
+              "@id": "https://alessandrobalbina.github.io/#person"
+            },
+            "breadcrumb": {
+              "@id": "https://alessandrobalbina.github.io/it/#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://alessandrobalbina.github.io/it/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://alessandrobalbina.github.io/it/"
+              }
+            ]
+          },
+          {
+            "@type": "Person",
+            "@id": "https://alessandrobalbina.github.io/#person",
+            "name": "Alessandro Balbina",
+            "jobTitle": "Dottorando di ricerca in Scienze economiche e aziendali",
+            "worksFor": {
+              "@type": "EducationalOrganization",
+              "@id": "https://www.wikidata.org/wiki/Q2067315",
+              "name": "Università degli Studi di Cagliari",
+              "url": "https://www.unica.it/",
+              "sameAs": [
+                "https://it.wikipedia.org/wiki/Universit%C3%A0_degli_Studi_di_Cagliari",
+                "https://en.wikipedia.org/wiki/University_of_Cagliari",
+                "https://www.wikidata.org/wiki/Q2067315"
+              ]
+            },
+            "alumniOf": [
+              {
+                "@type": "EducationalOrganization",
+                "@id": "https://www.wikidata.org/wiki/Q2067315",
+                "name": "Università degli Studi di Cagliari"
+              }
+            ],
+            "knowsAbout": [
+              "Economia del turismo",
+              "Intelligenza artificiale nel turismo",
+              "Turismo sostenibile",
+              "Analisi dei dati",
+              "Econometria"
+            ],
+            "knowsLanguage": [
+              {
+                "@type": "Language",
+                "name": "Italiano"
+              },
+              {
+                "@type": "Language",
+                "name": "Inglese"
+              },
+              {
+                "@type": "Language",
+                "name": "Spagnolo"
+              },
+              {
+                "@type": "Language",
+                "name": "Olandese"
+              }
+            ],
+            "url": "https://alessandrobalbina.github.io/it/",
+            "image": "https://alessandrobalbina.github.io/assets/profile_photo.webp",
+            "sameAs": [
+              "https://orcid.org/0009-0008-4824-4107",
+              "https://scholar.google.com/citations?user=_nKG67gAAAAJ&hl=it",
+              "https://www.linkedin.com/in/alessandrobalbina/",
+              "https://github.com/alessandrobalbina"
+            ]
+          },
+          {
+            "@type": "AcademicEvent",
+            "@id": "https://alessandrobalbina.github.io/#icem-2026",
+            "name": "VI International Conference on Entrepreneurial Motivation (ICEM 2026)",
+            "startDate": "2026-10-21",
+            "endDate": "2026-10-23",
+            "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+              "@type": "VirtualLocation",
+              "url": "https://alessandrobalbina.github.io/it/#conferenze"
+            },
+            "description": "VI Conferenza Internazionale sulla Motivazione Imprenditoriale a Valencia (partecipazione da remoto)."
+          },
+          {
+            "@type": "AcademicEvent",
+            "@id": "https://alessandrobalbina.github.io/#sima-2026",
+            "name": "Sinergie-SIMA 2026 Management Conference",
+            "startDate": "2026-06",
+            "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+            "eventStatus": "https://schema.org/EventScheduled",
+            "location": {
+              "@type": "Place",
+              "name": "Università Politecnica delle Marche",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Ancona",
+                "addressCountry": "IT"
+              }
+            },
+            "description": "Conferenza di Management Sinergie-SIMA 2026: Transforming Management in the Era of Post-Globalization and Agentic Economy."
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://alessandrobalbina.github.io/#paper-icem-2026",
+            "headline": "Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia",
+            "name": "Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia",
+            "author": [
+              {
+                "@id": "https://alessandrobalbina.github.io/#person"
+              },
+              {
+                "@type": "Person",
+                "name": "Andrea Vincis"
+              },
+              {
+                "@type": "Person",
+                "name": "Cinzia Dessì"
+              }
+            ],
+            "datePublished": "2026",
+            "isPartOf": {
+              "@id": "https://alessandrobalbina.github.io/#icem-2026"
+            },
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://alessandrobalbina.github.io/#paper-sima-2026-pm",
+            "headline": "AI Literacy as a Hiring Signal in Project Management Recruitment",
+            "name": "AI Literacy as a Hiring Signal in Project Management Recruitment",
+            "author": [
+              {
+                "@type": "Person",
+                "name": "Andrea Vincis"
+              },
+              {
+                "@type": "Person",
+                "name": "Daniel Tedde"
+              },
+              {
+                "@id": "https://alessandrobalbina.github.io/#person"
+              },
+              {
+                "@type": "Person",
+                "name": "Cinzia Dessì"
+              }
+            ],
+            "datePublished": "2026",
+            "isPartOf": {
+              "@id": "https://alessandrobalbina.github.io/#sima-2026"
+            },
+            "isbn": "979-12-243-4261-8",
+            "inLanguage": "en"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "@id": "https://alessandrobalbina.github.io/#paper-sima-2026-family",
+            "headline": "Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same",
+            "name": "Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same",
+            "author": [
+              {
+                "@type": "Person",
+                "name": "Cinzia Dessì"
+              },
+              {
+                "@type": "Person",
+                "name": "Andrea Vincis"
+              },
+              {
+                "@id": "https://alessandrobalbina.github.io/#person"
+              },
+              {
+                "@type": "Person",
+                "name": "Andrea Succa"
+              }
+            ],
+            "datePublished": "2026",
+            "isPartOf": {
+              "@id": "https://alessandrobalbina.github.io/#sima-2026"
+            },
+            "isbn": "979-12-243-4261-8",
+            "inLanguage": "en"
+          }
+        ]
       }
-    ],
-    "knowsAbout": [
-      "Economia del turismo",
-      "Intelligenza artificiale nel turismo",
-      "Turismo sostenibile",
-      "Analisi dei dati",
-      "Econometria"
-    ],
-    "url": "https://alessandrobalbina.github.io/it/",
-    "image": "https://alessandrobalbina.github.io/assets/profile_photo.webp",
-    "sameAs": [
-      "https://orcid.org/0009-0008-4824-4107",
-      "https://scholar.google.com/citations?user=_nKG67gAAAAJ&hl=it",
-      "https://www.linkedin.com/in/alessandrobalbina/"
-    ]
-  }
-  </script>
-</head>
+    </script>
+  </head>
 
-<body>
-  <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
-  <div class="page">
-    <header class="topbar card" role="banner">
-      <nav aria-label="Navigazione principale">
-        <div class="topbar-links">
-          <a href="./" aria-current="page">Home</a>
-          <a href="other-projects/">
-            <span class="nav-desktop">Altri progetti</span>
-            <span class="nav-mobile">Progetti</span>
-          </a>
-          <div class="dropdown">
-            <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false" aria-controls="cv-dropdown-menu">
-              <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-              </svg>
-              <span class="nav-desktop">CV / Resume</span>
-              <span class="nav-mobile">CV</span>
-              <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="dropdown-menu" id="cv-dropdown-menu">
-              <a href="../assets/CV%20Alessandro%20Balbina.pdf" target="_blank" rel="noopener noreferrer">
-                <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+  <body>
+    <a href="#main-content" class="skip-link">Salta al contenuto principale</a>
+    <div class="page">
+      <header class="topbar card" role="banner">
+        <nav aria-label="Navigazione principale">
+          <div class="topbar-links">
+            <a href="./" aria-current="page">Home</a>
+            <a href="other-projects/">
+              <span class="nav-desktop">Altri progetti</span>
+              <span class="nav-mobile">Progetti</span>
+            </a>
+            <div class="dropdown">
+              <button
+                class="dropdown-trigger"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="cv-dropdown-menu"
+              >
+                <svg
+                  class="cv-icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <path
+                    d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                  ></path>
                   <polyline points="14 2 14 8 20 8"></polyline>
                   <line x1="16" y1="13" x2="8" y2="13"></line>
                   <line x1="16" y1="17" x2="8" y2="17"></line>
                 </svg>
-                <span>CV Standard (EN)</span>
-              </a>
-              <a href="../assets/CV%20Alessandro%20Balbina%20Europeo.pdf" target="_blank" rel="noopener noreferrer">
-                <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-                  <rect x="3" y="4" width="18" height="16" rx="2" ry="2"></rect>
-                  <line x1="7" y1="8" x2="17" y2="8"></line>
-                  <line x1="7" y1="12" x2="17" y2="12"></line>
-                  <line x1="7" y1="16" x2="13" y2="16"></line>
+                <span class="nav-desktop">CV / Resume</span>
+                <span class="nav-mobile">CV</span>
+                <svg
+                  class="dropdown-arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                  focusable="false"
+                >
+                  <polyline points="6 9 12 15 18 9"></polyline>
                 </svg>
-                <span>CV Europeo (IT)</span>
-              </a>
+              </button>
+              <div class="dropdown-menu" id="cv-dropdown-menu">
+                <a
+                  href="../assets/CV%20Alessandro%20Balbina.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    class="cv-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    ></path>
+                    <polyline points="14 2 14 8 20 8"></polyline>
+                    <line x1="16" y1="13" x2="8" y2="13"></line>
+                    <line x1="16" y1="17" x2="8" y2="17"></line>
+                  </svg>
+                  <span>CV Standard (EN)</span>
+                </a>
+                <a
+                  href="../assets/CV%20Alessandro%20Balbina%20Europeo.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    class="cv-icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                    focusable="false"
+                  >
+                    <rect
+                      x="3"
+                      y="4"
+                      width="18"
+                      height="16"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="7" y1="8" x2="17" y2="8"></line>
+                    <line x1="7" y1="12" x2="17" y2="12"></line>
+                    <line x1="7" y1="16" x2="13" y2="16"></line>
+                  </svg>
+                  <span>CV Europeo (IT)</span>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="topbar-actions">
-          <a href="contact/" class="btn-contact">
-            <span class="nav-desktop">Contattami</span>
-            <span class="nav-mobile">Contatti</span>
-          </a>
-          <a href="../" class="lang-toggle" aria-label="Switch language to English">EN</a>
-          <button id="theme-toggle" class="theme-toggle" aria-label="Cambia tema chiaro/scuro">
-            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-              <circle cx="12" cy="12" r="5"></circle>
-              <line x1="12" y1="1" x2="12" y2="3"></line>
-              <line x1="12" y1="21" x2="12" y2="23"></line>
-              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-              <line x1="1" y1="12" x2="3" y2="12"></line>
-              <line x1="21" y1="12" x2="23" y2="12"></line>
-              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-            </svg>
-          </button>
-        </div>
-      </nav>
-    </header>
+          <div class="topbar-actions">
+            <a href="contact/" class="btn-contact">
+              <span class="nav-desktop">Contattami</span>
+              <span class="nav-mobile">Contatti</span>
+            </a>
+            <a
+              href="../"
+              class="lang-toggle"
+              aria-label="Switch language to English"
+              >EN</a
+            >
+            <button
+              id="theme-toggle"
+              class="theme-toggle"
+              aria-label="Cambia tema chiaro/scuro"
+            >
+              <svg
+                class="moon-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"
+                ></path>
+              </svg>
+              <svg
+                class="sun-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
 
-    <main id="main-content">
-      <header class="hero card">
-      <div class="hero-layout">
-        <div class="hero-copy">
-          <img src="../assets/unica-logo.svg" alt="Logo Università degli Studi di Cagliari" class="unica-logo" width="320"
-            height="51" loading="eager" />
-          <h1>Alessandro Balbina</h1>
-          <p class="lead">
-            Dottorando di ricerca in Scienze economiche e aziendali presso l'Università degli Studi di Cagliari (Italia).
+      <main id="main-content">
+        <header class="hero card">
+          <div class="hero-layout">
+            <div class="hero-copy">
+              <img
+                src="../assets/unica-logo.svg"
+                alt="Logo Università degli Studi di Cagliari"
+                class="unica-logo"
+                width="320"
+                height="51"
+                loading="eager"
+              />
+              <h1>Alessandro Balbina</h1>
+              <p class="lead">
+                Dottorando di ricerca in Scienze economiche e aziendali presso
+                l'Università degli Studi di Cagliari (Italia).
+              </p>
+              <div class="focus-list" aria-label="Aree di ricerca">
+                <span>Economia del turismo</span>
+                <span>Sostenibilità</span>
+                <span>AI nel turismo</span>
+              </div>
+            </div>
+            <div
+              class="profile-photo"
+              aria-label="Foto profilo di Alessandro Balbina"
+            >
+              <img
+                src="../assets/profile_photo.webp"
+                alt="Alessandro Balbina, dottorando in Scienze economiche e aziendali presso l'Università degli Studi di Cagliari"
+                draggable="false"
+                width="240"
+                height="240"
+                fetchpriority="high"
+              />
+            </div>
+          </div>
+        </header>
+
+        <section aria-labelledby="about-title" class="card">
+          <h2 id="about-title">Biografia</h2>
+          <p>
+            Sono un dottorando di ricerca in scienze economiche e aziendali (41°
+            ciclo) presso l'Università degli Studi di Cagliari. <br />
+            Il mio percorso accademico è guidato dalla passione per la
+            sostenibilità basata sull'analisi dei dati. Nel 2025 ho conseguito
+            la laurea magistrale in Management e Monitoraggio del Turismo
+            Sostenibile, discutendo una tesi che ha analizzato i dati turistici
+            e stimato l'economia sommersa del turismo nella città di Cagliari.
+            Nello stesso anno ho unito la ricerca all'impatto pratico
+            collaborando al progetto "Radici Sarde" (e.INS), progettando
+            esperienze turistiche su misura per la diaspora sarda nel mondo.
           </p>
-          <div class="focus-list" aria-label="Aree di ricerca">
-            <span>Economia del turismo</span>
-            <span>Sostenibilità</span>
-            <span>AI nel turismo</span>
+          <p>
+            Attualmente, la mia ricerca si concentra sull'adozione e l'utilizzo
+            dell'intelligenza artificiale da parte dei turisti per la
+            pianificazione e la prenotazione di esperienze di viaggio, con un
+            focus specifico sui chatbot AI, utilizzando metodologie miste
+            qualitative e quantitative.
+          </p>
+          <p>
+            Alla conferenza Sinergie-SIMA 2026 ho ricevuto il premio come
+            "Outstanding Young Scholar Reviewer".
+          </p>
+
+          <div class="research-focus-card">
+            <div class="research-focus-header">
+              <span class="research-focus-tag">
+                <svg
+                  viewBox="0 0 24 24"
+                  width="16"
+                  height="16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                Focus di ricerca attuale
+              </span>
+              <span class="research-focus-badge">
+                <span class="research-focus-pulse"></span>
+                Dottorato 41° ciclo · Ricerca sul campo
+              </span>
+            </div>
+            <p class="research-focus-title">
+              Adozione e Processi Decisionali dei Turisti con IA Generativa e
+              Chatbot
+            </p>
+            <p class="research-focus-desc">
+              Indagine sulle modalità con cui i viaggiatori interagiscono con
+              gli agenti di intelligenza artificiale conversazionale per
+              pianificare itinerari, prenotare e scoprire destinazioni
+              sostenibili, mediante metodologie miste qualitative e
+              quantitative.
+            </p>
+          </div>
+        </section>
+
+        <section aria-labelledby="publications-title" class="card">
+          <h2 id="publications-title">Ricerca e Pubblicazioni</h2>
+
+          <div
+            class="pub-filters"
+            role="tablist"
+            aria-label="Filtra le pubblicazioni per tema di ricerca"
+          >
+            <button
+              type="button"
+              class="pub-filter-btn is-active"
+              data-filter="all"
+              role="tab"
+              aria-selected="true"
+            >
+              Tutti i lavori
+            </button>
+            <button
+              type="button"
+              class="pub-filter-btn"
+              data-filter="ai"
+              role="tab"
+              aria-selected="false"
+            >
+              IA &amp; Digitalizzazione
+            </button>
+            <button
+              type="button"
+              class="pub-filter-btn"
+              data-filter="tourism"
+              role="tab"
+              aria-selected="false"
+            >
+              Turismo &amp; Territorio
+            </button>
+            <button
+              type="button"
+              class="pub-filter-btn"
+              data-filter="family-business"
+              role="tab"
+              aria-selected="false"
+            >
+              Imprese Familiari
+            </button>
           </div>
 
-        </div>
-        <div class="profile-photo" aria-label="Foto profilo di Alessandro Balbina">
-            <img src="../assets/profile_photo.webp" alt="Alessandro Balbina, dottorando in Scienze economiche e aziendali presso l'Università degli Studi di Cagliari" draggable="false" width="240"
-              height="240" fetchpriority="high" />
-        </div>
-      </div>
-    </header>
-
-    <section aria-labelledby="about-title" class="card">
-      <h2 id="about-title">Biografia</h2>
-      <p>
-        Sono un dottorando di ricerca in scienze economiche e aziendali (41° ciclo) presso l'Università degli Studi di Cagliari. <br>
-        Il mio percorso accademico è guidato dalla passione per la sostenibilità basata sull'analisi dei dati. Nel 2025 ho conseguito la laurea magistrale in Management e Monitoraggio del Turismo Sostenibile, discutendo una tesi che ha analizzato i dati turistici e stimato l'economia sommersa del turismo nella città di Cagliari. Nello stesso anno ho unito la ricerca all'impatto pratico collaborando al progetto "Radici Sarde" (e.INS), progettando esperienze turistiche su misura per la diaspora sarda nel mondo.
-      </p>
-      <p>
-        Attualmente, la mia ricerca si concentra sull'adozione e l'utilizzo dell'intelligenza artificiale da parte dei turisti per la pianificazione e la prenotazione di esperienze di viaggio, con un focus specifico sui chatbot AI, utilizzando metodologie miste qualitative e quantitative.
-      </p>
-      <p>
-        Alla conferenza Sinergie-SIMA 2026 ho ricevuto il premio come "Outstanding Young Scholar Reviewer".
-      </p>
-
-      <div class="research-focus-card">
-        <div class="research-focus-header">
-          <span class="research-focus-tag">
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-            Focus di ricerca attuale
-          </span>
-          <span class="research-focus-badge">
-            <span class="research-focus-pulse"></span>
-            Dottorato 41° ciclo · Ricerca sul campo
-          </span>
-        </div>
-        <p class="research-focus-title">
-          Adozione e Processi Decisionali dei Turisti con IA Generativa e Chatbot
-        </p>
-        <p class="research-focus-desc">
-          Indagine sulle modalità con cui i viaggiatori interagiscono con gli agenti di intelligenza artificiale conversazionale per pianificare itinerari, prenotare e scoprire destinazioni sostenibili, mediante metodologie miste qualitative e quantitative.
-        </p>
-      </div>
-    </section>
-
-    <section aria-labelledby="publications-title" class="card">
-      <h2 id="publications-title">Ricerca e Pubblicazioni</h2>
-
-      <div class="pub-filters" role="tablist" aria-label="Filtra le pubblicazioni per tema di ricerca">
-        <button type="button" class="pub-filter-btn is-active" data-filter="all" role="tab" aria-selected="true">
-          Tutti i lavori
-        </button>
-        <button type="button" class="pub-filter-btn" data-filter="ai" role="tab" aria-selected="false">
-          IA &amp; Digitalizzazione
-        </button>
-        <button type="button" class="pub-filter-btn" data-filter="tourism" role="tab" aria-selected="false">
-          Turismo &amp; Territorio
-        </button>
-        <button type="button" class="pub-filter-btn" data-filter="family-business" role="tab" aria-selected="false">
-          Imprese Familiari
-        </button>
-      </div>
-
-      <div class="publications-layout">
-        <div class="pub-category">
-          <h3>Paper e abstract di conferenze</h3>
-          <ul class="pub-list">
-            <li data-category="ai tourism">
-              <span class="pub-badge">Abstract di conferenza · 2026</span>
-              <span class="pub-authors"><strong>Balbina, A.</strong>, Vincis, A., &amp; Dessì, C. (2026).</span>
-              <span class="pub-title">"Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia."</span>
-              <span class="pub-venue"><a href="https://www.resocem.com/icem-conference/icem-2026/" target="_blank" rel="noopener noreferrer"><em>6th ICEM Conference 2026</em></a> (Abstract di conferenza).</span>
-              <div class="pub-actions">
-                <a href="https://www.resocem.com/icem-conference/icem-2026/" class="pub-btn" target="_blank" rel="noopener noreferrer" aria-label="Visita il link della conferenza ICEM 2026">
-                  <span>Link conferenza</span>
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                </a>
-                <button type="button" class="pub-btn pub-btn--cite" data-citation="Balbina, A., Vincis, A., &amp; Dessì, C. (2026). Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia. 6th ICEM Conference 2026." aria-label="Copia citazione: Driving Sustainable Destinations through Digital Transformation">
-                  <svg class="pub-btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                  <span>Cita</span>
-                </button>
-              </div>
-            </li>
-            <li data-category="ai">
-              <span class="pub-badge">Paper di conferenza · 2026</span>
-              <span class="pub-authors">Vincis, A., Tedde, D., <strong>Balbina, A.</strong>, &amp; Dessì, C.
-                (2026).</span>
-              <span class="pub-title">"AI Literacy as a Hiring Signal in Project Management Recruitment."</span>
-              <span class="pub-venue"><a href="https://www.sijmsima.it/previous-conferences/transforming-management-in-the-era-of-post-globalization-and-agentic-economy/" target="_blank" rel="noopener noreferrer"><em>Sinergie-SIMA Management Conference 2026 Proceedings</em></a>, Università di Pavia, ISBN 979-12-243-4261-8.</span>
-              <div class="pub-actions">
-                <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=it&amp;user=_nKG67gAAAAJ&amp;citation_for_view=_nKG67gAAAAJ:ufrVoPGSRksC" class="pub-btn" target="_blank" rel="noopener noreferrer" aria-label="Visualizza articolo su Google Scholar: AI Literacy as a Hiring Signal in Project Management Recruitment">
-                  <span>Vedi articolo</span>
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                </a>
-                <button type="button" class="pub-btn pub-btn--cite" data-citation="Vincis, A., Tedde, D., Balbina, A., &amp; Dessì, C. (2026). AI Literacy as a Hiring Signal in Project Management Recruitment. Sinergie-SIMA Management Conference 2026 Proceedings, Università di Pavia, ISBN 979-12-243-4261-8." aria-label="Copia citazione: AI Literacy as a Hiring Signal in Project Management Recruitment">
-                  <svg class="pub-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-                  <span>Cita</span>
-                </button>
-              </div>
-            </li>
-            <li data-category="family-business">
-              <span class="pub-badge">Paper di conferenza · 2026</span>
-              <span class="pub-authors">Dessì, C., Vincis, A., <strong>Balbina, A.</strong>, &amp; Succa, A.
-                (2026).</span>
-              <span class="pub-title">"Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same."</span>
-              <span class="pub-venue"><a href="https://www.sijmsima.it/previous-conferences/transforming-management-in-the-era-of-post-globalization-and-agentic-economy/" target="_blank" rel="noopener noreferrer"><em>Sinergie-SIMA Management Conference 2026 Proceedings</em></a>, Università di Pavia, ISBN 979-12-243-4261-8.</span>
-              <div class="pub-actions">
-                <a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=it&amp;user=_nKG67gAAAAJ&amp;citation_for_view=_nKG67gAAAAJ:WF5omc3nYNoC" class="pub-btn" target="_blank" rel="noopener noreferrer" aria-label="Visualizza articolo su Google Scholar: Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same">
-                  <span>Vedi articolo</span>
-                  <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-                </a>
-                <button type="button" class="pub-btn pub-btn--cite" data-citation="Dessì, C., Vincis, A., Balbina, A., &amp; Succa, A. (2026). Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same. Sinergie-SIMA Management Conference 2026 Proceedings, Università di Pavia, ISBN 979-12-243-4261-8." aria-label="Copia citazione: Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same">
-                  <svg class="pub-btn-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-                  <span>Cita</span>
-                </button>
-              </div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="pub-category">
-          <h3>Working paper e capitoli di libri</h3>
-          <ul class="pub-list">
-            <li data-category="ai">
-              <span class="pub-badge">Capitolo di libro</span>
-              <span class="pub-authors">Dessì, C., Vincis, A., &amp; <strong>Balbina, A.</strong></span>
-              <span class="pub-title">"People Management in AI-Enabled SMEs: A Human-Centered Capability
-                Perspective."</span>
-              <span class="pub-venue">Capitolo di libro in uscita nella collana <em>Innovation in Human Centered
-                  Sustainability: Human Centered Sustainability in the AI Age</em>.</span>
-            </li>
-            <li data-category="ai tourism">
-              <span class="pub-badge">Working Paper</span>
-              <span class="pub-authors"><strong>Balbina, A.</strong></span>
-              <span class="pub-title">"Adoption of Artificial Intelligence by Tourists: A Literature Review."</span>
-              <span class="pub-venue">Working paper/In corso, volto a esplorare le applicazioni dell'IA nella pianificazione dei viaggi, nella ricerca delle destinazioni e nelle prenotazioni turistiche.</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="pub-category">
-          <h3>Presentazioni e relazioni</h3>
-          <ul class="pub-list">
-            <li data-category="ai tourism">
-              <span class="pub-badge">Presentazione a conferenza · 2026</span>
-              <span class="pub-authors"><strong>Balbina, A.</strong> &amp; Vincis, A. (2026).</span>
-              <span class="pub-title">"Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia."</span>
-              <span class="pub-venue">Lavoro presentato da remoto alla <em>VI International Conference on Entrepreneurial Motivation (ICEM 2026)</em>, Valencia, Spagna.</span>
-              <div class="pub-actions">
-                <button type="button" class="pub-btn pub-btn--cite" data-citation="Balbina, A. &amp; Vincis, A. (2026). Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia. VI International Conference on Entrepreneurial Motivation (ICEM 2026), Valencia, Spagna." aria-label="Copia citazione: Driving Sustainable Destinations through Digital Transformation">
-                  <svg class="pub-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-                  <span>Cita</span>
-                </button>
-              </div>
-            </li>
-            <li data-category="tourism">
-              <span class="pub-badge">Relazione · 2026</span>
-              <span class="pub-authors">Dessì, C. &amp; <strong>Balbina, A.</strong> (2026).</span>
-              <span class="pub-title">"Cineturismo, immaginario audiovisivo e territorio: dalla letteratura
-                internazionale al caso locale de L'Isola di Pietro."</span>
-              <span class="pub-venue">Relazione presentata all'evento <em>Ogni film è un viaggio</em>, Società Umanitaria,
-                Cagliari, Italia.</span>
-              <div class="pub-actions">
-                <button type="button" class="pub-btn pub-btn--cite" data-citation="Dessì, C. &amp; Balbina, A. (2026). Cineturismo, immaginario audiovisivo e territorio: dalla letteratura internazionale al caso locale de L'Isola di Pietro. Relazione presentata all'evento Ogni film è un viaggio, Società Umanitaria, Cagliari, Italia." aria-label="Copia citazione: Cineturismo, immaginario audiovisivo e territorio">
-                  <svg class="pub-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg>
-                  <span>Cita</span>
-                </button>
-              </div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="conferences-title" class="card">
-      <h2 id="conferences-title">Conferenze &amp; Eventi Accademici</h2>
-      <div class="conferences-grid">
-        <article class="conf-bento-card" aria-labelledby="conf-icem-2026">
-          <div>
-            <div class="conf-bento-header">
-              <div class="conf-bento-logo-wrapper">
-                <img src="../assets/icem-2026-logo.png" alt="Logo conferenza ICEM 2026" class="conf-bento-logo" width="332" height="245" loading="lazy">
-              </div>
-              <div class="conf-bento-badges">
-                <span class="conf-pill conf-pill--remote">Da remoto</span>
-                <span class="conf-pill">Valencia, ES</span>
-              </div>
+          <div class="publications-layout">
+            <div class="pub-category">
+              <h3>Paper e abstract di conferenze</h3>
+              <ul class="pub-list">
+                <li data-category="ai tourism">
+                  <span class="pub-badge"
+                    >Abstract di conferenza ·
+                    <time datetime="2026">2026</time></span
+                  >
+                  <span class="pub-authors"
+                    ><strong>Balbina, A.</strong>, Vincis, A., &amp; Dessì, C.
+                    (2026).</span
+                  >
+                  <span class="pub-title"
+                    >"Driving Sustainable Destinations through Digital
+                    Transformation: A Qualitative Inquiry into Local SMEs in
+                    Sardinia."</span
+                  >
+                  <span class="pub-venue"
+                    ><a
+                      href="https://www.resocem.com/icem-conference/icem-2026/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      ><em>6th ICEM Conference 2026</em></a
+                    >
+                    (Abstract di conferenza).</span
+                  >
+                  <div class="pub-actions">
+                    <a
+                      href="https://www.resocem.com/icem-conference/icem-2026/"
+                      class="pub-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visita il link della conferenza ICEM 2026"
+                    >
+                      <span>Link conferenza</span>
+                      <svg
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M3 8h10M9 4l4 4-4 4" />
+                      </svg>
+                    </a>
+                    <button
+                      type="button"
+                      class="pub-btn pub-btn--cite"
+                      data-citation="Balbina, A., Vincis, A., &amp; Dessì, C. (2026). Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia. 6th ICEM Conference 2026."
+                      aria-label="Copia citazione: Driving Sustainable Destinations through Digital Transformation"
+                    >
+                      <svg
+                        class="pub-btn-icon"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                        />
+                      </svg>
+                      <span>Cita</span>
+                    </button>
+                  </div>
+                </li>
+                <li data-category="ai">
+                  <span class="pub-badge"
+                    >Paper di conferenza ·
+                    <time datetime="2026">2026</time></span
+                  >
+                  <span class="pub-authors"
+                    >Vincis, A., Tedde, D., <strong>Balbina, A.</strong>, &amp;
+                    Dessì, C. (2026).</span
+                  >
+                  <span class="pub-title"
+                    >"AI Literacy as a Hiring Signal in Project Management
+                    Recruitment."</span
+                  >
+                  <span class="pub-venue"
+                    ><a
+                      href="https://www.sijmsima.it/previous-conferences/transforming-management-in-the-era-of-post-globalization-and-agentic-economy/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      ><em
+                        >Sinergie-SIMA Management Conference 2026
+                        Proceedings</em
+                      ></a
+                    >, Università di Pavia, ISBN 979-12-243-4261-8.</span
+                  >
+                  <div class="pub-actions">
+                    <a
+                      href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=it&amp;user=_nKG67gAAAAJ&amp;citation_for_view=_nKG67gAAAAJ:ufrVoPGSRksC"
+                      class="pub-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visualizza articolo su Google Scholar: AI Literacy as a Hiring Signal in Project Management Recruitment"
+                    >
+                      <span>Vedi articolo</span>
+                      <svg
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M3 8h10M9 4l4 4-4 4" />
+                      </svg>
+                    </a>
+                    <button
+                      type="button"
+                      class="pub-btn pub-btn--cite"
+                      data-citation="Vincis, A., Tedde, D., Balbina, A., &amp; Dessì, C. (2026). AI Literacy as a Hiring Signal in Project Management Recruitment. Sinergie-SIMA Management Conference 2026 Proceedings, Università di Pavia, ISBN 979-12-243-4261-8."
+                      aria-label="Copia citazione: AI Literacy as a Hiring Signal in Project Management Recruitment"
+                    >
+                      <svg
+                        class="pub-btn-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1 2-2h2"
+                        ></path>
+                        <rect
+                          x="8"
+                          y="2"
+                          width="8"
+                          height="4"
+                          rx="1"
+                          ry="1"
+                        ></rect>
+                      </svg>
+                      <span>Cita</span>
+                    </button>
+                  </div>
+                </li>
+                <li data-category="family-business">
+                  <span class="pub-badge"
+                    >Paper di conferenza ·
+                    <time datetime="2026">2026</time></span
+                  >
+                  <span class="pub-authors"
+                    >Dessì, C., Vincis, A., <strong>Balbina, A.</strong>, &amp;
+                    Succa, A. (2026).</span
+                  >
+                  <span class="pub-title"
+                    >"Dual-Speed Transformation After Succession: Why Family
+                    Business Groups Change while Staying the Same."</span
+                  >
+                  <span class="pub-venue"
+                    ><a
+                      href="https://www.sijmsima.it/previous-conferences/transforming-management-in-the-era-of-post-globalization-and-agentic-economy/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      ><em
+                        >Sinergie-SIMA Management Conference 2026
+                        Proceedings</em
+                      ></a
+                    >, Università di Pavia, ISBN 979-12-243-4261-8.</span
+                  >
+                  <div class="pub-actions">
+                    <a
+                      href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=it&amp;user=_nKG67gAAAAJ&amp;citation_for_view=_nKG67gAAAAJ:WF5omc3nYNoC"
+                      class="pub-btn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Visualizza articolo su Google Scholar: Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same"
+                    >
+                      <span>Vedi articolo</span>
+                      <svg
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path d="M3 8h10M9 4l4 4-4 4" />
+                      </svg>
+                    </a>
+                    <button
+                      type="button"
+                      class="pub-btn pub-btn--cite"
+                      data-citation="Dessì, C., Vincis, A., Balbina, A., &amp; Succa, A. (2026). Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same. Sinergie-SIMA Management Conference 2026 Proceedings, Università di Pavia, ISBN 979-12-243-4261-8."
+                      aria-label="Copia citazione: Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same"
+                    >
+                      <svg
+                        class="pub-btn-icon"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"
+                        />
+                      </svg>
+                      <span>Cita</span>
+                    </button>
+                  </div>
+                </li>
+              </ul>
             </div>
 
-            <h3 id="conf-icem-2026" class="conf-bento-title">VI International Conference on Entrepreneurial Motivation (ICEM 2026)</h3>
-
-            <div class="conf-bento-meta">
-              <span class="conf-meta-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                Valencia, Spagna (Partecipazione da remoto)
-              </span>
-              <span class="conf-meta-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                19–20 Ottobre 2026
-              </span>
+            <div class="pub-category">
+              <h3>Working paper e capitoli di libri</h3>
+              <ul class="pub-list">
+                <li data-category="ai">
+                  <span class="pub-badge">Capitolo di libro</span>
+                  <span class="pub-authors"
+                    >Dessì, C., Vincis, A., &amp;
+                    <strong>Balbina, A.</strong></span
+                  >
+                  <span class="pub-title"
+                    >"People Management in AI-Enabled SMEs: A Human-Centered
+                    Capability Perspective."</span
+                  >
+                  <span class="pub-venue"
+                    >Capitolo di libro in uscita nella collana
+                    <em
+                      >Innovation in Human Centered Sustainability: Human
+                      Centered Sustainability in the AI Age</em
+                    >.</span
+                  >
+                </li>
+                <li data-category="ai tourism">
+                  <span class="pub-badge">Working Paper</span>
+                  <span class="pub-authors"><strong>Balbina, A.</strong></span>
+                  <span class="pub-title"
+                    >"Adoption of Artificial Intelligence by Tourists: A
+                    Literature Review."</span
+                  >
+                  <span class="pub-venue"
+                    >Working paper/In corso, volto a esplorare le applicazioni
+                    dell'IA nella pianificazione dei viaggi, nella ricerca delle
+                    destinazioni e nelle prenotazioni turistiche.</span
+                  >
+                </li>
+              </ul>
             </div>
 
-            <div class="conf-bento-paper">
-              <span class="conf-bento-paper-tag">Contributo presentato</span>
-              <p class="conf-bento-paper-title">"Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia"</p>
-              <p class="conf-bento-paper-authors"><strong>Alessandro Balbina</strong>, Andrea Vincis, Cinzia Dessì</p>
+            <div class="pub-category">
+              <h3>Presentazioni e relazioni</h3>
+              <ul class="pub-list">
+                <li data-category="ai tourism">
+                  <span class="pub-badge"
+                    >Presentazione a conferenza ·
+                    <time datetime="2026">2026</time></span
+                  >
+                  <span class="pub-authors"
+                    ><strong>Balbina, A.</strong> &amp; Vincis, A. (2026).</span
+                  >
+                  <span class="pub-title"
+                    >"Driving Sustainable Destinations through Digital
+                    Transformation: A Qualitative Inquiry into Local SMEs in
+                    Sardinia."</span
+                  >
+                  <span class="pub-venue"
+                    >Lavoro presentato da remoto alla
+                    <em
+                      >VI International Conference on Entrepreneurial Motivation
+                      (ICEM 2026)</em
+                    >, Valencia, Spagna.</span
+                  >
+                  <div class="pub-actions">
+                    <button
+                      type="button"
+                      class="pub-btn pub-btn--cite"
+                      data-citation="Balbina, A. &amp; Vincis, A. (2026). Driving Sustainable Destinations through Digital Transformation: A Qualitative Inquiry into Local SMEs in Sardinia. VI International Conference on Entrepreneurial Motivation (ICEM 2026), Valencia, Spagna."
+                      aria-label="Copia citazione: Driving Sustainable Destinations through Digital Transformation"
+                    >
+                      <svg
+                        class="pub-btn-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1 2-2h2"
+                        ></path>
+                        <rect
+                          x="8"
+                          y="2"
+                          width="8"
+                          height="4"
+                          rx="1"
+                          ry="1"
+                        ></rect>
+                      </svg>
+                      <span>Cita</span>
+                    </button>
+                  </div>
+                </li>
+                <li data-category="tourism">
+                  <span class="pub-badge"
+                    >Relazione · <time datetime="2026">2026</time></span
+                  >
+                  <span class="pub-authors"
+                    >Dessì, C. &amp; <strong>Balbina, A.</strong> (2026).</span
+                  >
+                  <span class="pub-title"
+                    >"Cineturismo, immaginario audiovisivo e territorio: dalla
+                    letteratura internazionale al caso locale de L'Isola di
+                    Pietro."</span
+                  >
+                  <span class="pub-venue"
+                    >Relazione presentata all'evento
+                    <em>Ogni film è un viaggio</em>, Società Umanitaria,
+                    Cagliari, Italia.</span
+                  >
+                  <div class="pub-actions">
+                    <button
+                      type="button"
+                      class="pub-btn pub-btn--cite"
+                      data-citation="Dessì, C. &amp; Balbina, A. (2026). Cineturismo, immaginario audiovisivo e territorio: dalla letteratura internazionale al caso locale de L'Isola di Pietro. Relazione presentata all'evento Ogni film è un viaggio, Società Umanitaria, Cagliari, Italia."
+                      aria-label="Copia citazione: Cineturismo, immaginario audiovisivo e territorio"
+                    >
+                      <svg
+                        class="pub-btn-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <path
+                          d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1 2-2h2"
+                        ></path>
+                        <rect
+                          x="8"
+                          y="2"
+                          width="8"
+                          height="4"
+                          rx="1"
+                          ry="1"
+                        ></rect>
+                      </svg>
+                      <span>Cita</span>
+                    </button>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
+        </section>
 
-          <div class="conf-bento-actions">
-            <a href="https://www.resocem.com/icem-conference/icem-2026/" class="pub-btn" target="_blank" rel="noopener noreferrer" aria-label="Visita il sito ufficiale della conferenza ICEM 2026">
-              <span>Sito della conferenza</span>
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="conf-bento-card" aria-labelledby="conf-sima-2026">
-          <div>
-            <div class="conf-bento-header">
-              <div class="conf-bento-logo-wrapper">
-                <img src="../assets/sinergie-sima-logo.png" alt="Logo conferenza Sinergie-SIMA 2026" class="conf-bento-logo" width="299" height="62" loading="lazy">
-              </div>
-              <div class="conf-bento-badges">
-                <span class="conf-pill conf-pill--award">Vincitore premio</span>
-                <span class="conf-pill">Pavia, IT</span>
-              </div>
-            </div>
-
-            <h3 id="conf-sima-2026" class="conf-bento-title">Sinergie-SIMA 2026 Management Conference</h3>
-            <p class="conf-bento-subtitle">"Transforming management in the era of post-globalization and agentic economy"</p>
-
-            <div class="conf-bento-meta">
-              <span class="conf-meta-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                Università di Pavia, Italia
-              </span>
-              <span class="conf-meta-item">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                28–29 Maggio 2026
-              </span>
-            </div>
-
-            <div class="conf-bento-highlight">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-              <span>Premio Outstanding Young Scholar Reviewer</span>
-            </div>
-
-            <div class="conf-bento-paper">
-              <span class="conf-bento-paper-tag">Contributi negli atti di conferenza</span>
-              <div class="conf-bento-paper-list">
-                <div class="conf-bento-paper-item">
-                  <p class="conf-bento-paper-title">"AI Literacy as a Hiring Signal in Project Management Recruitment"</p>
-                  <p class="conf-bento-paper-authors">Andrea Vincis, Daniel Tedde, <strong>Alessandro Balbina</strong>, Cinzia Dessì</p>
+        <section aria-labelledby="conferences-title" class="card">
+          <h2 id="conferences-title">Conferenze &amp; Eventi Accademici</h2>
+          <div class="conferences-grid">
+            <article class="conf-bento-card" aria-labelledby="conf-icem-2026">
+              <div>
+                <div class="conf-bento-header">
+                  <div class="conf-bento-logo-wrapper">
+                    <img
+                      src="../assets/icem-2026-logo.png"
+                      alt="Logo conferenza ICEM 2026"
+                      class="conf-bento-logo"
+                      width="332"
+                      height="245"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="conf-bento-badges">
+                    <span class="conf-pill conf-pill--remote">Da remoto</span>
+                    <span class="conf-pill">Valencia, ES</span>
+                  </div>
                 </div>
-                <div class="conf-bento-paper-item">
-                  <p class="conf-bento-paper-title">"Dual-Speed Transformation After Succession: Why Family Business Groups Change while Staying the Same"</p>
-                  <p class="conf-bento-paper-authors">Cinzia Dessì, Andrea Vincis, <strong>Alessandro Balbina</strong>, Andrea Succa</p>
+
+                <h3 id="conf-icem-2026" class="conf-bento-title">
+                  VI International Conference on Entrepreneurial Motivation
+                  (ICEM 2026)
+                </h3>
+
+                <div class="conf-bento-meta">
+                  <span class="conf-meta-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                      ></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Valencia, Spagna (Partecipazione da remoto)
+                  </span>
+                  <span class="conf-meta-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect
+                        x="3"
+                        y="4"
+                        width="18"
+                        height="18"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    19–20 Ottobre 2026
+                  </span>
+                </div>
+
+                <div class="conf-bento-paper">
+                  <span class="conf-bento-paper-tag"
+                    >Contributo presentato</span
+                  >
+                  <p class="conf-bento-paper-title">
+                    "Driving Sustainable Destinations through Digital
+                    Transformation: A Qualitative Inquiry into Local SMEs in
+                    Sardinia"
+                  </p>
+                  <p class="conf-bento-paper-authors">
+                    <strong>Alessandro Balbina</strong>, Andrea Vincis, Cinzia
+                    Dessì
+                  </p>
+                </div>
+              </div>
+
+              <div class="conf-bento-actions">
+                <a
+                  href="https://www.resocem.com/icem-conference/icem-2026/"
+                  class="pub-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visita il sito ufficiale della conferenza ICEM 2026"
+                >
+                  <span>Sito della conferenza</span>
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+
+            <article class="conf-bento-card" aria-labelledby="conf-sima-2026">
+              <div>
+                <div class="conf-bento-header">
+                  <div class="conf-bento-logo-wrapper">
+                    <img
+                      src="../assets/sinergie-sima-logo.png"
+                      alt="Logo conferenza Sinergie-SIMA 2026"
+                      class="conf-bento-logo"
+                      width="299"
+                      height="62"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="conf-bento-badges">
+                    <span class="conf-pill conf-pill--award"
+                      >Vincitore premio</span
+                    >
+                    <span class="conf-pill">Pavia, IT</span>
+                  </div>
+                </div>
+
+                <h3 id="conf-sima-2026" class="conf-bento-title">
+                  Sinergie-SIMA 2026 Management Conference
+                </h3>
+                <p class="conf-bento-subtitle">
+                  "Transforming management in the era of post-globalization and
+                  agentic economy"
+                </p>
+
+                <div class="conf-bento-meta">
+                  <span class="conf-meta-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                      ></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    Università di Pavia, Italia
+                  </span>
+                  <span class="conf-meta-item">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect
+                        x="3"
+                        y="4"
+                        width="18"
+                        height="18"
+                        rx="2"
+                        ry="2"
+                      ></rect>
+                      <line x1="16" y1="2" x2="16" y2="6"></line>
+                      <line x1="8" y1="2" x2="8" y2="6"></line>
+                      <line x1="3" y1="10" x2="21" y2="10"></line>
+                    </svg>
+                    28–29 Maggio 2026
+                  </span>
+                </div>
+
+                <div class="conf-bento-highlight">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <polygon
+                      points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"
+                    ></polygon>
+                  </svg>
+                  <span>Premio Outstanding Young Scholar Reviewer</span>
+                </div>
+
+                <div class="conf-bento-paper">
+                  <span class="conf-bento-paper-tag"
+                    >Contributi negli atti di conferenza</span
+                  >
+                  <div class="conf-bento-paper-list">
+                    <div class="conf-bento-paper-item">
+                      <p class="conf-bento-paper-title">
+                        "AI Literacy as a Hiring Signal in Project Management
+                        Recruitment"
+                      </p>
+                      <p class="conf-bento-paper-authors">
+                        Andrea Vincis, Daniel Tedde,
+                        <strong>Alessandro Balbina</strong>, Cinzia Dessì
+                      </p>
+                    </div>
+                    <div class="conf-bento-paper-item">
+                      <p class="conf-bento-paper-title">
+                        "Dual-Speed Transformation After Succession: Why Family
+                        Business Groups Change while Staying the Same"
+                      </p>
+                      <p class="conf-bento-paper-authors">
+                        Cinzia Dessì, Andrea Vincis,
+                        <strong>Alessandro Balbina</strong>, Andrea Succa
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="conf-bento-actions">
+                <a
+                  href="https://www.sijmsima.it/previous-conferences/transforming-management-in-the-era-of-post-globalization-and-agentic-economy/"
+                  class="pub-btn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Visita il sito ufficiale della conferenza Sinergie-SIMA 2026"
+                >
+                  <span>Sito della conferenza</span>
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M3 8h10M9 4l4 4-4 4" />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="education-title" class="card">
+          <h2 id="education-title">Formazione</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">
+                    Dottorato di ricerca in Scienze economiche e aziendali (41°
+                    ciclo)
+                  </h3>
+                  <span class="timeline-org"
+                    >Università degli Studi di Cagliari, Italia</span
+                  >
+                </div>
+                <span class="timeline-time"
+                  ><time datetime="2025-11">Novembre 2025</time> – in
+                  corso</span
+                >
+              </div>
+              <div class="timeline-details">
+                <p>Dipartimento di Scienze Economiche ed Aziendali</p>
+                <p>
+                  <strong>Focus:</strong> Utilizzo dell'intelligenza artificiale
+                  da parte dei turisti per la pianificazione e prenotazione di
+                  esperienze di viaggio, con particolare attenzione ai chatbot
+                  di intelligenza artificiale mediante metodologie miste
+                  qualitative e quantitative.
+                </p>
+                <p>
+                  <strong>Supervisori:</strong> prof.ssa Cinzia Dessì
+                  (supervisore), prof. Ivan Etzo (co-supervisore)
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">
+                    Laurea Magistrale in Management e Monitoraggio del Turismo
+                    Sostenibile
+                  </h3>
+                  <span class="timeline-org"
+                    >Università degli Studi di Cagliari, Italia</span
+                  >
+                </div>
+                <span class="timeline-time"
+                  ><time datetime="2022">2022</time> –
+                  <time datetime="2025">2025</time></span
+                >
+              </div>
+              <div class="timeline-details">
+                <p>Votazione: 110/110 e lode</p>
+                <p>
+                  Tesi:
+                  <em
+                    >Dati turistici, sostenibilità e stime del turismo sommerso.
+                    Caso studio del comune di Cagliari.</em
+                  >
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">
+                    Laurea Triennale in Scienze della Comunicazione
+                  </h3>
+                  <span class="timeline-org"
+                    >Università degli Studi di Cagliari, Italia</span
+                  >
+                </div>
+                <span class="timeline-time"
+                  ><time datetime="2017">2017</time> –
+                  <time datetime="2022">2022</time></span
+                >
+              </div>
+              <div class="timeline-details">
+                <p>Votazione: 106/110</p>
+                <p>
+                  Tesi:
+                  <em
+                    >Rebrand e social media strategy: Il caso dell'azienda
+                    agricola "Opuntia".</em
+                  >
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="experience-title" class="card">
+          <h2 id="experience-title">Esperienza Professionale</h2>
+          <div class="timeline">
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">
+                    Consulente per lo sviluppo locale e il turismo
+                    (apprendistato)
+                  </h3>
+                  <span class="timeline-org"
+                    >Rete Gaia, Sardegna, Italia (Ibrido)</span
+                  >
+                </div>
+                <span class="timeline-time"
+                  ><time datetime="2025-04">aprile 2025</time> –
+                  <time datetime="2025-12">dicembre 2025</time></span
+                >
+              </div>
+              <div class="timeline-details">
+                <ul>
+                  <li>
+                    Attività di consulenza nella progettazione e attuazione di
+                    iniziative di sviluppo locale sostenibile.
+                  </li>
+                  <li>
+                    Svolgimento di attività di animazione economica
+                    territoriale.
+                  </li>
+                  <li>
+                    Analisi della domanda ed elaborazione di prodotti
+                    dell'offerta turistica.
+                  </li>
+                  <li>
+                    Consulenza, sviluppo territoriale e supporto marketing per
+                    <em>Sardinian Roots</em>, progetto incentrato sul turismo
+                    delle radici.
+                  </li>
+                  <li>
+                    Consulenza di marketing e creazione di contenuti online e
+                    offline per Italea Sardegna.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">Collaboratore di ricerca</h3>
+                  <span class="timeline-org"
+                    >progetto Sardinian Roots (e.INS)</span
+                  >
+                </div>
+                <span class="timeline-time"
+                  ><time datetime="2025">2025</time></span
+                >
+              </div>
+              <div class="timeline-details">
+                <p>
+                  Contributo alla progettazione di esperienze turistiche
+                  personalizzate per la diaspora sarda nel mondo, coniugando la
+                  valorizzazione del patrimonio locale con strategie di turismo
+                  sostenibile.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">Data analyst (tirocinio)</h3>
+                  <span class="timeline-org">Comune di Cagliari, Italia</span>
+                </div>
+                <span class="timeline-time"
+                  ><time datetime="2024-09">settembre 2024</time> –
+                  <time datetime="2024-12">dicembre 2024</time></span
+                >
+              </div>
+              <div class="timeline-details">
+                <p>
+                  Tirocinio curriculare presso l'Ufficio turismo del Comune di
+                  Cagliari.
+                </p>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">
+                    Tutor universitario - Laurea triennale in Economia e
+                    gestione aziendale
+                  </h3>
+                  <span class="timeline-org"
+                    >Università degli Studi di Cagliari, Italia (Ibrido)</span
+                  >
+                </div>
+                <span class="timeline-time"
+                  ><time datetime="2023-11">novembre 2023</time> –
+                  <time datetime="2024-09">settembre 2024</time></span
+                >
+              </div>
+              <div class="timeline-details">
+                <ul>
+                  <li>
+                    Attività di tutorato, didattico-integrative, propedeutiche e
+                    di recupero ai sensi dell'Art. 3 del D.M. n. 1047/2017.
+                  </li>
+                  <li>
+                    Organizzazione e supervisione dei test di ammissione TOLC.
+                  </li>
+                  <li>
+                    Automazione dei processi di immatricolazione, trasferimento
+                    di corso e riconoscimento CFU.
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="timeline-item">
+              <div class="timeline-marker"></div>
+              <div class="timeline-header">
+                <div>
+                  <h3 class="timeline-title">
+                    Addetto di scalo aeroportuale (stagionale)
+                  </h3>
+                  <span class="timeline-org"
+                    >SOGAERDYN S.p.A., Cagliari, Italia</span
+                  >
+                </div>
+                <span class="timeline-time"
+                  ><time datetime="2018-06">giugno 2018</time> –
+                  <time datetime="2022-10">ottobre 2022</time></span
+                >
+              </div>
+              <div class="timeline-details">
+                <p>
+                  Servizio di accoglienza e assistenza passeggeri, procedure di
+                  check-in, operazioni di imbarco e finalizzazione dei voli (4
+                  anni e 5 mesi totali distribuiti su 4 stagioni).
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section aria-labelledby="skills-title" class="card">
+          <h2 id="skills-title">Competenze e certificazioni</h2>
+          <div class="skills-grid">
+            <div class="skills-category">
+              <h3>Programmazione e analisi dati</h3>
+              <div class="tag-list">
+                <span class="tag">Python</span>
+                <span class="tag">R</span>
+                <span class="tag">Processing</span>
+                <span class="tag">Stata</span>
+                <span class="tag">Data Scraping</span>
+                <span class="tag">Econometria</span>
+                <span class="tag">Spatial Data</span>
+              </div>
+            </div>
+
+            <div class="skills-category">
+              <h3>Lingue</h3>
+              <div class="tag-list">
+                <span class="tag"
+                  >Italiano <span class="tag-cefr">Madrelingua</span></span
+                >
+                <span class="tag"
+                  >Sardo <span class="tag-cefr">Madrelingua</span></span
+                >
+                <span class="tag"
+                  >Inglese <span class="tag-cefr">Fluente · C1</span></span
+                >
+                <span class="tag"
+                  >Spagnolo <span class="tag-cefr">Elementare · A2</span></span
+                >
+                <span class="tag"
+                  >Olandese <span class="tag-cefr">Base · A1</span></span
+                >
+              </div>
+            </div>
+
+            <div class="skills-category">
+              <h3>Certificazioni e abilitazioni</h3>
+              <div class="cert-list">
+                <div class="cert-item">
+                  <span class="cert-name"
+                    >IBSEN Entrepreneurship Workshop Series</span
+                  ><br />
+                  <span class="cert-issuer">IBSEN Network</span>
+                  <span class="cert-meta">(febbraio 2025)</span>
+                </div>
+                <div class="cert-item">
+                  <span class="cert-name"
+                    >BLSD (Rianimazione Cardio-Polmonare con
+                    Defibrillatore)</span
+                  ><br />
+                  <span class="cert-issuer">Ircomunità A.p.s.</span>
+                  <span class="cert-meta"
+                    >(rilascio: giugno 2022 · scadenza: giugno 2026)</span
+                  >
                 </div>
               </div>
             </div>
           </div>
+        </section>
 
-          <div class="conf-bento-actions">
-            <a href="https://www.sijmsima.it/previous-conferences/transforming-management-in-the-era-of-post-globalization-and-agentic-economy/" class="pub-btn" target="_blank" rel="noopener noreferrer" aria-label="Visita il sito ufficiale della conferenza Sinergie-SIMA 2026">
-              <span>Sito della conferenza</span>
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-            </a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section aria-labelledby="education-title" class="card">
-      <h2 id="education-title">Formazione</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Dottorato di ricerca in Scienze economiche e aziendali (41° ciclo)</h3>
-              <span class="timeline-org">Università degli Studi di Cagliari, Italia</span>
+        <a
+          href="other-projects/"
+          class="beyond-desk-card"
+          aria-label="Scopri gli altri progetti e le attività di volontariato"
+        >
+          <div class="beyond-desk-content">
+            <div class="beyond-desk-icon">
+              <img
+                src="../assets/AGESCI%20logo.svg"
+                alt="Logo Scout AGESCI"
+                width="38"
+                height="43"
+                loading="lazy"
+              />
             </div>
-            <span class="timeline-time">Novembre 2025 - in corso</span>
-          </div>
-          <div class="timeline-details">
-            <p>Dipartimento di Scienze Economiche ed Aziendali</p>
-            <p><strong>Focus:</strong> Utilizzo dell'intelligenza artificiale da parte dei turisti per la pianificazione e prenotazione di esperienze di viaggio, con particolare attenzione ai chatbot di intelligenza artificiale mediante metodologie miste qualitative e quantitative.</p>
-            <p><strong>Supervisori:</strong> prof.ssa Cinzia Dessì (supervisore), prof. Ivan Etzo (co-supervisore)</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Laurea Magistrale in Management e Monitoraggio del Turismo Sostenibile</h3>
-              <span class="timeline-org">Università degli Studi di Cagliari, Italia</span>
-            </div>
-            <span class="timeline-time">2022 - 2025</span>
-          </div>
-          <div class="timeline-details">
-            <p>Votazione: 110/110 e lode</p>
-            <p>Tesi: <em>Dati turistici, sostenibilità e stime del turismo sommerso. Caso studio del comune di
-                Cagliari.</em></p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Laurea Triennale in Scienze della Comunicazione</h3>
-              <span class="timeline-org">Università degli Studi di Cagliari, Italia</span>
-            </div>
-            <span class="timeline-time">2017 - 2022</span>
-          </div>
-          <div class="timeline-details">
-            <p>Votazione: 106/110</p>
-            <p>Tesi: <em>Rebrand e social media strategy: Il caso dell'azienda agricola "Opuntia".</em></p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="experience-title" class="card">
-      <h2 id="experience-title">Esperienza Professionale</h2>
-      <div class="timeline">
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Consulente per lo sviluppo locale e il turismo (apprendistato)</h3>
-              <span class="timeline-org">Rete Gaia, Sardegna, Italia (Ibrido)</span>
-            </div>
-            <span class="timeline-time">aprile 2025 - dicembre 2025</span>
-          </div>
-          <div class="timeline-details">
-            <ul>
-              <li>Attività di consulenza nella progettazione e attuazione di iniziative di sviluppo locale sostenibile.
-              </li>
-              <li>Svolgimento di attività di animazione economica territoriale.</li>
-              <li>Analisi della domanda ed elaborazione di prodotti dell'offerta turistica.</li>
-              <li>Consulenza, sviluppo territoriale e supporto marketing per <em>Sardinian Roots</em>, progetto incentrato sul turismo delle radici.</li>
-              <li>Consulenza di marketing e creazione di contenuti online e offline per Italea Sardegna.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Collaboratore di ricerca</h3>
-              <span class="timeline-org">progetto Sardinian Roots (e.INS)</span>
-            </div>
-            <span class="timeline-time">2025</span>
-          </div>
-          <div class="timeline-details">
-            <p>Contributo alla progettazione di esperienze turistiche personalizzate per la diaspora sarda nel mondo, coniugando la valorizzazione del patrimonio locale con strategie di turismo sostenibile.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Data analyst (tirocinio)</h3>
-              <span class="timeline-org">Comune di Cagliari, Italia</span>
-            </div>
-            <span class="timeline-time">settembre 2024 - dicembre 2024</span>
-          </div>
-          <div class="timeline-details">
-            <p>Tirocinio curriculare presso l'Ufficio turismo del Comune di Cagliari.</p>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Tutor universitario - Laurea triennale in Economia e gestione aziendale</h3>
-              <span class="timeline-org">Università degli Studi di Cagliari, Italia (Ibrido)</span>
-            </div>
-            <span class="timeline-time">novembre 2023 - settembre 2024</span>
-          </div>
-          <div class="timeline-details">
-            <ul>
-              <li>Attività di tutorato, didattico-integrative, propedeutiche e di recupero ai sensi dell'Art. 3 del D.M. n. 1047/2017.</li>
-              <li>Organizzazione e supervisione dei test di ammissione TOLC.</li>
-              <li>Automazione dei processi di immatricolazione, trasferimento di corso e riconoscimento CFU.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-header">
-            <div>
-              <h3 class="timeline-title">Addetto di scalo aeroportuale (stagionale)</h3>
-              <span class="timeline-org">SOGAERDYN S.p.A., Cagliari, Italia</span>
-            </div>
-            <span class="timeline-time">giugno 2018 - ottobre 2022</span>
-          </div>
-          <div class="timeline-details">
-            <p>Servizio di accoglienza e assistenza passeggeri, procedure di check-in, operazioni di imbarco e finalizzazione dei voli (4 anni e 5 mesi totali distribuiti su 4 stagioni).</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section aria-labelledby="skills-title" class="card">
-      <h2 id="skills-title">Competenze e certificazioni</h2>
-      <div class="skills-grid">
-        <div class="skills-category">
-          <h3>Programmazione e analisi dati</h3>
-          <div class="tag-list">
-            <span class="tag">Python</span>
-            <span class="tag">R</span>
-            <span class="tag">Processing</span>
-            <span class="tag">Stata</span>
-            <span class="tag">Data Scraping</span>
-            <span class="tag">Econometria</span>
-            <span class="tag">Spatial Data</span>
-          </div>
-        </div>
-
-        <div class="skills-category">
-          <h3>Lingue</h3>
-          <div class="tag-list">
-            <span class="tag">Italiano <span class="tag-cefr">Madrelingua</span></span>
-            <span class="tag">Sardo <span class="tag-cefr">Madrelingua</span></span>
-            <span class="tag">Inglese <span class="tag-cefr">Fluente · C1</span></span>
-            <span class="tag">Spagnolo <span class="tag-cefr">Elementare · A2</span></span>
-            <span class="tag">Olandese <span class="tag-cefr">Base · A1</span></span>
-          </div>
-        </div>
-
-        <div class="skills-category">
-          <h3>Certificazioni e abilitazioni</h3>
-          <div class="cert-list">
-            <div class="cert-item">
-              <span class="cert-name">IBSEN Entrepreneurship Workshop Series</span><br>
-              <span class="cert-issuer">IBSEN Network</span>
-              <span class="cert-meta">(febbraio 2025)</span>
-            </div>
-            <div class="cert-item">
-              <span class="cert-name">BLSD (Rianimazione Cardio-Polmonare con Defibrillatore)</span><br>
-              <span class="cert-issuer">Ircomunità A.p.s.</span>
-              <span class="cert-meta">(rilascio: giugno 2022 · scadenza: giugno 2026)</span>
+            <div class="beyond-desk-info">
+              <span class="eyebrow">Comunità &amp; Passioni</span>
+              <h3>Oltre la Ricerca: Più di 18 Anni nello Scoutismo</h3>
+              <p>
+                Servizio educativo, cittadinanza attiva e cammino esperienziale
+                in AGESCI dal 2007.
+              </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+          <div class="beyond-desk-arrow" aria-hidden="true">
+            <svg
+              viewBox="0 0 24 24"
+              width="20"
+              height="20"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </div>
+        </a>
 
-    <a href="other-projects/" class="beyond-desk-card" aria-label="Scopri gli altri progetti e le attività di volontariato">
-      <div class="beyond-desk-content">
-        <div class="beyond-desk-icon">
-          <img src="../assets/AGESCI%20logo.svg" alt="Logo Scout AGESCI" width="38" height="43" loading="lazy">
-        </div>
-        <div class="beyond-desk-info">
-          <span class="eyebrow">Comunità &amp; Passioni</span>
-          <h3>Oltre la Ricerca: Più di 18 Anni nello Scoutismo</h3>
-          <p>Servizio educativo, cittadinanza attiva e cammino esperienziale in AGESCI dal 2007.</p>
-        </div>
-      </div>
-      <div class="beyond-desk-arrow" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-      </div>
-    </a>
+        <footer class="card site-footer" role="contentinfo">
+          <div>
+            © Alessandro Balbina (2026) | Ultimo aggiornamento: 13 luglio 2026
+          </div>
+          <span class="site-footer-quote"
+            >Vibe-coded con Antigravity. Pagato in cache.</span
+          >
+        </footer>
+      </main>
+    </div>
 
-    <footer class="card site-footer" role="contentinfo">
-      <div>© Alessandro Balbina (2026) | Ultimo aggiornamento: 13 luglio 2026</div>
-      <span class="site-footer-quote">Vibe-coded con Antigravity. Pagato in cache.</span>
-    </footer>
-    </main>
-  </div>
-
-  <button class="back-to-top" aria-label="Torna su">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
-      <polyline points="18 15 12 9 6 15"></polyline>
-    </svg>
-  </button>
-</body>
-
+    <button class="back-to-top" aria-label="Torna su">
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <polyline points="18 15 12 9 6 15"></polyline>
+      </svg>
+    </button>
+  </body>
 </html>
