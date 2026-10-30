@@ -153,4 +153,64 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
+
+  // 7. 1-Click Citation Copy (Academic UX)
+  document.querySelectorAll('.pub-btn--cite').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const citation = btn.getAttribute('data-citation');
+      if (!citation) return;
+      try {
+        await navigator.clipboard.writeText(citation);
+        const originalHtml = btn.innerHTML;
+        const isItalian = document.documentElement.lang === 'it' || window.location.pathname.includes('/it');
+        btn.classList.add('is-copied');
+        btn.innerHTML = `
+          <svg class="pub-btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>${isItalian ? 'Copiato!' : 'Copied!'}</span>
+        `;
+        setTimeout(() => {
+          btn.classList.remove('is-copied');
+          btn.innerHTML = originalHtml;
+        }, 2200);
+      } catch (err) {
+        console.error('Clipboard copy failed:', err);
+      }
+    });
+  });
+
+  // 8. Thematic Publications Filtering
+  const filterBtns = document.querySelectorAll('.pub-filter-btn');
+  if (filterBtns.length > 0) {
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = btn.getAttribute('data-filter');
+        filterBtns.forEach(b => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-selected', 'true');
+
+        const pubItems = document.querySelectorAll('.pub-list li');
+        pubItems.forEach(item => {
+          const categories = (item.getAttribute('data-category') || '').split(' ');
+          if (filter === 'all' || categories.includes(filter)) {
+            item.classList.remove('is-hidden');
+          } else {
+            item.classList.add('is-hidden');
+          }
+        });
+
+        // Hide empty categories
+        document.querySelectorAll('.pub-category').forEach(cat => {
+          const visibleItems = cat.querySelectorAll('.pub-list li:not(.is-hidden)');
+          if (visibleItems.length === 0) {
+            cat.classList.add('is-hidden');
+          } else {
+            cat.classList.remove('is-hidden');
+          }
+        });
+      });
+    });
+  }
 });
