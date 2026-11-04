@@ -920,6 +920,12 @@ p {
   max-width: 65ch;
 }
 
+[aria-labelledby="about-title"] p,
+.about-card p {
+  max-width: 100%;
+  text-wrap: pretty;
+}
+
 p:last-child {
   margin-bottom: 0;
 }
