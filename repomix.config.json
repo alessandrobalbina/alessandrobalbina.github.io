@@ -1,0 +1,36 @@
+{
+  "$schema": "https://raw.githubusercontent.com/yamadashy/repomix/main/repomix.schema.json",
+  "output": {
+    "filePath": "repomix-output.xml",
+    "style": "xml",
+    "parsableStyle": true,
+    "removeComments": false,
+    "removeEmptyLines": true,
+    "topFilesLen": 5
+  },
+  "include": [],
+  "ignore": {
+    "useGitignore": true,
+    "useDefaultPatterns": true,
+    "customPatterns": [
+      "**/*.svg",
+      "assets/fonts/**",
+      "cv_*.html",
+      "*.tex",
+      "**/*.png",
+      "**/*.jpg",
+      "**/*.jpeg",
+      "**/*.webp",
+      "**/*.ico",
+      "**/*.pdf",
+      "**/*.map",
+      "**/*.lock",
+      "_site/**",
+      "repomix-output.*",
+      ".DS_Store"
+    ]
+  },
+  "security": {
+    "enableSecurityCheck": true
+  }
+}

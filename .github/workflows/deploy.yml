@@ -41,6 +41,7 @@ jobs:
             --exclude='_site' \
             --exclude='*.tex' \
             --exclude='*.md' \
+            --exclude='repomix*' \
             --exclude='cv_english_academic.html' \
             --exclude='cv_italiano_europass.html' \
             --exclude='.DS_Store' \
