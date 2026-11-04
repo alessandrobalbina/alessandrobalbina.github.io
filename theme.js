@@ -48,16 +48,19 @@ document.addEventListener('DOMContentLoaded', () => {
   // 3. Dropdown Menu (Touch & Click Support + ARIA accessibility)
   const dropdown = document.querySelector('.dropdown');
   const dropdownTrigger = document.querySelector('.dropdown-trigger');
+  const dropdownMenu = document.querySelector('.dropdown-menu');
   if (dropdown && dropdownTrigger) {
     const closeDropdown = () => {
       dropdown.classList.remove('is-open');
       dropdownTrigger.setAttribute('aria-expanded', 'false');
+      if (dropdownMenu) dropdownMenu.setAttribute('aria-hidden', 'true');
     };
 
     dropdownTrigger.addEventListener('click', (e) => {
       e.stopPropagation();
       const isOpen = dropdown.classList.toggle('is-open');
       dropdownTrigger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (dropdownMenu) dropdownMenu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
     });
 
     document.addEventListener('click', (e) => {

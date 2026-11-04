@@ -12,3 +12,6 @@ repomix-output.*
 # Build output
 _site/
 
+# Taste-skill inspection artifacts
+.taste-skill/
+
