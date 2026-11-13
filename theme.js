@@ -114,8 +114,35 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 5. Discrete Language Suggestion Banner (Safe DOM Creation without innerHTML)
-  const isEnglishHome = window.location.pathname.endsWith('/') && !window.location.pathname.includes('/it');
-  if (isEnglishHome) {
+  const resolveItalianHref = () => {
+    const pathname = window.location.pathname;
+    const htmlLang = (document.documentElement.lang || '').toLowerCase();
+    const isItalianPage = htmlLang.startsWith('it') || /(?:^|\/)it(?:\/|$)/.test(pathname);
+    if (isItalianPage) return null;
+
+    const langToggle = document.querySelector('.lang-toggle');
+    const toggleHref = langToggle ? langToggle.getAttribute('href') : null;
+    let targetHref = null;
+
+    if (toggleHref && /(?:^|\/)it(?:\/|$)/.test(toggleHref)) {
+      targetHref = toggleHref;
+    } else if (/(?:^|\/)contact(?:\/(?:index\.html)?)?$/.test(pathname)) {
+      targetHref = pathname.endsWith('/contact') ? './it/contact/' : '../it/contact/';
+    } else if (/(?:^|\/)other-projects(?:\/(?:index\.html)?)?$/.test(pathname)) {
+      targetHref = pathname.endsWith('/other-projects') ? './it/other-projects/' : '../it/other-projects/';
+    } else if (pathname === '/' || /(?:^|\/)index\.html$/.test(pathname)) {
+      targetHref = './it/';
+    }
+
+    if (!targetHref) return null;
+    if (window.location.protocol === 'file:' && targetHref.endsWith('/')) {
+      return `${targetHref}index.html`;
+    }
+    return targetHref;
+  };
+
+  const italianHref = resolveItalianHref();
+  if (italianHref) {
     const prefLang = localStorage.getItem('pref-lang');
     const userLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
     
@@ -137,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
       actions.className = 'lang-toast-actions';
 
       const acceptBtn = document.createElement('a');
-      acceptBtn.href = './it/';
+      acceptBtn.setAttribute('href', italianHref);
       acceptBtn.className = 'lang-toast-btn';
       acceptBtn.id = 'lang-toast-accept';
       acceptBtn.textContent = "Passa all'italiano";
@@ -257,5 +284,37 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       });
     });
+  }
+
+  // 9. Dealt Moment: Word-Highlight on Research Statement (Service Kind)
+  // Progressively highlights words or statement on viewport entry via IntersectionObserver,
+  // respecting prefers-reduced-motion. CSP compliant (no innerHTML, no eval).
+  const highlightTargets = document.querySelectorAll(
+    '.word-highlight, [data-moment="word-highlight"], .research-statement-highlight, .research-focus-card'
+  );
+
+  if (highlightTargets.length > 0) {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    if (prefersReducedMotion.matches) {
+      highlightTargets.forEach(el => {
+        el.classList.add('is-highlighted', 'is-on', 'is-done');
+      });
+    } else {
+      const highlightObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-highlighted', 'is-on');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        root: null,
+        rootMargin: '0px 0px -15% 0px',
+        threshold: 0.2
+      });
+
+      highlightTargets.forEach(el => highlightObserver.observe(el));
+    }
   }
 });

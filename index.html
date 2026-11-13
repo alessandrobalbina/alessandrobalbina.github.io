@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-type="service" data-radius="soft" data-buttons="pill" data-motion>
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="page-type" content="service">
+  <meta name="site-kind" content="other">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests;" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="description"
@@ -356,14 +358,22 @@
               width="320" height="51" loading="eager" />
             <h1>Alessandro Balbina</h1>
             <p class="lead">
-              PhD Student in Economics and Business at the University of Cagliari — Researching Tourism Economics, Sustainability &amp; AI Applications.
+              PhD Researcher in Tourism &amp; AI — University of Cagliari. Focusing on tourism economics, data-driven sustainability, and generative AI adoption.
             </p>
             <div class="focus-list" aria-label="Research focus">
               <span>Tourism economics</span>
               <span>Sustainability</span>
               <span>AI in tourism</span>
             </div>
-
+            <div class="hero-actions">
+              <a href="contact/" class="btn btn--primary">
+                <span>Contact me</span>
+                <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+              </a>
+              <a href="#publications-title" class="btn btn--secondary">
+                <span>View Research</span>
+              </a>
+            </div>
           </div>
           <div class="profile-photo" aria-label="Profile photo of Alessandro Balbina">
             <img src="assets/profile_photo.webp" alt="Alessandro Balbina, PhD student in Economics and Business at the University of Cagliari" draggable="false" width="240"
@@ -375,17 +385,11 @@
       <section aria-labelledby="about-title" class="card about-card">
         <h2 id="about-title">About</h2>
         <p>
-          I am a Ph.D. student in Economics and Business (41st cycle) at the University of Cagliari. <br>
-          My academic journey is driven by a passion for data-driven sustainability. In 2025, I earned my Master’s
-          degree in Management and Monitoring of Sustainable Tourism, defending a thesis that explored tourism data and
-          estimated the underground tourism economy in the city of Cagliari. That same year, I merged research with
-          practical impact by contributing to the "Sardinian Roots" project (e.INS), designing tailored tourism
-          experiences for the global Sardinian diaspora.
+          I am a Ph.D. student in Economics and Business (41st cycle) at the University of Cagliari.
+          My academic path explores data-driven sustainability and tourism economics, building on my 2025 Master's thesis on shadow tourism dynamics in Cagliari and field initiatives with the "Sardinian Roots" diaspora project.
         </p>
-        <p>
-          Currently, my research focuses on the adoption and use of artificial intelligence by tourists for planning and
-          booking travel experiences, with a specific focus on AI chatbots using mixed qualitative and quantitative
-          methodologies.
+        <p class="research-statement-highlight word-highlight" data-moment="word-highlight">
+          Currently, my research investigates <span class="highlight-text">how travelers adopt generative AI and chatbots</span> for trip planning and decision-making, using mixed qualitative and quantitative methodologies.
         </p>
         <p>
           At Sinergie-SIMA 2026, I received an award as Outstanding Young Scholar Reviewer.
@@ -398,7 +402,6 @@
               Current Research Focus
             </span>
             <span class="research-focus-badge">
-              <span class="research-focus-pulse"></span>
               Ph.D. Cycle 41 · Active Fieldwork
             </span>
           </div>
@@ -847,7 +850,6 @@
 
       <footer class="card site-footer" role="contentinfo">
         <div>© Alessandro Balbina (2026) | Last updated 16 September 2026</div>
-        <span class="site-footer-quote">Vibe-coded with Antigravity. Paid in cache.</span>
       </footer>
     </main>
   </div>

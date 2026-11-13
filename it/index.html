@@ -1,9 +1,11 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" data-type="service" data-radius="soft" data-buttons="pill" data-motion>
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="page-type" content="service">
+  <meta name="site-kind" content="other">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests;" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="description"
@@ -355,14 +357,22 @@
             height="51" loading="eager" />
           <h1>Alessandro Balbina</h1>
           <p class="lead">
-            Dottorando in Scienze Economiche e Aziendali presso l'Università degli Studi di Cagliari — Economia del Turismo, Sostenibilità e Applicazioni AI.
+            Dottorando di Ricerca in Turismo e IA — Università di Cagliari. Ricerca su economia del turismo, sostenibilità guidata dai dati e adozione dell'IA generativa.
           </p>
           <div class="focus-list" aria-label="Aree di ricerca">
             <span>Economia del turismo</span>
             <span>Sostenibilità</span>
             <span>AI nel turismo</span>
           </div>
-
+          <div class="hero-actions">
+            <a href="contact/" class="btn btn--primary">
+              <span>Contattami</span>
+              <svg class="btn-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+            <a href="#publications-title" class="btn btn--secondary">
+              <span>Vedi Pubblicazioni</span>
+            </a>
+          </div>
         </div>
         <div class="profile-photo" aria-label="Foto profilo di Alessandro Balbina">
             <img src="../assets/profile_photo.webp" alt="Alessandro Balbina, dottorando in Scienze economiche e aziendali presso l'Università degli Studi di Cagliari" draggable="false" width="240"
@@ -374,11 +384,11 @@
     <section aria-labelledby="about-title" class="card about-card">
       <h2 id="about-title">Biografia</h2>
       <p>
-        Sono un dottorando di ricerca in scienze economiche e aziendali (41° ciclo) presso l'Università degli Studi di Cagliari. <br>
-        Il mio percorso accademico è guidato dalla passione per la sostenibilità basata sull'analisi dei dati. Nel 2025 ho conseguito la laurea magistrale in Management e Monitoraggio del Turismo Sostenibile, discutendo una tesi che ha analizzato i dati turistici e stimato l'economia sommersa del turismo nella città di Cagliari. Nello stesso anno ho unito la ricerca all'impatto pratico collaborando al progetto "Radici Sarde" (e.INS), progettando esperienze turistiche su misura per la diaspora sarda nel mondo.
+        Sono un dottorando di ricerca in scienze economiche e aziendali (41° ciclo) presso l'Università degli Studi di Cagliari.
+        Il mio percorso accademico approfondisce la sostenibilità e l'economia del turismo attraverso l'analisi dei dati, a partire dalla tesi di laurea magistrale (2025) sul turismo sommerso a Cagliari e dalle attività sul campo per il progetto sulle radici sarde nel mondo.
       </p>
-      <p>
-        Attualmente, la mia ricerca si concentra sull'adozione e l'utilizzo dell'intelligenza artificiale da parte dei turisti per la pianificazione e la prenotazione di esperienze di viaggio, con un focus specifico sui chatbot AI, utilizzando metodologie miste qualitative e quantitative.
+      <p class="research-statement-highlight word-highlight" data-moment="word-highlight">
+        Attualmente, la mia ricerca indaga <span class="highlight-text">l'adozione dell'IA generativa e dei chatbot da parte dei viaggiatori</span> nei processi di scelta e pianificazione degli itinerari, attraverso metodologie miste qualitative e quantitative.
       </p>
       <p>
         Alla conferenza Sinergie-SIMA 2026 ho ricevuto il premio come "Outstanding Young Scholar Reviewer".
@@ -391,7 +401,6 @@
             Focus di ricerca attuale
           </span>
           <span class="research-focus-badge">
-            <span class="research-focus-pulse"></span>
             Dottorato 41° ciclo · Ricerca sul campo
           </span>
         </div>
@@ -832,7 +841,6 @@
 
     <footer class="card site-footer" role="contentinfo">
       <div>© Alessandro Balbina (2026) | Ultimo aggiornamento: 13 luglio 2026</div>
-      <span class="site-footer-quote">Vibe-coded con Antigravity. Pagato in cache.</span>
     </footer>
     </main>
   </div>
