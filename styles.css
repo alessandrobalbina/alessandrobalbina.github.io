@@ -706,10 +706,14 @@ body {
   margin-bottom: 1rem;
   overflow: hidden;
   position: relative;
-  min-height: calc(100svh - 5.5rem);
+  min-height: clamp(22rem, 64svh, 38rem);
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.hero--full-width {
+  min-height: auto;
 }
 
 /* Button Styles */
@@ -844,6 +848,7 @@ h1 {
 .focus-list span {
   display: inline-flex;
   align-items: center;
+  gap: 0.45rem;
   border-radius: var(--radius-pill);
   border: none;
   background: var(--surface-subtle);
@@ -852,6 +857,103 @@ h1 {
   font-size: 0.88rem;
   font-weight: 600;
   transition: background-color 0.2s var(--ease-apple), color 0.2s var(--ease-apple);
+}
+
+.focus-icon {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  transition: transform 200ms var(--ease-apple);
+}
+
+.focus-list span:hover .focus-icon {
+  transform: scale(1.14);
+}
+
+.focus-icon--tourism {
+  color: #0284c7;
+}
+
+.focus-icon--tourism .icon-bar {
+  transform-box: fill-box;
+  transform-origin: center bottom;
+  animation: focusBarBreathe 3.6s ease-in-out infinite;
+}
+
+.focus-icon--tourism .icon-bar--2 {
+  animation-delay: 0.45s;
+}
+
+.focus-icon--tourism .icon-bar--3 {
+  animation-delay: 0.9s;
+}
+
+.focus-icon--sustainability {
+  color: #16a34a;
+  animation: focusSway 3.8s ease-in-out infinite;
+  transform-origin: 20% 85%;
+}
+
+.focus-icon--ai {
+  color: #7c3aed;
+  animation: focusTwinkle 3s ease-in-out infinite;
+}
+
+.focus-icon--ai .icon-spark-mini {
+  animation: focusSparkMini 2s ease-in-out infinite alternate;
+  transform-origin: 19px 5px;
+}
+
+[data-theme="dark"] .focus-icon--tourism {
+  color: #38bdf8;
+}
+
+[data-theme="dark"] .focus-icon--sustainability {
+  color: #4ade80;
+}
+
+[data-theme="dark"] .focus-icon--ai {
+  color: #a78bfa;
+}
+
+@keyframes focusBarBreathe {
+  0%, 100% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleY(0.82);
+    opacity: 0.78;
+  }
+}
+
+@keyframes focusSway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(7deg);
+  }
+}
+
+@keyframes focusTwinkle {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(6deg);
+  }
+}
+
+@keyframes focusSparkMini {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
 }
 
 .focus-list span:hover {
@@ -925,7 +1027,8 @@ p {
 }
 
 [aria-labelledby="about-title"] p,
-.about-card p {
+.about-card p,
+.card p {
   max-width: 100%;
   text-wrap: pretty;
 }
@@ -1163,6 +1266,53 @@ li a {
 .tag:hover {
   background: var(--accent-light);
   color: var(--accent);
+}
+
+.tag--tool {
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface-subtle));
+}
+
+[data-theme="dark"] .tag--tool {
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface-subtle));
+}
+
+.tag-icon {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  object-fit: contain;
+}
+
+.tag-icon--stata {
+  color: #1f5a8a;
+}
+
+.tag-icon--scraping {
+  color: #0891b2;
+}
+
+.tag-icon--econometrics {
+  color: #7c3aed;
+}
+
+.tag-icon--spatial {
+  color: #16a34a;
+}
+
+[data-theme="dark"] .tag-icon--stata {
+  color: #60a5fa;
+}
+
+[data-theme="dark"] .tag-icon--scraping {
+  color: #22d3ee;
+}
+
+[data-theme="dark"] .tag-icon--econometrics {
+  color: #a78bfa;
+}
+
+[data-theme="dark"] .tag-icon--spatial {
+  color: #4ade80;
 }
 
 .tag-cefr {
