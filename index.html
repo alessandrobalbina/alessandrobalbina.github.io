@@ -18,6 +18,7 @@
   <link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/" />
   <link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/" />
   <link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/" />
+  <link rel="alternate" type="text/plain" title="LLMs.txt" href="https://alessandrobalbina.github.io/llms.txt" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="assets/favicon-48x48.png" sizes="48x48" type="image/png" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
@@ -32,6 +33,7 @@
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Alessandro Balbina, PhD Student in Economics and Business at the University of Cagliari" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:locale:alternate" content="it_IT" />
   <meta name="twitter:card" content="summary_large_image" />
@@ -39,6 +41,7 @@
   <meta name="twitter:description"
     content="PhD student in Economics and Business focused on tourism economics, sustainability, and AI in tourism." />
   <meta name="twitter:image" content="https://alessandrobalbina.github.io/assets/og-preview.png" />
+  <meta name="twitter:image:alt" content="Alessandro Balbina, PhD Student in Economics and Business at the University of Cagliari" />
 
   <!-- Academic & Citation Metadata for Google Scholar & Reference Managers -->
   <meta name="citation_author" content="Balbina, Alessandro" />
@@ -72,6 +75,7 @@
         "@id": "https://alessandrobalbina.github.io/#profilepage",
         "url": "https://alessandrobalbina.github.io/",
         "name": "Alessandro Balbina | PhD Student in Economics & Business – University of Cagliari",
+        "dateModified": "2026-11-24",
         "isPartOf": {
           "@id": "https://alessandrobalbina.github.io/#website"
         },
@@ -128,6 +132,10 @@
           {
             "@type": "Language",
             "name": "Italian"
+          },
+          {
+            "@type": "Language",
+            "name": "Sardinian"
           },
           {
             "@type": "Language",
@@ -361,9 +369,28 @@
               PhD Researcher in Tourism &amp; AI — University of Cagliari. Focusing on tourism economics, data-driven sustainability, and generative AI adoption.
             </p>
             <div class="focus-list" aria-label="Research focus">
-              <span>Tourism economics</span>
-              <span>Sustainability</span>
-              <span>AI in tourism</span>
+              <span>
+                <svg class="focus-icon focus-icon--tourism" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect class="icon-bar icon-bar--1" x="4" y="13" width="3.5" height="7" rx="1" fill="currentColor" fill-opacity="0.18"/>
+                  <rect class="icon-bar icon-bar--2" x="10.25" y="9" width="3.5" height="11" rx="1" fill="currentColor" fill-opacity="0.18"/>
+                  <rect class="icon-bar icon-bar--3" x="16.5" y="4" width="3.5" height="16" rx="1" fill="currentColor" fill-opacity="0.18"/>
+                </svg>
+                Tourism economics
+              </span>
+              <span>
+                <svg class="focus-icon focus-icon--sustainability" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" fill="currentColor" fill-opacity="0.16"/>
+                  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
+                </svg>
+                Sustainability
+              </span>
+              <span>
+                <svg class="focus-icon focus-icon--ai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M9.5 16.5a2 2 0 0 0-1.4-1.4L2.5 13.5a.4.4 0 0 1 0-.77l5.6-1.6a2 2 0 0 0 1.4-1.4l1.6-5.6a.4.4 0 0 1 .77 0l1.6 5.6a2 2 0 0 0 1.4 1.4l5.6 1.6a.4.4 0 0 1 0 .77l-5.6 1.6a2 2 0 0 0-1.4 1.4l-1.6 5.6a.4.4 0 0 1-.77 0Z" fill="currentColor" fill-opacity="0.16"/>
+                  <path class="icon-spark-mini" d="M19 3v4M17 5h4"/>
+                </svg>
+                AI in tourism
+              </span>
             </div>
             <div class="hero-actions">
               <a href="contact/" class="btn btn--primary">
@@ -794,13 +821,60 @@
           <div class="skills-category">
             <h3>Programming &amp; Data Analysis</h3>
             <div class="tag-list">
-              <span class="tag">Python</span>
-              <span class="tag">R</span>
-              <span class="tag">Processing</span>
-              <span class="tag">Stata</span>
-              <span class="tag">Data Scraping</span>
-              <span class="tag">Econometrics</span>
-              <span class="tag">Spatial Data</span>
+              <span class="tag tag--tool">
+                <svg class="tag-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill="#3776AB" d="M11.9 2C7.1 2 7.4 4.1 7.4 4.1v2.2h4.6v.7H5.5S2.5 6.6 2.5 11.4s2.6 4.6 2.6 4.6h1.6v-2.3s-.1-2.6 2.5-2.6h4.4s2.4 0 2.4-2.3V4.4S16.4 2 11.9 2Zm-2.5 1.4a.85.85 0 1 1 0 1.7.85.85 0 0 1 0-1.7Z"/>
+                  <path fill="#FFD43B" d="M12.1 22c4.8 0 4.5-2.1 4.5-2.1v-2.2H12v-.7h6.5s3 .4 3-4.4-2.6-4.6-2.6-4.6h-1.6v2.3s.1 2.6-2.5 2.6h-4.4s-2.4 0-2.4 2.3v4.4S7.6 22 12.1 22Zm2.5-1.4a.85.85 0 1 1 0-1.7.85.85 0 0 1 0 1.7Z"/>
+                </svg>
+                Python
+              </span>
+              <span class="tag tag--tool">
+                <img class="tag-icon" src="assets/r-logo.png" alt="" width="18" height="14" aria-hidden="true" />
+                R
+              </span>
+              <span class="tag tag--tool">
+                <img class="tag-icon" src="assets/processing-logo.png" alt="" width="15" height="15" aria-hidden="true" />
+                Processing
+              </span>
+              <span class="tag tag--tool">
+                <svg class="tag-icon tag-icon--stata" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <rect x="3" y="3" width="5" height="5" rx="1"/>
+                  <rect x="9.5" y="3" width="5" height="5" rx="1" fill-opacity="0.7"/>
+                  <rect x="16" y="3" width="5" height="5" rx="1" fill-opacity="0.45"/>
+                  <rect x="3" y="9.5" width="5" height="5" rx="1" fill-opacity="0.7"/>
+                  <rect x="9.5" y="9.5" width="5" height="5" rx="1"/>
+                  <rect x="16" y="9.5" width="5" height="5" rx="1" fill-opacity="0.7"/>
+                  <rect x="3" y="16" width="5" height="5" rx="1" fill-opacity="0.45"/>
+                  <rect x="9.5" y="16" width="5" height="5" rx="1" fill-opacity="0.7"/>
+                  <rect x="16" y="16" width="5" height="5" rx="1"/>
+                </svg>
+                Stata
+              </span>
+              <span class="tag">
+                <svg class="tag-icon tag-icon--scraping" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m7 8-4 4 4 4"/>
+                  <path d="m17 8 4 4-4 4"/>
+                  <path d="m14 4-4 16"/>
+                </svg>
+                Data Scraping
+              </span>
+              <span class="tag">
+                <svg class="tag-icon tag-icon--econometrics" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M3 3v18h18"/>
+                  <path d="M6 16 19 6"/>
+                  <circle cx="8" cy="11" r="1.2" fill="currentColor" stroke="none"/>
+                  <circle cx="13" cy="14" r="1.2" fill="currentColor" stroke="none"/>
+                  <circle cx="15" cy="7" r="1.2" fill="currentColor" stroke="none"/>
+                </svg>
+                Econometrics
+              </span>
+              <span class="tag">
+                <svg class="tag-icon tag-icon--spatial" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 21s-6-5.2-6-10a6 6 0 1 1 12 0c0 4.8-6 10-6 10Z" fill="currentColor" fill-opacity="0.14"/>
+                  <circle cx="12" cy="11" r="2"/>
+                </svg>
+                Spatial Data
+              </span>
             </div>
           </div>
 
@@ -849,7 +923,7 @@
       </a>
 
       <footer class="card site-footer" role="contentinfo">
-        <div>© Alessandro Balbina (2026) | Last updated 16 September 2026</div>
+        <div>© Alessandro Balbina (2026) | Last updated 24 November 2026</div>
       </footer>
     </main>
   </div>
