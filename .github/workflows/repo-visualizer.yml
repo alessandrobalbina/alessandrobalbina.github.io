@@ -1,0 +1,25 @@
+name: Update Repo Visualizer
+
+on:
+  push:
+    branches:
+      - main # Sostituisci con 'master' se il tuo branch principale si chiama così
+
+permissions:
+  contents: write
+
+jobs:
+  visualize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Generate repo diagram
+        uses: githubocto/repo-visualizer@0.6.1
+        with:
+          output_file: images/diagram.svg
+          # Opzionale: escludi cartelle o file superflui (es. node_modules, dist, immagini)
+          excluded_paths: "node_modules,dist,.git,.github"
+          # Opzionale: colore dei nodi o profondità massima
+          max_depth: 5
