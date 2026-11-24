@@ -19,7 +19,8 @@ jobs:
         uses: githubocto/repo-visualizer@0.6.1
         with:
           output_file: images/diagram.svg
-          # Opzionale: escludi cartelle o file superflui (es. node_modules, dist, immagini)
-          excluded_paths: "node_modules,dist,.git,.github"
-          # Opzionale: colore dei nodi o profondità massima
-          max_depth: 5
+          excluded_paths: "node_modules,dist,.git,.github,assets/fonts,images,docs"
+          max_depth: 4
+          color_encoding: "type"
+          commit_message: "chore(ci): update repository visualization diagram [skip ci]"
+          file_colors: '{"html":"#1b4b82","css":"#0284c7","js":"#f59e0b","svg":"#16a34a","png":"#7c3aed","webp":"#7c3aed","pdf":"#dc2626","xml":"#64748b","txt":"#64748b","md":"#475569"}'

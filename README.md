@@ -25,6 +25,8 @@ This repository contains the source code for my static academic portfolio, desig
 
 * **Sitemap**: [sitemap.xml](https://alessandrobalbina.github.io/sitemap.xml)
 * **Robots Policy**: [robots.txt](https://alessandrobalbina.github.io/robots.txt)
-* **Metadata**: Full Dublin Core / Open Graph tags configured in HTML layout files.
+* **Metadata**: Full Open Graph, Twitter Card, Schema.org JSON-LD, and Google Scholar tags configured in HTML layout files.
 
-* ![Struttura del repository](./images/diagram.svg)
+## Repository Structure
+
+![Repository Structure](./images/diagram.svg)
