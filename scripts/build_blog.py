@@ -290,7 +290,7 @@ def _render_topbar(lang: str, asset_prefix: str, lang_switch_href: str, active: 
     blog_href = f"{asset_prefix}it/blog/" if lang == "it" else f"{asset_prefix}blog/"
     contact_href = f"{asset_prefix}it/contact/" if lang == "it" else f"{asset_prefix}contact/"
     nav_label = "Navigazione principale" if lang == "it" else "Main navigation"
-    projects_desktop = "Altri Progetti" if lang == "it" else "Other Projects"
+    projects_desktop = "Altri progetti" if lang == "it" else "Other Projects"
     projects_mobile = "Progetti" if lang == "it" else "Projects"
     contact_desktop = "Contattami" if lang == "it" else "Contact me"
     contact_mobile = "Contatti" if lang == "it" else "Contact"
@@ -446,15 +446,19 @@ def _render_shell_head(
 
 
 def _render_shell_footer(lang: str) -> str:
-    skip_label = "Vai al contenuto principale" if lang == "it" else "Skip to main content"
     top_label = "Torna su" if lang == "it" else "Back to top"
+    quote_text = (
+        "Note di ricerca, progetti e riflessioni."
+        if lang == "it"
+        else "Research notes, projects &amp; reflections."
+    )
     return f"""      <footer class="card site-footer" role="contentinfo">
         <div>© Alessandro Balbina (2026)</div>
-        <span class="site-footer-quote">Research notes, projects &amp; reflections.</span>
+        <span class="site-footer-quote">{quote_text}</span>
       </footer>
     </main>
   </div>
-  <button class="back-to-top" aria-label="{top_label}" title="{skip_label}">
+  <button class="back-to-top" aria-label="{top_label}" title="{top_label}">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
       stroke-linejoin="round" aria-hidden="true" focusable="false">
       <polyline points="18 15 12 9 6 15"></polyline>
@@ -687,26 +691,32 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
     heading = "Blog &amp; Note di Ricerca" if is_it else "Blog &amp; Research Notes"
     rss_href = f"{asset_prefix}it/feed.xml" if is_it else f"{asset_prefix}feed.xml"
     empty_attr = ' aria-live="polite" hidden' if posts else ' aria-live="polite"'
+    unica_alt = "Logo Università degli Studi di Cagliari" if is_it else "University of Cagliari Logo"
+    filter_aria = "Filtra articoli per categoria" if is_it else "Filter posts by category"
 
+    articles_aria = "Articoli" if is_it else "Articles"
     return f"""{head}
 <body>
   <a href="#main-content" class="skip-link">{skip_text}</a>
   <div class="page">
 {topbar}
     <main id="main-content">
-      <section class="card blog-index-header" aria-labelledby="blog-index-title">
-        <div class="blog-index-top">
-          <div>
-            <h1 id="blog-index-title">{heading}</h1>
-            <p class="blog-lead">{html.escape(desc)}</p>
+      <header class="hero card hero--full-width" aria-labelledby="blog-index-title">
+        <div class="hero-copy hero-copy--wide">
+          <img src="{asset_prefix}assets/unica-logo.svg" alt="{unica_alt}" class="unica-logo" width="320" height="51" loading="eager" />
+          <div class="blog-index-top">
+            <div>
+              <h1 id="blog-index-title">{heading}</h1>
+              <p class="lead">{html.escape(desc)}</p>
+            </div>
+            <a href="{rss_href}" class="blog-rss-link">RSS</a>
           </div>
-          <a href="{rss_href}" class="blog-rss-link">RSS</a>
+          <div class="blog-filter-bar" role="group" aria-label="{filter_aria}">
+            {"".join(filter_buttons)}
+          </div>
         </div>
-        <div class="blog-filter-bar" role="group" aria-label="Filter posts by category">
-          {"".join(filter_buttons)}
-        </div>
-      </section>
-      <section class="blog-grid" aria-label="Articles">
+      </header>
+      <section class="blog-grid" aria-label="{articles_aria}">
         {"".join(cards_html)}
         <p class="card blog-empty-state"{empty_attr}>{empty_label}</p>
       </section>
