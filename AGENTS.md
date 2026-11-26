@@ -33,11 +33,15 @@ Per mantenere massima velocità, reattività e minimizzare il consumo di token s
 | `it/contact/index.html` | Pagina contatti (Italiano) | Mirroring della pagina contatti |
 | `other-projects/index.html` | Pagina progetti extracurricolari (EN) | Impegno scout AGESCI, divulgazione e tech |
 | `it/other-projects/index.html` | Pagina progetti extracurricolari (IT) | Mirroring della pagina altri progetti |
+| `blog/` & `it/blog/` | Sezione Blog bilingue (EN / IT) | Generata staticamente; nascosta automaticamente finché non ci sono post pubblicati (`draft: false`) |
+| `content/blog/<slug>/` | Sorgenti Markdown degli articoli | Coppia obbligatoria `en.md` + `it.md` con frontmatter YAML (esclusa dal deploy) |
+| `scripts/build_blog.py` | Generatore statico zero-dipendenze | Genera HTML blog, `feed.xml`, `it/feed.xml`, aggiorna nav, homepage e `sitemap.xml` |
+| `tests/test_build_blog.py` | Suite `unittest` del generatore | Verifica parser, escape XSS, parità EN/IT, SEO, RSS e visibilità automatica |
 | `cv_english_academic.html` | CV Accademico formato Web (EN) | Layout tipografico pulito per stampa/schermo (offline) |
 | `cv_italiano_europass.html` | CV Europass formato Web (IT) | Formato Europass standard (offline) |
 | `cv_alessandro_balbina.tex` | Sorgente LaTeX del CV | Compilabile con XeLaTeX/LuaLaTeX (offline) |
-| `styles.css` | Foglio di stile globale (~2.700 righe) | Design tokens in `:root`, Dark mode, zero dipendenze |
-| `theme.js` | Logica client Vanilla JS (~260 righe) | Anti-clickjacking, dark mode, toast lingua, citazioni 1-click, filtri |
+| `styles.css` | Foglio di stile globale (~3.400 righe) | Design tokens in `:root`, Dark mode, sezione Blog, zero dipendenze |
+| `theme.js` | Logica client Vanilla JS (~350 righe) | Anti-clickjacking, dark mode, toast lingua, citazioni 1-click, filtri |
 | `assets/fonts/` | Font self-hosted WOFF2 | Manrope, Newsreader, Sora suddivisi in subset `unicode-range` |
 | `llms.txt` & `llms-full.txt` | Standard per agenti e crawler AI | Documentazione strutturata ad alta densità informativa (~900 token) |
 | `.github/workflows/deploy.yml`| Pipeline GitHub Actions | Deploy automatico su GitHub Pages con rsync filtering |
@@ -67,6 +71,7 @@ Per evitare letture integrali, consultare questi riferimenti di riga esatti prim
 | `2519 – 2565` | Floating Back-to-Top | Pulsante circolare flottante con blur backdrop |
 | `2566 – 2654` | Toast Suggerimento Lingua | Banner discreto per utenti browser italiani |
 | `2655 – 2700` | Responsive & Reduced Motion | Media queries per tablet/mobile e `@media (prefers-reduced-motion)` |
+| `2959 – 3400` | Sezione Blog & Grafici | Griglia blog, card con CTA `Read`/`Leggi`, prose, `<figure>`, grafici `.blog-chart` |
 
 ### 3.2 [`theme.js`](file:///Users/alessandrobalbina/Documents/Repo/alessandrobalbina.github.io/theme.js) (258 righe)
 | Intervallo Righe | Feature / Funzione | Descrizione |
@@ -127,3 +132,12 @@ flowchart LR
 3. **Step 3 - Lettura Selettiva**: Leggi solo il range necessario (`StartLine`-`EndLine`).
 4. **Step 4 - Modifica Chirurgica**: Applica la modifica preservando le convenzioni Vanilla, accessibilità e sicurezza.
 5. **Step 5 - Verifica Bilingue**: Se la modifica riguarda contenuti/sezioni, sincronizza la controparte (EN ⟷ IT).
+
+---
+
+## 6. Gestione & Pubblicazione Articoli Blog
+
+1. **Sorgenti**: Ogni articolo vive in `content/blog/<slug>/en.md` e `content/blog/<slug>/it.md` (entrambe obbligatorie).
+2. **Stato Bozza / Visibilità**: Con `draft: true` (o zero articoli pubblicati), `scripts/build_blog.py` nasconde automaticamente il link `Blog` nella navbar, la sezione anteprima in Homepage, gli URL in `sitemap.xml` e imposta `noindex, follow` su `/blog/`.
+3. **Pubblicazione**: Impostare `draft: false` su entrambi i file, eseguire `python3 scripts/build_blog.py` e verificare con `python3 -m unittest discover -s tests -v`.
+4. **Immagini e Grafici**: Inserire immagini statiche in `assets/blog/<slug>/` usando `![alt](path "didascalia")` oppure blocchi `<figure class="blog-figure"><div class="blog-chart"><svg>...</svg></div><figcaption>...</figcaption></figure>` adattivi al tema tramite `currentColor` e variabili CSS (zero `<script>` inline per rispettare la CSP).
