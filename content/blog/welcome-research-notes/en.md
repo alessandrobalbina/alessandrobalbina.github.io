@@ -5,7 +5,7 @@ category: Research
 tags: [Research, AI, Sustainability]
 excerpt: Why I am opening a bilingual space to document ongoing projects, experimental notes, and reflections across Edge AI and sustainable computing.
 cover: assets/blog/welcome-research-notes/research-overview.svg
-draft: false
+draft: true
 ---
 
 Welcome to this new section of my website. Alongside formal papers and conference proceedings, much of the day-to-day work in research and software engineering happens in between: testing hypotheses, building small prototypes, and comparing architectural trade-offs.

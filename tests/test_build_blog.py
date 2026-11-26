@@ -176,6 +176,35 @@ class TestBlogParser(unittest.TestCase):
             self.assertIn('class="blog-read-btn"', home_it)
             self.assertIn("https://alessandrobalbina.github.io/blog/sample-post/", sitemap)
 
+    def test_build_site_hides_blog_when_no_published_posts(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            (root / "content" / "blog").mkdir(parents=True)
+            (root / "it").mkdir()
+            (root / "index.html").write_text(
+                "<html><body><!-- BLOG_NAV_START --><a href='blog/'>Blog</a><!-- BLOG_NAV_END -->"
+                "<!-- BLOG_LATEST_START --><section>old</section><!-- BLOG_LATEST_END --></body></html>",
+                encoding="utf-8",
+            )
+            (root / "it" / "index.html").write_text(
+                "<html><body><!-- BLOG_NAV_START --><a href='blog/'>Blog</a><!-- BLOG_NAV_END -->"
+                "<!-- BLOG_LATEST_START --><section>old</section><!-- BLOG_LATEST_END --></body></html>",
+                encoding="utf-8",
+            )
+            (root / "sitemap.xml").write_text(
+                "<urlset><!-- BLOG_SITEMAP_START --><url>old</url><!-- BLOG_SITEMAP_END --></urlset>",
+                encoding="utf-8",
+            )
+            stats = build_site(root)
+            self.assertEqual(stats["posts"], 0)
+            home_en = (root / "index.html").read_text(encoding="utf-8")
+            sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
+            en_idx = (root / "blog" / "index.html").read_text(encoding="utf-8")
+            self.assertNotIn("<a href", home_en)
+            self.assertNotIn("<section>", home_en)
+            self.assertNotIn("<url>", sitemap)
+            self.assertIn("noindex, follow", en_idx)
+
 
 if __name__ == "__main__":
     unittest.main()

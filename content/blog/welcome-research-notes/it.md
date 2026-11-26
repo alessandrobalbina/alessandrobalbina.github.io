@@ -5,7 +5,7 @@ category: Ricerca
 tags: [Ricerca, AI, Sostenibilità]
 excerpt: Perché apro uno spazio bilingue per raccontare progetti in corso, esperimenti e riflessioni tra Edge AI e computing sostenibile.
 cover: assets/blog/welcome-research-notes/research-overview.svg
-draft: false
+draft: true
 ---
 
 Benvenuti in questa nuova sezione del sito. Accanto agli articoli scientifici e agli atti di conferenza, gran parte del lavoro quotidiano tra ricerca e ingegneria del software avviene nel mezzo: testare ipotesi, costruire prototipi e confrontare compromessi architetturali.

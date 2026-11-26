@@ -6,6 +6,7 @@ import html
 import json
 import math
 import re
+import shutil
 from datetime import datetime
 from email.utils import format_datetime
 from pathlib import Path
@@ -375,6 +376,7 @@ def _render_shell_head(
     schema_objs: list[dict[str, Any]],
     keywords: list[str] | None = None,
     article_meta: dict[str, Any] | None = None,
+    robots_meta: str = "index, follow, max-image-preview:large",
 ) -> str:
     og_locale = "it_IT" if lang == "it" else "en_US"
     og_alt = "en_US" if lang == "it" else "it_IT"
@@ -412,7 +414,7 @@ def _render_shell_head(
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="description" content="{html.escape(description)}" />{keywords_tag}
   <meta name="author" content="Alessandro Balbina" />
-  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <meta name="robots" content="{robots_meta}" />
   <meta name="theme-color" content="#11213f" />
   <meta property="og:type" content="{og_type}" />
   <meta property="og:site_name" content="Alessandro Balbina" />
@@ -678,11 +680,13 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
         asset_prefix=asset_prefix,
         og_type="website",
         schema_objs=[schema_obj, breadcrumb_schema],
+        robots_meta="index, follow, max-image-preview:large" if posts else "noindex, follow",
     )
     topbar = _render_topbar(lang, asset_prefix, lang_switch_href, active="blog")
     footer = _render_shell_footer(lang)
     heading = "Blog &amp; Note di Ricerca" if is_it else "Blog &amp; Research Notes"
     rss_href = f"{asset_prefix}it/feed.xml" if is_it else f"{asset_prefix}feed.xml"
+    empty_attr = ' aria-live="polite" hidden' if posts else ' aria-live="polite"'
 
     return f"""{head}
 <body>
@@ -704,7 +708,7 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
       </section>
       <section class="blog-grid" aria-label="Articles">
         {"".join(cards_html)}
-        <p class="card blog-empty-state" aria-live="polite" hidden>{empty_label}</p>
+        <p class="card blog-empty-state"{empty_attr}>{empty_label}</p>
       </section>
 {footer}"""
 
@@ -765,13 +769,12 @@ def update_marker_block(file_path: Path, start_marker: str, end_marker: str, rep
 
 
 def _render_homepage_latest(posts: list[dict[str, Any]], lang: str) -> str:
+    if not posts:
+        return ""
     is_it = lang == "it"
     heading = "Dal Blog" if is_it else "Latest from the Blog"
     all_label = "Tutti gli articoli →" if is_it else "All articles →"
-    blog_root = "blog/" if is_it else "blog/"
-    if not posts:
-        empty = "Nessun articolo pubblicato ancora." if is_it else "No articles published yet."
-        return f'<h2 id="latest-blog-title">{heading}</h2><p>{empty}</p>'
+    blog_root = "blog/"
     read_label = "Leggi" if is_it else "Read"
     cards: list[str] = []
     for p in posts[:3]:
@@ -791,14 +794,18 @@ def _render_homepage_latest(posts: list[dict[str, Any]], lang: str) -> str:
             f"</article>"
         )
     return (
-        f'<div class="blog-preview-header"><h2 id="latest-blog-title">{heading}</h2>'
-        f'<a href="{blog_root}" class="blog-preview-all">{all_label}</a></div>'
-        f'<div class="blog-preview-grid">{"".join(cards)}</div>'
+        f'<section aria-labelledby="latest-blog-title" class="card">\n'
+        f'  <div class="blog-preview-header"><h2 id="latest-blog-title">{heading}</h2>'
+        f'<a href="{blog_root}" class="blog-preview-all">{all_label}</a></div>\n'
+        f'  <div class="blog-preview-grid">{"".join(cards)}</div>\n'
+        f"</section>"
     )
 
 
 def _render_sitemap_entries(posts: list[dict[str, Any]]) -> str:
-    latest_date = posts[0]["date"] if posts else "2026-11-26"
+    if not posts:
+        return ""
+    latest_date = posts[0]["date"]
     entries = [
         f"""  <url>
     <loc>{SITE_ORIGIN}/blog/</loc>
@@ -860,6 +867,12 @@ def build_site(root_dir: Path) -> dict[str, int]:
     (en_blog_dir / "index.html").write_text(render_index_page(posts, "en", "../"), encoding="utf-8")
     (it_blog_dir / "index.html").write_text(render_index_page(posts, "it", "../../"), encoding="utf-8")
 
+    active_slugs = {post["slug"] for post in posts}
+    for base_dir in (en_blog_dir, it_blog_dir):
+        for child in base_dir.iterdir():
+            if child.is_dir() and child.name not in active_slugs:
+                shutil.rmtree(child)
+
     for post in posts:
         slug = post["slug"]
         en_post_dir = en_blog_dir / slug
@@ -871,6 +884,22 @@ def build_site(root_dir: Path) -> dict[str, int]:
 
     (root_dir / "feed.xml").write_text(render_rss_feed(posts, "en"), encoding="utf-8")
     (root_dir / "it" / "feed.xml").write_text(render_rss_feed(posts, "it"), encoding="utf-8")
+
+    nav_targets = (
+        (root_dir / "index.html", '<a href="blog/">Blog</a>'),
+        (root_dir / "it" / "index.html", '<a href="blog/">Blog</a>'),
+        (root_dir / "contact" / "index.html", '<a href="../blog/">Blog</a>'),
+        (root_dir / "it" / "contact" / "index.html", '<a href="../blog/">Blog</a>'),
+        (root_dir / "other-projects" / "index.html", '<a href="../blog/">Blog</a>'),
+        (root_dir / "it" / "other-projects" / "index.html", '<a href="../blog/">Blog</a>'),
+    )
+    for nav_file, nav_link in nav_targets:
+        update_marker_block(
+            nav_file,
+            "<!-- BLOG_NAV_START -->",
+            "<!-- BLOG_NAV_END -->",
+            nav_link if posts else "",
+        )
 
     update_marker_block(
         root_dir / "index.html",
