@@ -377,12 +377,13 @@ def _render_shell_head(
     keywords: list[str] | None = None,
     article_meta: dict[str, Any] | None = None,
     robots_meta: str = "index, follow, max-image-preview:large",
+    og_image: str | None = None,
 ) -> str:
     og_locale = "it_IT" if lang == "it" else "en_US"
     og_alt = "en_US" if lang == "it" else "it_IT"
     rss_href = f"{asset_prefix}it/feed.xml" if lang == "it" else f"{asset_prefix}feed.xml"
     rss_title = "Blog di Alessandro Balbina (IT)" if lang == "it" else "Alessandro Balbina Blog (EN)"
-    og_image = f"{SITE_ORIGIN}/assets/og-preview.png"
+    resolved_og_image = og_image or f"{SITE_ORIGIN}/assets/og-preview.png"
     keywords_tag = (
         f'\n  <meta name="keywords" content="{html.escape(", ".join(str(k) for k in keywords))}" />'
         if keywords
@@ -390,9 +391,10 @@ def _render_shell_head(
     )
     article_tags = ""
     if article_meta:
+        iso_dt = f'{article_meta["published"]}T09:00:00+01:00'
         parts = [
-            f'  <meta property="article:published_time" content="{html.escape(str(article_meta["published"]))}" />',
-            f'  <meta property="article:modified_time" content="{html.escape(str(article_meta["published"]))}" />',
+            f'  <meta property="article:published_time" content="{html.escape(iso_dt)}" />',
+            f'  <meta property="article:modified_time" content="{html.escape(iso_dt)}" />',
             f'  <meta property="article:author" content="Alessandro Balbina" />',
             f'  <meta property="article:section" content="{html.escape(str(article_meta["section"]))}" />',
         ]
@@ -421,14 +423,14 @@ def _render_shell_head(
   <meta property="og:title" content="{html.escape(title)}" />
   <meta property="og:description" content="{html.escape(description)}" />
   <meta property="og:url" content="{canonical_url}" />
-  <meta property="og:image" content="{og_image}" />
+  <meta property="og:image" content="{html.escape(resolved_og_image)}" />
   <meta property="og:image:alt" content="{html.escape(title)}" />
   <meta property="og:locale" content="{og_locale}" />
   <meta property="og:locale:alternate" content="{og_alt}" />{article_tags}
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="{html.escape(title)}" />
   <meta name="twitter:description" content="{html.escape(description)}" />
-  <meta name="twitter:image" content="{og_image}" />
+  <meta name="twitter:image" content="{html.escape(resolved_og_image)}" />
   <meta name="twitter:image:alt" content="{html.escape(title)}" />
   <title>{html.escape(title)}</title>
   <link rel="canonical" href="{canonical_url}" />
@@ -508,19 +510,21 @@ def render_post_page(post: dict[str, Any], lang: str, asset_prefix: str) -> str:
     }
     cover_abs = f"{SITE_ORIGIN}/{post['cover'].lstrip('/')}" if post["cover"] else f"{SITE_ORIGIN}/assets/og-preview.png"
     word_count = len(re.findall(r"\b\w+\b", data["body_md"]))
+    iso_published = f"{date_str}T09:00:00+01:00"
     post_schema = {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
+        "@type": ["NewsArticle", "BlogPosting"],
         "headline": title,
         "description": excerpt,
-        "datePublished": date_str,
-        "dateModified": date_str,
+        "datePublished": iso_published,
+        "dateModified": iso_published,
         "inLanguage": lang,
         "articleSection": category,
         "keywords": [str(t) for t in tags],
         "wordCount": word_count,
         "timeRequired": f"PT{data['reading_time']}M",
-        "image": cover_abs,
+        "isAccessibleForFree": True,
+        "image": [cover_abs],
         "mainEntityOfPage": {"@type": "WebPage", "@id": canonical_url},
         "author": person_ref,
         "publisher": person_ref,
@@ -549,6 +553,7 @@ def render_post_page(post: dict[str, Any], lang: str, asset_prefix: str) -> str:
         schema_objs=[post_schema, breadcrumb_schema],
         keywords=[str(t) for t in tags],
         article_meta={"published": date_str, "section": category, "tags": tags},
+        og_image=cover_abs,
     )
     topbar = _render_topbar(lang, asset_prefix, lang_switch_href, active="blog")
     footer = _render_shell_footer(lang)
@@ -651,14 +656,21 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
         {
             "@type": "BlogPosting",
             "headline": str(p[lang]["meta"].get("title", p["slug"])),
+            "description": str(p[lang]["meta"].get("excerpt", "")),
             "url": f"{SITE_ORIGIN}/it/blog/{p['slug']}/" if is_it else f"{SITE_ORIGIN}/blog/{p['slug']}/",
-            "datePublished": p["date"],
+            "datePublished": f"{p['date']}T09:00:00+01:00",
+            "image": (
+                f"{SITE_ORIGIN}/{p['cover'].lstrip('/')}"
+                if p["cover"]
+                else f"{SITE_ORIGIN}/assets/og-preview.png"
+            ),
+            "author": {"@type": "Person", "name": "Alessandro Balbina", "url": SITE_ORIGIN},
         }
         for p in posts
     ]
     schema_obj = {
         "@context": "https://schema.org",
-        "@type": "Blog",
+        "@type": ["CollectionPage", "Blog"],
         "name": title,
         "description": desc,
         "url": canonical_url,
@@ -689,12 +701,11 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
     topbar = _render_topbar(lang, asset_prefix, lang_switch_href, active="blog")
     footer = _render_shell_footer(lang)
     heading = "Blog &amp; Note di Ricerca" if is_it else "Blog &amp; Research Notes"
-    rss_href = f"{asset_prefix}it/feed.xml" if is_it else f"{asset_prefix}feed.xml"
     empty_attr = ' aria-live="polite" hidden' if posts else ' aria-live="polite"'
     unica_alt = "Logo Università degli Studi di Cagliari" if is_it else "University of Cagliari Logo"
     filter_aria = "Filtra articoli per categoria" if is_it else "Filter posts by category"
-
     articles_aria = "Articoli" if is_it else "Articles"
+
     return f"""{head}
 <body>
   <a href="#main-content" class="skip-link">{skip_text}</a>
@@ -704,13 +715,8 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
       <header class="hero card hero--full-width" aria-labelledby="blog-index-title">
         <div class="hero-copy hero-copy--wide">
           <img src="{asset_prefix}assets/unica-logo.svg" alt="{unica_alt}" class="unica-logo" width="320" height="51" loading="eager" />
-          <div class="blog-index-top">
-            <div>
-              <h1 id="blog-index-title">{heading}</h1>
-              <p class="lead">{html.escape(desc)}</p>
-            </div>
-            <a href="{rss_href}" class="blog-rss-link">RSS</a>
-          </div>
+          <h1 id="blog-index-title">{heading}</h1>
+          <p class="lead">{html.escape(desc)}</p>
           <div class="blog-filter-bar" role="group" aria-label="{filter_aria}">
             {"".join(filter_buttons)}
           </div>
@@ -856,7 +862,7 @@ def _render_sitemap_entries(posts: list[dict[str, Any]]) -> str:
     <loc>{loc}</loc>
     <lastmod>{html.escape(p["date"])}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="{en_u}" />
     <xhtml:link rel="alternate" hreflang="it" href="{it_u}" />
     <xhtml:link rel="alternate" hreflang="x-default" href="{en_u}" />{img_block}
