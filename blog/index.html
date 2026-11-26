@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en" data-type="article" data-radius="soft" data-buttons="pill" data-motion>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; worker-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests;" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="description" content="Articles, ongoing project updates, and reflections on AI, cloud, and edge computing." />
+  <meta name="author" content="Alessandro Balbina" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#11213f" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Alessandro Balbina" />
+  <meta property="og:title" content="Blog &amp; Research Notes | Alessandro Balbina" />
+  <meta property="og:description" content="Articles, ongoing project updates, and reflections on AI, cloud, and edge computing." />
+  <meta property="og:url" content="https://alessandrobalbina.github.io/blog/" />
+  <meta property="og:image" content="https://alessandrobalbina.github.io/assets/og-preview.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:locale:alternate" content="it_IT" />
+  <title>Blog &amp; Research Notes | Alessandro Balbina</title>
+  <link rel="canonical" href="https://alessandrobalbina.github.io/blog/" />
+  <link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/" />
+  <link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/" />
+  <link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/" />
+  <link rel="alternate" type="application/rss+xml" title="Alessandro Balbina Blog (EN)" href="../feed.xml" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="../assets/favicon-48x48.png" sizes="48x48" type="image/png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180" />
+  <link rel="stylesheet" href="../styles.css?v=3" />
+  <script src="../theme.js"></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Blog & Research Notes | Alessandro Balbina", "description": "Articles, ongoing project updates, and reflections on AI, cloud, and edge computing.", "url": "https://alessandrobalbina.github.io/blog/", "inLanguage": "en"}</script>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <div class="page">
+    <header class="topbar card" role="banner">
+      <nav aria-label="Main navigation">
+        <div class="topbar-links">
+          <a href="../">Home</a>
+          <a href="../other-projects/">
+            <span class="nav-desktop">Other Projects</span>
+            <span class="nav-mobile">Projects</span>
+          </a>
+          <a href="../blog/" aria-current="page">Blog</a>
+          <div class="dropdown">
+            <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false"
+              aria-controls="cv-dropdown-menu">
+              <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <span class="nav-desktop">CV / Resume</span>
+              <span class="nav-mobile">CV</span>
+              <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="cv-dropdown-menu" aria-hidden="true">
+              <a href="../assets/CV%20Alessandro%20Balbina.pdf" target="_blank" rel="noopener noreferrer">
+                <span>CV Standard (EN)</span>
+              </a>
+              <a href="../assets/CV%20Alessandro%20Balbina%20Europeo.pdf" target="_blank" rel="noopener noreferrer">
+                <span>CV Europeo (IT)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <a href="../contact/" class="btn-contact">
+            <span class="nav-desktop">Contact me</span>
+            <span class="nav-mobile">Contact</span>
+          </a>
+          <a href="../it/blog/" class="lang-toggle" aria-label="IT - Cambia lingua in Italiano">IT</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>
+    <main id="main-content">
+      <section class="card blog-index-header" aria-labelledby="blog-index-title">
+        <div class="blog-index-top">
+          <div>
+            <h1 id="blog-index-title">Blog &amp; Research Notes</h1>
+            <p class="blog-lead">Articles, ongoing project updates, and reflections on AI, cloud, and edge computing.</p>
+          </div>
+          <a href="../feed.xml" class="blog-rss-link">RSS</a>
+        </div>
+        <div class="blog-filter-bar" role="group" aria-label="Filter posts by category">
+          <button type="button" class="blog-filter-btn is-active" data-filter="all" aria-pressed="true">All</button><button type="button" class="blog-filter-btn" data-filter="research" aria-pressed="false">Research</button>
+        </div>
+      </section>
+      <section class="blog-grid" aria-label="Articles">
+        <article class="blog-card" data-category="research"><img class="blog-card-cover" src="../assets/blog/welcome-research-notes/research-overview.svg" alt="Starting a Bilingual Research &amp; Project Log" loading="lazy" decoding="async"><div class="blog-card-body"><div class="blog-meta"><span class="blog-category-pill">Research</span><time datetime="2026-11-26">26 November 2026</time><span>· 1 min</span></div><h2><a href="welcome-research-notes/">Starting a Bilingual Research &amp; Project Log</a></h2><p>Why I am opening a bilingual space to document ongoing projects, experimental notes, and reflections across Edge AI and sustainable computing.</p></div></article>
+        <p class="card blog-empty-state" hidden>No articles found in this category.</p>
+      </section>
+      <footer class="card site-footer" role="contentinfo">
+        <div>© Alessandro Balbina (2026)</div>
+        <span class="site-footer-quote">Research notes, projects &amp; reflections.</span>
+      </footer>
+    </main>
+  </div>
+  <button class="back-to-top" aria-label="Back to top" title="Skip to main content">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+</body>
+
+</html>

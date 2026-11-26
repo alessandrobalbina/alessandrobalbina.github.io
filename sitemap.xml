@@ -76,5 +76,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <!-- BLOG_SITEMAP_START --><!-- BLOG_SITEMAP_END -->
+  <!-- BLOG_SITEMAP_START -->
+  <url>
+    <loc>https://alessandrobalbina.github.io/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/" />
+  </url>
+  <url>
+    <loc>https://alessandrobalbina.github.io/it/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/" />
+  </url>
+  <url>
+    <loc>https://alessandrobalbina.github.io/blog/welcome-research-notes/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/welcome-research-notes/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/welcome-research-notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/welcome-research-notes/" />
+  </url>
+  <url>
+    <loc>https://alessandrobalbina.github.io/it/blog/welcome-research-notes/</loc>
+    <lastmod>2026-11-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/welcome-research-notes/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/welcome-research-notes/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/welcome-research-notes/" />
+  </url>
+<!-- BLOG_SITEMAP_END -->
 </urlset>

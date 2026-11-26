@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Research themes overview: AI, Cloud-Edge Continuum, Sustainability">
+  <rect width="800" height="450" rx="16" fill="#0f172a"/>
+  <circle cx="240" cy="225" r="115" fill="none" stroke="#38bdf8" stroke-width="2.5" opacity="0.85"/>
+  <circle cx="400" cy="225" r="115" fill="none" stroke="#818cf8" stroke-width="2.5" opacity="0.85"/>
+  <circle cx="560" cy="225" r="115" fill="none" stroke="#34d399" stroke-width="2.5" opacity="0.85"/>
+  <text x="200" y="230" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Edge AI</text>
+  <text x="400" y="230" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Cloud Continuum</text>
+  <text x="600" y="230" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="18" font-weight="600" text-anchor="middle">Sustainability</text>
+  <text x="400" y="56" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="14" font-weight="600" letter-spacing="2" text-anchor="middle">RESEARCH NOTES &amp; PROJECTS</text>
+</svg>
