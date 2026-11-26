@@ -3,6 +3,7 @@ import unittest
 from pathlib import Path
 
 from scripts.build_blog import (
+    build_site,
     estimate_reading_time,
     load_posts,
     markdown_to_html,
@@ -95,6 +96,74 @@ class TestBlogParser(unittest.TestCase):
             (post_dir / "en.md").write_text(content, encoding="utf-8")
             (post_dir / "it.md").write_text(content, encoding="utf-8")
             self.assertEqual(load_posts(Path(tmp)), [])
+
+    def test_build_site_generates_bilingual_pages_rss_and_updates_markers(self) -> None:
+        import xml.etree.ElementTree as ET
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            post_dir = root / "content" / "blog" / "sample-post"
+            post_dir.mkdir(parents=True)
+            (post_dir / "en.md").write_text(
+                "---\ntitle: Sample Post\ndate: 2026-11-26\ncategory: Research\n"
+                "tags: [AI, Cloud]\nexcerpt: English excerpt.\n"
+                "cover: assets/blog/sample-post/cover.svg\ndraft: false\n---\n\n"
+                "## Section\n\nEnglish body.\n",
+                encoding="utf-8",
+            )
+            (post_dir / "it.md").write_text(
+                "---\ntitle: Articolo di Prova\ndate: 2026-11-26\ncategory: Ricerca\n"
+                "tags: [AI, Cloud]\nexcerpt: Estratto italiano.\n"
+                "cover: assets/blog/sample-post/cover.svg\ndraft: false\n---\n\n"
+                "## Sezione\n\nTesto italiano.\n",
+                encoding="utf-8",
+            )
+            (root / "index.html").write_text(
+                "<html><body><!-- BLOG_LATEST_START --><!-- BLOG_LATEST_END --></body></html>",
+                encoding="utf-8",
+            )
+            (root / "it").mkdir()
+            (root / "it" / "index.html").write_text(
+                "<html><body><!-- BLOG_LATEST_START --><!-- BLOG_LATEST_END --></body></html>",
+                encoding="utf-8",
+            )
+            (root / "sitemap.xml").write_text(
+                '<?xml version="1.0" encoding="UTF-8"?>\n'
+                '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+                'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
+                "<!-- BLOG_SITEMAP_START --><!-- BLOG_SITEMAP_END -->\n"
+                "</urlset>\n",
+                encoding="utf-8",
+            )
+
+            stats = build_site(root)
+            self.assertEqual(stats["posts"], 1)
+
+            en_idx = (root / "blog" / "index.html").read_text(encoding="utf-8")
+            it_idx = (root / "it" / "blog" / "index.html").read_text(encoding="utf-8")
+            en_post = (root / "blog" / "sample-post" / "index.html").read_text(encoding="utf-8")
+            it_post = (root / "it" / "blog" / "sample-post" / "index.html").read_text(encoding="utf-8")
+
+            self.assertIn("../styles.css", en_idx)
+            self.assertIn("../theme.js", en_idx)
+            self.assertIn("../../styles.css", it_idx)
+            self.assertIn("../../theme.js", it_idx)
+            self.assertIn("../../styles.css", en_post)
+            self.assertIn('hreflang="it" href="https://alessandrobalbina.github.io/it/blog/sample-post/"', en_post)
+            self.assertIn("../../../styles.css", it_post)
+            self.assertNotIn("<script>", en_post.split("</head>")[1])
+
+            en_rss = ET.fromstring((root / "feed.xml").read_text(encoding="utf-8"))
+            it_rss = ET.fromstring((root / "it" / "feed.xml").read_text(encoding="utf-8"))
+            self.assertEqual(en_rss.find(".//item/title").text, "Sample Post")
+            self.assertEqual(it_rss.find(".//item/title").text, "Articolo di Prova")
+
+            home_en = (root / "index.html").read_text(encoding="utf-8")
+            home_it = (root / "it" / "index.html").read_text(encoding="utf-8")
+            sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
+            self.assertIn("Sample Post", home_en)
+            self.assertIn("Articolo di Prova", home_it)
+            self.assertIn("https://alessandrobalbina.github.io/blog/sample-post/", sitemap)
 
 
 if __name__ == "__main__":

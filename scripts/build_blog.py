@@ -3,10 +3,20 @@
 from __future__ import annotations
 
 import html
+import json
 import math
 import re
+from datetime import datetime
+from email.utils import format_datetime
 from pathlib import Path
 from typing import Any
+
+SITE_ORIGIN = "https://alessandrobalbina.github.io"
+CSP_CONTENT = (
+    "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; "
+    "img-src 'self' data:; connect-src 'self'; frame-src 'none'; worker-src 'none'; "
+    "object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests;"
+)
 
 SAFE_BLOCK_PREFIXES = ("<figure", "<svg")
 INLINE_EVENT_RE = re.compile(r"\s+on[a-z]+\s*=\s*(?:\"[^\"]*\"|'[^']*'|[^\s>]+)", re.IGNORECASE)
@@ -247,3 +257,538 @@ def load_posts(content_dir: Path) -> list[dict[str, Any]]:
 
     posts.sort(key=lambda item: item["date"], reverse=True)
     return posts
+
+
+def _format_date(date_str: str, lang: str) -> str:
+    """Format YYYY-MM-DD into a human-readable EN or IT date."""
+    try:
+        dt = datetime.strptime(date_str, "%Y-%m-%d")
+    except ValueError:
+        return html.escape(date_str)
+    months_en = (
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December",
+    )
+    months_it = (
+        "gennaio", "febbraio", "marzo", "aprile", "maggio", "giugno",
+        "luglio", "agosto", "settembre", "ottobre", "novembre", "dicembre",
+    )
+    month = months_it[dt.month - 1] if lang == "it" else months_en[dt.month - 1]
+    return f"{dt.day} {month} {dt.year}"
+
+
+def _resolve_asset(path_val: str, asset_prefix: str) -> str:
+    if not path_val or path_val.startswith(("http://", "https://", "/", "../", "data:")):
+        return path_val
+    return f"{asset_prefix}{path_val}"
+
+
+def _render_topbar(lang: str, asset_prefix: str, lang_switch_href: str, active: str = "blog") -> str:
+    home_href = f"{asset_prefix}it/" if lang == "it" else asset_prefix
+    projects_href = f"{asset_prefix}it/other-projects/" if lang == "it" else f"{asset_prefix}other-projects/"
+    blog_href = f"{asset_prefix}it/blog/" if lang == "it" else f"{asset_prefix}blog/"
+    contact_href = f"{asset_prefix}it/contact/" if lang == "it" else f"{asset_prefix}contact/"
+    nav_label = "Navigazione principale" if lang == "it" else "Main navigation"
+    projects_desktop = "Altri Progetti" if lang == "it" else "Other Projects"
+    projects_mobile = "Progetti" if lang == "it" else "Projects"
+    contact_desktop = "Contattami" if lang == "it" else "Contact me"
+    contact_mobile = "Contatti" if lang == "it" else "Contact"
+    lang_code = "EN" if lang == "it" else "IT"
+    lang_aria = "EN - Switch language to English" if lang == "it" else "IT - Cambia lingua in Italiano"
+    blog_current = ' aria-current="page"' if active == "blog" else ""
+
+    return f"""    <header class="topbar card" role="banner">
+      <nav aria-label="{nav_label}">
+        <div class="topbar-links">
+          <a href="{home_href}">Home</a>
+          <a href="{projects_href}">
+            <span class="nav-desktop">{projects_desktop}</span>
+            <span class="nav-mobile">{projects_mobile}</span>
+          </a>
+          <a href="{blog_href}"{blog_current}>Blog</a>
+          <div class="dropdown">
+            <button class="dropdown-trigger" aria-haspopup="true" aria-expanded="false"
+              aria-controls="cv-dropdown-menu">
+              <svg class="cv-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+              </svg>
+              <span class="nav-desktop">CV / Resume</span>
+              <span class="nav-mobile">CV</span>
+              <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </button>
+            <div class="dropdown-menu" id="cv-dropdown-menu" aria-hidden="true">
+              <a href="{asset_prefix}assets/CV%20Alessandro%20Balbina.pdf" target="_blank" rel="noopener noreferrer">
+                <span>CV Standard (EN)</span>
+              </a>
+              <a href="{asset_prefix}assets/CV%20Alessandro%20Balbina%20Europeo.pdf" target="_blank" rel="noopener noreferrer">
+                <span>CV Europeo (IT)</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="topbar-actions">
+          <a href="{contact_href}" class="btn-contact">
+            <span class="nav-desktop">{contact_desktop}</span>
+            <span class="nav-mobile">{contact_mobile}</span>
+          </a>
+          <a href="{lang_switch_href}" class="lang-toggle" aria-label="{lang_aria}">{lang_code}</a>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode">
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+              <circle cx="12" cy="12" r="5"></circle>
+              <line x1="12" y1="1" x2="12" y2="3"></line>
+              <line x1="12" y1="21" x2="12" y2="23"></line>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+              <line x1="1" y1="12" x2="3" y2="12"></line>
+              <line x1="21" y1="12" x2="23" y2="12"></line>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+          </button>
+        </div>
+      </nav>
+    </header>"""
+
+
+def _render_shell_head(
+    *,
+    lang: str,
+    title: str,
+    description: str,
+    canonical_url: str,
+    en_url: str,
+    it_url: str,
+    asset_prefix: str,
+    og_type: str,
+    schema_obj: dict[str, Any],
+) -> str:
+    og_locale = "it_IT" if lang == "it" else "en_US"
+    og_alt = "en_US" if lang == "it" else "it_IT"
+    rss_href = f"{asset_prefix}it/feed.xml" if lang == "it" else f"{asset_prefix}feed.xml"
+    rss_title = "Blog di Alessandro Balbina (IT)" if lang == "it" else "Alessandro Balbina Blog (EN)"
+    return f"""<!doctype html>
+<html lang="{lang}" data-type="article" data-radius="soft" data-buttons="pill" data-motion>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Security-Policy" content="{CSP_CONTENT}" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <meta name="description" content="{html.escape(description)}" />
+  <meta name="author" content="Alessandro Balbina" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#11213f" />
+  <meta property="og:type" content="{og_type}" />
+  <meta property="og:site_name" content="Alessandro Balbina" />
+  <meta property="og:title" content="{html.escape(title)}" />
+  <meta property="og:description" content="{html.escape(description)}" />
+  <meta property="og:url" content="{canonical_url}" />
+  <meta property="og:image" content="{SITE_ORIGIN}/assets/og-preview.png" />
+  <meta property="og:locale" content="{og_locale}" />
+  <meta property="og:locale:alternate" content="{og_alt}" />
+  <title>{html.escape(title)}</title>
+  <link rel="canonical" href="{canonical_url}" />
+  <link rel="alternate" hreflang="en" href="{en_url}" />
+  <link rel="alternate" hreflang="it" href="{it_url}" />
+  <link rel="alternate" hreflang="x-default" href="{en_url}" />
+  <link rel="alternate" type="application/rss+xml" title="{rss_title}" href="{rss_href}" />
+  <link rel="icon" href="{asset_prefix}assets/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="{asset_prefix}assets/favicon-48x48.png" sizes="48x48" type="image/png" />
+  <link rel="apple-touch-icon" href="{asset_prefix}assets/apple-touch-icon.png" sizes="180x180" />
+  <link rel="stylesheet" href="{asset_prefix}styles.css?v=3" />
+  <script src="{asset_prefix}theme.js"></script>
+  <script type="application/ld+json">{json.dumps(schema_obj, ensure_ascii=False)}</script>
+</head>"""
+
+
+def _render_shell_footer(lang: str) -> str:
+    skip_label = "Vai al contenuto principale" if lang == "it" else "Skip to main content"
+    top_label = "Torna su" if lang == "it" else "Back to top"
+    return f"""      <footer class="card site-footer" role="contentinfo">
+        <div>© Alessandro Balbina (2026)</div>
+        <span class="site-footer-quote">Research notes, projects &amp; reflections.</span>
+      </footer>
+    </main>
+  </div>
+  <button class="back-to-top" aria-label="{top_label}" title="{skip_label}">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+      stroke-linejoin="round" aria-hidden="true" focusable="false">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+</body>
+
+</html>"""
+
+
+def render_post_page(post: dict[str, Any], lang: str, asset_prefix: str) -> str:
+    """Render an individual bilingual blog article page."""
+    slug = post["slug"]
+    data = post[lang]
+    meta = data["meta"]
+    title = str(meta.get("title", slug))
+    excerpt = str(meta.get("excerpt", ""))
+    category = str(meta.get("category", "Notes"))
+    tags = meta.get("tags", [])
+    date_str = post["date"]
+    formatted_date = _format_date(date_str, lang)
+    min_label = f"{data['reading_time']} min di lettura" if lang == "it" else f"{data['reading_time']} min read"
+    en_url = f"{SITE_ORIGIN}/blog/{slug}/"
+    it_url = f"{SITE_ORIGIN}/it/blog/{slug}/"
+    canonical_url = it_url if lang == "it" else en_url
+    lang_switch_href = f"{asset_prefix}blog/{slug}/" if lang == "it" else f"{asset_prefix}it/blog/{slug}/"
+    lang_switch_text = "Read in English" if lang == "it" else "Leggi in Italiano"
+    back_href = f"{asset_prefix}it/blog/" if lang == "it" else f"{asset_prefix}blog/"
+    back_text = "← Torna al Blog" if lang == "it" else "← Back to Blog"
+    skip_text = "Vai al contenuto principale" if lang == "it" else "Skip to main content"
+
+    cover_html = ""
+    if post["cover"]:
+        cover_src = _resolve_asset(post["cover"], asset_prefix)
+        cover_html = (
+            f'<figure class="blog-figure blog-cover">'
+            f'<img src="{html.escape(cover_src)}" alt="{html.escape(title)}" loading="eager" decoding="async">'
+            f"</figure>"
+        )
+
+    tags_html = "".join(f'<span class="blog-tag">{html.escape(str(t))}</span>' for t in tags)
+    schema_obj = {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": title,
+        "description": excerpt,
+        "datePublished": date_str,
+        "inLanguage": lang,
+        "author": {"@type": "Person", "name": "Alessandro Balbina", "url": SITE_ORIGIN},
+        "url": canonical_url,
+    }
+    head = _render_shell_head(
+        lang=lang,
+        title=f"{title} | Alessandro Balbina",
+        description=excerpt,
+        canonical_url=canonical_url,
+        en_url=en_url,
+        it_url=it_url,
+        asset_prefix=asset_prefix,
+        og_type="article",
+        schema_obj=schema_obj,
+    )
+    topbar = _render_topbar(lang, asset_prefix, lang_switch_href, active="blog")
+    footer = _render_shell_footer(lang)
+    return f"""{head}
+<body>
+  <a href="#main-content" class="skip-link">{skip_text}</a>
+  <div class="page">
+{topbar}
+    <main id="main-content">
+      <article class="card blog-article">
+        <nav class="blog-breadcrumb" aria-label="Breadcrumb">
+          <a href="{back_href}">{back_text}</a>
+          <a href="{lang_switch_href}" class="blog-lang-pill">{lang_switch_text}</a>
+        </nav>
+        <header class="blog-article-header">
+          <div class="blog-meta">
+            <span class="blog-category-pill">{html.escape(category)}</span>
+            <time datetime="{html.escape(date_str)}">{formatted_date}</time>
+            <span>· {min_label}</span>
+          </div>
+          <h1>{html.escape(title)}</h1>
+          <p class="blog-lead">{html.escape(excerpt)}</p>
+          <div class="blog-tags">{tags_html}</div>
+        </header>
+        {cover_html}
+        <div class="blog-prose">
+{data["body_html"]}
+        </div>
+      </article>
+{footer}"""
+
+
+def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str) -> str:
+    """Render /blog/index.html or /it/blog/index.html with category filter buttons."""
+    is_it = lang == "it"
+    title = "Blog & Note di Ricerca | Alessandro Balbina" if is_it else "Blog & Research Notes | Alessandro Balbina"
+    desc = (
+        "Articoli, aggiornamenti sui progetti in corso e riflessioni su AI, cloud ed edge computing."
+        if is_it
+        else "Articles, ongoing project updates, and reflections on AI, cloud, and edge computing."
+    )
+    en_url = f"{SITE_ORIGIN}/blog/"
+    it_url = f"{SITE_ORIGIN}/it/blog/"
+    canonical_url = it_url if is_it else en_url
+    lang_switch_href = f"{asset_prefix}blog/" if is_it else f"{asset_prefix}it/blog/"
+    skip_text = "Vai al contenuto principale" if is_it else "Skip to main content"
+    all_label = "Tutti" if is_it else "All"
+    empty_label = "Nessun articolo in questa categoria." if is_it else "No articles found in this category."
+
+    categories = sorted({str(p[lang]["meta"].get("category", "Notes")) for p in posts})
+    filter_buttons = [
+        f'<button type="button" class="blog-filter-btn is-active" data-filter="all" aria-pressed="true">{all_label}</button>'
+    ]
+    for cat in categories:
+        cat_esc = html.escape(cat)
+        filter_buttons.append(
+            f'<button type="button" class="blog-filter-btn" data-filter="{cat_esc.lower()}" aria-pressed="false">{cat_esc}</button>'
+        )
+
+    cards_html: list[str] = []
+    for p in posts:
+        slug = p["slug"]
+        data = p[lang]
+        meta = data["meta"]
+        cat = str(meta.get("category", "Notes"))
+        post_href = f"{slug}/"
+        min_label = f"{data['reading_time']} min"
+        cover_block = ""
+        if p["cover"]:
+            cover_src = _resolve_asset(p["cover"], asset_prefix)
+            cover_block = (
+                f'<img class="blog-card-cover" src="{html.escape(cover_src)}" '
+                f'alt="{html.escape(str(meta.get("title", slug)))}" loading="lazy" decoding="async">'
+            )
+        cards_html.append(
+            f'<article class="blog-card" data-category="{html.escape(cat.lower())}">'
+            f"{cover_block}"
+            f'<div class="blog-card-body">'
+            f'<div class="blog-meta">'
+            f'<span class="blog-category-pill">{html.escape(cat)}</span>'
+            f'<time datetime="{html.escape(p["date"])}">{_format_date(p["date"], lang)}</time>'
+            f"<span>· {min_label}</span>"
+            f"</div>"
+            f'<h2><a href="{post_href}">{html.escape(str(meta.get("title", slug)))}</a></h2>'
+            f'<p>{html.escape(str(meta.get("excerpt", "")))}</p>'
+            f"</div></article>"
+        )
+
+    schema_obj = {
+        "@context": "https://schema.org",
+        "@type": "Blog",
+        "name": title,
+        "description": desc,
+        "url": canonical_url,
+        "inLanguage": lang,
+    }
+    head = _render_shell_head(
+        lang=lang,
+        title=title,
+        description=desc,
+        canonical_url=canonical_url,
+        en_url=en_url,
+        it_url=it_url,
+        asset_prefix=asset_prefix,
+        og_type="website",
+        schema_obj=schema_obj,
+    )
+    topbar = _render_topbar(lang, asset_prefix, lang_switch_href, active="blog")
+    footer = _render_shell_footer(lang)
+    heading = "Blog &amp; Note di Ricerca" if is_it else "Blog &amp; Research Notes"
+    rss_href = f"{asset_prefix}it/feed.xml" if is_it else f"{asset_prefix}feed.xml"
+
+    return f"""{head}
+<body>
+  <a href="#main-content" class="skip-link">{skip_text}</a>
+  <div class="page">
+{topbar}
+    <main id="main-content">
+      <section class="card blog-index-header" aria-labelledby="blog-index-title">
+        <div class="blog-index-top">
+          <div>
+            <h1 id="blog-index-title">{heading}</h1>
+            <p class="blog-lead">{html.escape(desc)}</p>
+          </div>
+          <a href="{rss_href}" class="blog-rss-link">RSS</a>
+        </div>
+        <div class="blog-filter-bar" role="group" aria-label="Filter posts by category">
+          {"".join(filter_buttons)}
+        </div>
+      </section>
+      <section class="blog-grid" aria-label="Articles">
+        {"".join(cards_html)}
+        <p class="card blog-empty-state" hidden>{empty_label}</p>
+      </section>
+{footer}"""
+
+
+def render_rss_feed(posts: list[dict[str, Any]], lang: str) -> str:
+    """Render RSS 2.0 XML feed for EN or IT."""
+    is_it = lang == "it"
+    feed_title = "Alessandro Balbina — Blog (IT)" if is_it else "Alessandro Balbina — Blog (EN)"
+    feed_link = f"{SITE_ORIGIN}/it/blog/" if is_it else f"{SITE_ORIGIN}/blog/"
+    feed_desc = (
+        "Note di ricerca, progetti e riflessioni di Alessandro Balbina."
+        if is_it
+        else "Research notes, projects, and reflections by Alessandro Balbina."
+    )
+    items: list[str] = []
+    for p in posts:
+        slug = p["slug"]
+        data = p[lang]
+        meta = data["meta"]
+        link = f"{SITE_ORIGIN}/it/blog/{slug}/" if is_it else f"{SITE_ORIGIN}/blog/{slug}/"
+        try:
+            pub_dt = datetime.strptime(p["date"], "%Y-%m-%d")
+            pub_date = format_datetime(pub_dt)
+        except ValueError:
+            pub_date = p["date"]
+        items.append(
+            "    <item>\n"
+            f"      <title>{html.escape(str(meta.get('title', slug)))}</title>\n"
+            f"      <link>{link}</link>\n"
+            f"      <guid>{link}</guid>\n"
+            f"      <pubDate>{pub_date}</pubDate>\n"
+            f"      <description>{html.escape(str(meta.get('excerpt', '')))}</description>\n"
+            "    </item>"
+        )
+    return (
+        '<?xml version="1.0" encoding="UTF-8"?>\n'
+        '<rss version="2.0">\n'
+        "  <channel>\n"
+        f"    <title>{html.escape(feed_title)}</title>\n"
+        f"    <link>{feed_link}</link>\n"
+        f"    <description>{html.escape(feed_desc)}</description>\n"
+        f"    <language>{lang}</language>\n"
+        + "\n".join(items)
+        + "\n  </channel>\n</rss>\n"
+    )
+
+
+def update_marker_block(file_path: Path, start_marker: str, end_marker: str, replacement: str) -> None:
+    """Replace content between start_marker and end_marker in file_path."""
+    if not file_path.exists():
+        return
+    content = file_path.read_text(encoding="utf-8")
+    pattern = re.compile(re.escape(start_marker) + r".*?" + re.escape(end_marker), re.DOTALL)
+    if not pattern.search(content):
+        return
+    new_block = f"{start_marker}\n{replacement}\n{end_marker}"
+    file_path.write_text(pattern.sub(new_block, content, count=1), encoding="utf-8")
+
+
+def _render_homepage_latest(posts: list[dict[str, Any]], lang: str) -> str:
+    is_it = lang == "it"
+    heading = "Dal Blog" if is_it else "Latest from the Blog"
+    all_label = "Tutti gli articoli →" if is_it else "All articles →"
+    blog_root = "blog/" if is_it else "blog/"
+    if not posts:
+        empty = "Nessun articolo pubblicato ancora." if is_it else "No articles published yet."
+        return f'<h2 id="latest-blog-title">{heading}</h2><p>{empty}</p>'
+    cards: list[str] = []
+    for p in posts[:3]:
+        slug = p["slug"]
+        data = p[lang]
+        meta = data["meta"]
+        href = f"{blog_root}{slug}/"
+        cards.append(
+            f'<article class="blog-preview-item">'
+            f'<div class="blog-meta"><span class="blog-category-pill">{html.escape(str(meta.get("category", "")))}</span>'
+            f'<time datetime="{html.escape(p["date"])}">{_format_date(p["date"], lang)}</time></div>'
+            f'<h3><a href="{href}">{html.escape(str(meta.get("title", slug)))}</a></h3>'
+            f'<p>{html.escape(str(meta.get("excerpt", "")))}</p>'
+            f"</article>"
+        )
+    return (
+        f'<div class="blog-preview-header"><h2 id="latest-blog-title">{heading}</h2>'
+        f'<a href="{blog_root}" class="blog-preview-all">{all_label}</a></div>'
+        f'<div class="blog-preview-grid">{"".join(cards)}</div>'
+    )
+
+
+def _render_sitemap_entries(posts: list[dict[str, Any]]) -> str:
+    entries = [
+        f"""  <url>
+    <loc>{SITE_ORIGIN}/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{SITE_ORIGIN}/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="{SITE_ORIGIN}/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE_ORIGIN}/blog/" />
+  </url>
+  <url>
+    <loc>{SITE_ORIGIN}/it/blog/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{SITE_ORIGIN}/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="{SITE_ORIGIN}/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{SITE_ORIGIN}/blog/" />
+  </url>"""
+    ]
+    for p in posts:
+        slug = p["slug"]
+        en_u = f"{SITE_ORIGIN}/blog/{slug}/"
+        it_u = f"{SITE_ORIGIN}/it/blog/{slug}/"
+        for loc in (en_u, it_u):
+            entries.append(
+                f"""  <url>
+    <loc>{loc}</loc>
+    <lastmod>{html.escape(p["date"])}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="{en_u}" />
+    <xhtml:link rel="alternate" hreflang="it" href="{it_u}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{en_u}" />
+  </url>"""
+            )
+    return "\n".join(entries)
+
+
+def build_site(root_dir: Path) -> dict[str, int]:
+    """Build bilingual blog HTML pages, RSS feeds, homepage previews, and sitemap."""
+    posts = load_posts(root_dir / "content" / "blog")
+
+    en_blog_dir = root_dir / "blog"
+    it_blog_dir = root_dir / "it" / "blog"
+    en_blog_dir.mkdir(parents=True, exist_ok=True)
+    it_blog_dir.mkdir(parents=True, exist_ok=True)
+
+    (en_blog_dir / "index.html").write_text(render_index_page(posts, "en", "../"), encoding="utf-8")
+    (it_blog_dir / "index.html").write_text(render_index_page(posts, "it", "../../"), encoding="utf-8")
+
+    for post in posts:
+        slug = post["slug"]
+        en_post_dir = en_blog_dir / slug
+        it_post_dir = it_blog_dir / slug
+        en_post_dir.mkdir(parents=True, exist_ok=True)
+        it_post_dir.mkdir(parents=True, exist_ok=True)
+        (en_post_dir / "index.html").write_text(render_post_page(post, "en", "../../"), encoding="utf-8")
+        (it_post_dir / "index.html").write_text(render_post_page(post, "it", "../../../"), encoding="utf-8")
+
+    (root_dir / "feed.xml").write_text(render_rss_feed(posts, "en"), encoding="utf-8")
+    (root_dir / "it" / "feed.xml").write_text(render_rss_feed(posts, "it"), encoding="utf-8")
+
+    update_marker_block(
+        root_dir / "index.html",
+        "<!-- BLOG_LATEST_START -->",
+        "<!-- BLOG_LATEST_END -->",
+        _render_homepage_latest(posts, "en"),
+    )
+    update_marker_block(
+        root_dir / "it" / "index.html",
+        "<!-- BLOG_LATEST_START -->",
+        "<!-- BLOG_LATEST_END -->",
+        _render_homepage_latest(posts, "it"),
+    )
+    update_marker_block(
+        root_dir / "sitemap.xml",
+        "<!-- BLOG_SITEMAP_START -->",
+        "<!-- BLOG_SITEMAP_END -->",
+        _render_sitemap_entries(posts),
+    )
+
+    return {"posts": len(posts), "pages": len(posts) * 2 + 2, "feeds": 2}
+
+
+if __name__ == "__main__":
+    summary = build_site(Path(__file__).resolve().parent.parent)
+    print(f"Built {summary['posts']} posts ({summary['pages']} HTML pages, {summary['feeds']} RSS feeds).")
