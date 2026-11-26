@@ -152,6 +152,11 @@ class TestBlogParser(unittest.TestCase):
             self.assertIn('hreflang="it" href="https://alessandrobalbina.github.io/it/blog/sample-post/"', en_post)
             self.assertIn("../../../styles.css", it_post)
             self.assertNotIn("<script>", en_post.split("</head>")[1])
+            self.assertIn('class="blog-read-btn"', en_idx)
+            self.assertIn('class="blog-card-cover-link"', en_idx)
+            self.assertIn(">Read <span", en_idx)
+            self.assertIn(">Leggi <span", it_idx)
+            self.assertIn('class="blog-article-footer"', en_post)
 
             en_rss = ET.fromstring((root / "feed.xml").read_text(encoding="utf-8"))
             it_rss = ET.fromstring((root / "it" / "feed.xml").read_text(encoding="utf-8"))
@@ -163,6 +168,8 @@ class TestBlogParser(unittest.TestCase):
             sitemap = (root / "sitemap.xml").read_text(encoding="utf-8")
             self.assertIn("Sample Post", home_en)
             self.assertIn("Articolo di Prova", home_it)
+            self.assertIn('class="blog-read-btn"', home_en)
+            self.assertIn('class="blog-read-btn"', home_it)
             self.assertIn("https://alessandrobalbina.github.io/blog/sample-post/", sitemap)
 
 

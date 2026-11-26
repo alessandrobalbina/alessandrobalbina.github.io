@@ -512,6 +512,10 @@ def render_post_page(post: dict[str, Any], lang: str, asset_prefix: str) -> str:
         <div class="blog-prose">
 {data["body_html"]}
         </div>
+        <footer class="blog-article-footer">
+          <a href="{back_href}">{back_text}</a>
+          <a href="{lang_switch_href}" class="blog-lang-pill">{lang_switch_text}</a>
+        </footer>
       </article>
 {footer}"""
 
@@ -543,6 +547,7 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
             f'<button type="button" class="blog-filter-btn" data-filter="{cat_esc.lower()}" aria-pressed="false">{cat_esc}</button>'
         )
 
+    read_label = "Leggi" if is_it else "Read"
     cards_html: list[str] = []
     for p in posts:
         slug = p["slug"]
@@ -555,8 +560,10 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
         if p["cover"]:
             cover_src = _resolve_asset(p["cover"], asset_prefix)
             cover_block = (
+                f'<a href="{post_href}" class="blog-card-cover-link" tabindex="-1" aria-hidden="true">'
                 f'<img class="blog-card-cover" src="{html.escape(cover_src)}" '
                 f'alt="{html.escape(str(meta.get("title", slug)))}" loading="lazy" decoding="async">'
+                f"</a>"
             )
         cards_html.append(
             f'<article class="blog-card" data-category="{html.escape(cat.lower())}">'
@@ -569,6 +576,9 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
             f"</div>"
             f'<h2><a href="{post_href}">{html.escape(str(meta.get("title", slug)))}</a></h2>'
             f'<p>{html.escape(str(meta.get("excerpt", "")))}</p>'
+            f'<div class="blog-card-footer">'
+            f'<a href="{post_href}" class="blog-read-btn">{read_label} <span aria-hidden="true">→</span></a>'
+            f"</div>"
             f"</div></article>"
         )
 
@@ -616,7 +626,7 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
       </section>
       <section class="blog-grid" aria-label="Articles">
         {"".join(cards_html)}
-        <p class="card blog-empty-state" hidden>{empty_label}</p>
+        <p class="card blog-empty-state" aria-live="polite" hidden>{empty_label}</p>
       </section>
 {footer}"""
 
@@ -684,6 +694,7 @@ def _render_homepage_latest(posts: list[dict[str, Any]], lang: str) -> str:
     if not posts:
         empty = "Nessun articolo pubblicato ancora." if is_it else "No articles published yet."
         return f'<h2 id="latest-blog-title">{heading}</h2><p>{empty}</p>'
+    read_label = "Leggi" if is_it else "Read"
     cards: list[str] = []
     for p in posts[:3]:
         slug = p["slug"]
@@ -696,6 +707,9 @@ def _render_homepage_latest(posts: list[dict[str, Any]], lang: str) -> str:
             f'<time datetime="{html.escape(p["date"])}">{_format_date(p["date"], lang)}</time></div>'
             f'<h3><a href="{href}">{html.escape(str(meta.get("title", slug)))}</a></h3>'
             f'<p>{html.escape(str(meta.get("excerpt", "")))}</p>'
+            f'<div class="blog-card-footer">'
+            f'<a href="{href}" class="blog-read-btn">{read_label} <span aria-hidden="true">→</span></a>'
+            f"</div>"
             f"</article>"
         )
     return (
