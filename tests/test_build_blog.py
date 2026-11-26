@@ -157,6 +157,10 @@ class TestBlogParser(unittest.TestCase):
             self.assertIn(">Read <span", en_idx)
             self.assertIn(">Leggi <span", it_idx)
             self.assertIn('class="blog-article-footer"', en_post)
+            self.assertIn('name="twitter:card"', en_post)
+            self.assertIn('property="article:published_time"', en_post)
+            self.assertIn('"@type": "BreadcrumbList"', en_post)
+            self.assertIn('"@type": "BlogPosting"', en_idx)
 
             en_rss = ET.fromstring((root / "feed.xml").read_text(encoding="utf-8"))
             it_rss = ET.fromstring((root / "it" / "feed.xml").read_text(encoding="utf-8"))

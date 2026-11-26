@@ -3052,7 +3052,6 @@ a.btn:active,
 }
 
 .blog-card:hover {
-  transform: translateY(-2px);
   box-shadow: var(--shadow-hover);
   border-color: var(--accent);
 }

@@ -372,12 +372,36 @@ def _render_shell_head(
     it_url: str,
     asset_prefix: str,
     og_type: str,
-    schema_obj: dict[str, Any],
+    schema_objs: list[dict[str, Any]],
+    keywords: list[str] | None = None,
+    article_meta: dict[str, Any] | None = None,
 ) -> str:
     og_locale = "it_IT" if lang == "it" else "en_US"
     og_alt = "en_US" if lang == "it" else "it_IT"
     rss_href = f"{asset_prefix}it/feed.xml" if lang == "it" else f"{asset_prefix}feed.xml"
     rss_title = "Blog di Alessandro Balbina (IT)" if lang == "it" else "Alessandro Balbina Blog (EN)"
+    og_image = f"{SITE_ORIGIN}/assets/og-preview.png"
+    keywords_tag = (
+        f'\n  <meta name="keywords" content="{html.escape(", ".join(str(k) for k in keywords))}" />'
+        if keywords
+        else ""
+    )
+    article_tags = ""
+    if article_meta:
+        parts = [
+            f'  <meta property="article:published_time" content="{html.escape(str(article_meta["published"]))}" />',
+            f'  <meta property="article:modified_time" content="{html.escape(str(article_meta["published"]))}" />',
+            f'  <meta property="article:author" content="Alessandro Balbina" />',
+            f'  <meta property="article:section" content="{html.escape(str(article_meta["section"]))}" />',
+        ]
+        for t in article_meta.get("tags", []):
+            parts.append(f'  <meta property="article:tag" content="{html.escape(str(t))}" />')
+        article_tags = "\n" + "\n".join(parts)
+
+    ld_scripts = "\n  ".join(
+        f'<script type="application/ld+json">{json.dumps(obj, ensure_ascii=False)}</script>'
+        for obj in schema_objs
+    )
     return f"""<!doctype html>
 <html lang="{lang}" data-type="article" data-radius="soft" data-buttons="pill" data-motion>
 
@@ -386,18 +410,24 @@ def _render_shell_head(
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Security-Policy" content="{CSP_CONTENT}" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
-  <meta name="description" content="{html.escape(description)}" />
+  <meta name="description" content="{html.escape(description)}" />{keywords_tag}
   <meta name="author" content="Alessandro Balbina" />
-  <meta name="robots" content="index, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#11213f" />
   <meta property="og:type" content="{og_type}" />
   <meta property="og:site_name" content="Alessandro Balbina" />
   <meta property="og:title" content="{html.escape(title)}" />
   <meta property="og:description" content="{html.escape(description)}" />
   <meta property="og:url" content="{canonical_url}" />
-  <meta property="og:image" content="{SITE_ORIGIN}/assets/og-preview.png" />
+  <meta property="og:image" content="{og_image}" />
+  <meta property="og:image:alt" content="{html.escape(title)}" />
   <meta property="og:locale" content="{og_locale}" />
-  <meta property="og:locale:alternate" content="{og_alt}" />
+  <meta property="og:locale:alternate" content="{og_alt}" />{article_tags}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="{html.escape(title)}" />
+  <meta name="twitter:description" content="{html.escape(description)}" />
+  <meta name="twitter:image" content="{og_image}" />
+  <meta name="twitter:image:alt" content="{html.escape(title)}" />
   <title>{html.escape(title)}</title>
   <link rel="canonical" href="{canonical_url}" />
   <link rel="alternate" hreflang="en" href="{en_url}" />
@@ -409,7 +439,7 @@ def _render_shell_head(
   <link rel="apple-touch-icon" href="{asset_prefix}assets/apple-touch-icon.png" sizes="180x180" />
   <link rel="stylesheet" href="{asset_prefix}styles.css?v=3" />
   <script src="{asset_prefix}theme.js"></script>
-  <script type="application/ld+json">{json.dumps(schema_obj, ensure_ascii=False)}</script>
+  {ld_scripts}
 </head>"""
 
 
@@ -464,15 +494,42 @@ def render_post_page(post: dict[str, Any], lang: str, asset_prefix: str) -> str:
         )
 
     tags_html = "".join(f'<span class="blog-tag">{html.escape(str(t))}</span>' for t in tags)
-    schema_obj = {
+    person_ref = {
+        "@type": "Person",
+        "@id": f"{SITE_ORIGIN}/#person",
+        "name": "Alessandro Balbina",
+        "url": SITE_ORIGIN,
+    }
+    cover_abs = f"{SITE_ORIGIN}/{post['cover'].lstrip('/')}" if post["cover"] else f"{SITE_ORIGIN}/assets/og-preview.png"
+    word_count = len(re.findall(r"\b\w+\b", data["body_md"]))
+    post_schema = {
         "@context": "https://schema.org",
         "@type": "BlogPosting",
         "headline": title,
         "description": excerpt,
         "datePublished": date_str,
+        "dateModified": date_str,
         "inLanguage": lang,
-        "author": {"@type": "Person", "name": "Alessandro Balbina", "url": SITE_ORIGIN},
+        "articleSection": category,
+        "keywords": [str(t) for t in tags],
+        "wordCount": word_count,
+        "timeRequired": f"PT{data['reading_time']}M",
+        "image": cover_abs,
+        "mainEntityOfPage": {"@type": "WebPage", "@id": canonical_url},
+        "author": person_ref,
+        "publisher": person_ref,
         "url": canonical_url,
+    }
+    home_abs = f"{SITE_ORIGIN}/it/" if lang == "it" else f"{SITE_ORIGIN}/"
+    blog_abs = f"{SITE_ORIGIN}/it/blog/" if lang == "it" else f"{SITE_ORIGIN}/blog/"
+    breadcrumb_schema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": home_abs},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": blog_abs},
+            {"@type": "ListItem", "position": 3, "name": title, "item": canonical_url},
+        ],
     }
     head = _render_shell_head(
         lang=lang,
@@ -483,7 +540,9 @@ def render_post_page(post: dict[str, Any], lang: str, asset_prefix: str) -> str:
         it_url=it_url,
         asset_prefix=asset_prefix,
         og_type="article",
-        schema_obj=schema_obj,
+        schema_objs=[post_schema, breadcrumb_schema],
+        keywords=[str(t) for t in tags],
+        article_meta={"published": date_str, "section": category, "tags": tags},
     )
     topbar = _render_topbar(lang, asset_prefix, lang_switch_href, active="blog")
     footer = _render_shell_footer(lang)
@@ -582,6 +641,15 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
             f"</div></article>"
         )
 
+    blog_posts_ld = [
+        {
+            "@type": "BlogPosting",
+            "headline": str(p[lang]["meta"].get("title", p["slug"])),
+            "url": f"{SITE_ORIGIN}/it/blog/{p['slug']}/" if is_it else f"{SITE_ORIGIN}/blog/{p['slug']}/",
+            "datePublished": p["date"],
+        }
+        for p in posts
+    ]
     schema_obj = {
         "@context": "https://schema.org",
         "@type": "Blog",
@@ -589,6 +657,16 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
         "description": desc,
         "url": canonical_url,
         "inLanguage": lang,
+        "blogPost": blog_posts_ld,
+    }
+    home_abs = f"{SITE_ORIGIN}/it/" if is_it else f"{SITE_ORIGIN}/"
+    breadcrumb_schema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": home_abs},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": canonical_url},
+        ],
     }
     head = _render_shell_head(
         lang=lang,
@@ -599,7 +677,7 @@ def render_index_page(posts: list[dict[str, Any]], lang: str, asset_prefix: str)
         it_url=it_url,
         asset_prefix=asset_prefix,
         og_type="website",
-        schema_obj=schema_obj,
+        schema_objs=[schema_obj, breadcrumb_schema],
     )
     topbar = _render_topbar(lang, asset_prefix, lang_switch_href, active="blog")
     footer = _render_shell_footer(lang)
@@ -720,9 +798,11 @@ def _render_homepage_latest(posts: list[dict[str, Any]], lang: str) -> str:
 
 
 def _render_sitemap_entries(posts: list[dict[str, Any]]) -> str:
+    latest_date = posts[0]["date"] if posts else "2026-11-26"
     entries = [
         f"""  <url>
     <loc>{SITE_ORIGIN}/blog/</loc>
+    <lastmod>{html.escape(latest_date)}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="{SITE_ORIGIN}/blog/" />
@@ -731,6 +811,7 @@ def _render_sitemap_entries(posts: list[dict[str, Any]]) -> str:
   </url>
   <url>
     <loc>{SITE_ORIGIN}/it/blog/</loc>
+    <lastmod>{html.escape(latest_date)}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="{SITE_ORIGIN}/blog/" />
@@ -742,7 +823,17 @@ def _render_sitemap_entries(posts: list[dict[str, Any]]) -> str:
         slug = p["slug"]
         en_u = f"{SITE_ORIGIN}/blog/{slug}/"
         it_u = f"{SITE_ORIGIN}/it/blog/{slug}/"
-        for loc in (en_u, it_u):
+        for lang_key, loc in (("en", en_u), ("it", it_u)):
+            img_block = ""
+            if p["cover"] and not p["cover"].startswith(("http://", "https://")):
+                img_loc = f"{SITE_ORIGIN}/{p['cover'].lstrip('/')}"
+                img_title = html.escape(str(p[lang_key]["meta"].get("title", slug)))
+                img_block = (
+                    f"\n    <image:image>\n"
+                    f"      <image:loc>{html.escape(img_loc)}</image:loc>\n"
+                    f"      <image:title>{img_title}</image:title>\n"
+                    f"    </image:image>"
+                )
             entries.append(
                 f"""  <url>
     <loc>{loc}</loc>
@@ -751,7 +842,7 @@ def _render_sitemap_entries(posts: list[dict[str, Any]]) -> str:
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="{en_u}" />
     <xhtml:link rel="alternate" hreflang="it" href="{it_u}" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="{en_u}" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="{en_u}" />{img_block}
   </url>"""
             )
     return "\n".join(entries)

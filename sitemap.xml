@@ -79,6 +79,7 @@
   <!-- BLOG_SITEMAP_START -->
   <url>
     <loc>https://alessandrobalbina.github.io/blog/</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/" />
@@ -87,6 +88,7 @@
   </url>
   <url>
     <loc>https://alessandrobalbina.github.io/it/blog/</loc>
+    <lastmod>2026-11-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/" />
@@ -101,6 +103,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/welcome-research-notes/" />
     <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/welcome-research-notes/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/welcome-research-notes/" />
+    <image:image>
+      <image:loc>https://alessandrobalbina.github.io/assets/blog/welcome-research-notes/research-overview.svg</image:loc>
+      <image:title>Starting a Bilingual Research &amp; Project Log</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://alessandrobalbina.github.io/it/blog/welcome-research-notes/</loc>
@@ -110,6 +116,10 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/welcome-research-notes/" />
     <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/welcome-research-notes/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/welcome-research-notes/" />
+    <image:image>
+      <image:loc>https://alessandrobalbina.github.io/assets/blog/welcome-research-notes/research-overview.svg</image:loc>
+      <image:title>Apro un Diario Bilingue di Ricerca e Progetti</image:title>
+    </image:image>
   </url>
 <!-- BLOG_SITEMAP_END -->
 </urlset>
