@@ -77,6 +77,49 @@
     <priority>0.7</priority>
   </url>
   <!-- BLOG_SITEMAP_START -->
-
+  <url>
+    <loc>https://alessandrobalbina.github.io/blog/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/" />
+  </url>
+  <url>
+    <loc>https://alessandrobalbina.github.io/it/blog/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/" />
+  </url>
+  <url>
+    <loc>https://alessandrobalbina.github.io/blog/sinergie-2026-young-scholar-reviewer/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/sinergie-2026-young-scholar-reviewer/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/sinergie-2026-young-scholar-reviewer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/sinergie-2026-young-scholar-reviewer/" />
+    <image:image>
+      <image:loc>https://alessandrobalbina.github.io/assets/blog/sinergie-2026-young-scholar-reviewer/logo-sima-sinergie.png</image:loc>
+      <image:title>Sinergie 2026: Presenting on AI Literacy and Receiving the Outstanding Young Scholar Reviewer Award</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://alessandrobalbina.github.io/it/blog/sinergie-2026-young-scholar-reviewer/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://alessandrobalbina.github.io/blog/sinergie-2026-young-scholar-reviewer/" />
+    <xhtml:link rel="alternate" hreflang="it" href="https://alessandrobalbina.github.io/it/blog/sinergie-2026-young-scholar-reviewer/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://alessandrobalbina.github.io/blog/sinergie-2026-young-scholar-reviewer/" />
+    <image:image>
+      <image:loc>https://alessandrobalbina.github.io/assets/blog/sinergie-2026-young-scholar-reviewer/logo-sima-sinergie.png</image:loc>
+      <image:title>Sinergie 2026: Presentazione su AI Literacy e Premio Outstanding Young Scholar Reviewer</image:title>
+    </image:image>
+  </url>
 <!-- BLOG_SITEMAP_END -->
 </urlset>

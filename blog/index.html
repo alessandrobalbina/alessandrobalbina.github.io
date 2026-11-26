@@ -8,7 +8,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="description" content="Articles, ongoing project updates, and reflections on AI, cloud, and edge computing." />
   <meta name="author" content="Alessandro Balbina" />
-  <meta name="robots" content="noindex, follow" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
   <meta name="theme-color" content="#11213f" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Alessandro Balbina" />
@@ -35,7 +35,7 @@
   <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" sizes="180x180" />
   <link rel="stylesheet" href="../styles.css?v=3" />
   <script src="../theme.js"></script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Blog & Research Notes | Alessandro Balbina", "description": "Articles, ongoing project updates, and reflections on AI, cloud, and edge computing.", "url": "https://alessandrobalbina.github.io/blog/", "inLanguage": "en", "blogPost": []}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "Blog & Research Notes | Alessandro Balbina", "description": "Articles, ongoing project updates, and reflections on AI, cloud, and edge computing.", "url": "https://alessandrobalbina.github.io/blog/", "inLanguage": "en", "blogPost": [{"@type": "BlogPosting", "headline": "Sinergie 2026: Presenting on AI Literacy and Receiving the Outstanding Young Scholar Reviewer Award", "url": "https://alessandrobalbina.github.io/blog/sinergie-2026-young-scholar-reviewer/", "datePublished": "2026-06-01"}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://alessandrobalbina.github.io/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://alessandrobalbina.github.io/blog/"}]}</script>
 </head>
 <body>
@@ -105,21 +105,24 @@
       </nav>
     </header>
     <main id="main-content">
-      <section class="card blog-index-header" aria-labelledby="blog-index-title">
-        <div class="blog-index-top">
-          <div>
-            <h1 id="blog-index-title">Blog &amp; Research Notes</h1>
-            <p class="blog-lead">Articles, ongoing project updates, and reflections on AI, cloud, and edge computing.</p>
+      <header class="hero card hero--full-width" aria-labelledby="blog-index-title">
+        <div class="hero-copy hero-copy--wide">
+          <img src="../assets/unica-logo.svg" alt="University of Cagliari Logo" class="unica-logo" width="320" height="51" loading="eager" />
+          <div class="blog-index-top">
+            <div>
+              <h1 id="blog-index-title">Blog &amp; Research Notes</h1>
+              <p class="lead">Articles, ongoing project updates, and reflections on AI, cloud, and edge computing.</p>
+            </div>
+            <a href="../feed.xml" class="blog-rss-link">RSS</a>
           </div>
-          <a href="../feed.xml" class="blog-rss-link">RSS</a>
+          <div class="blog-filter-bar" role="group" aria-label="Filter posts by category">
+            <button type="button" class="blog-filter-btn is-active" data-filter="all" aria-pressed="true">All</button><button type="button" class="blog-filter-btn" data-filter="conferences" aria-pressed="false">Conferences</button>
+          </div>
         </div>
-        <div class="blog-filter-bar" role="group" aria-label="Filter posts by category">
-          <button type="button" class="blog-filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
-        </div>
-      </section>
+      </header>
       <section class="blog-grid" aria-label="Articles">
-        
-        <p class="card blog-empty-state" aria-live="polite">No articles found in this category.</p>
+        <article class="blog-card" data-category="conferences"><a href="sinergie-2026-young-scholar-reviewer/" class="blog-card-cover-link" tabindex="-1" aria-hidden="true"><img class="blog-card-cover" src="../assets/blog/sinergie-2026-young-scholar-reviewer/logo-sima-sinergie.png" alt="Sinergie 2026: Presenting on AI Literacy and Receiving the Outstanding Young Scholar Reviewer Award" loading="lazy" decoding="async"></a><div class="blog-card-body"><div class="blog-meta"><span class="blog-category-pill">Conferences</span><time datetime="2026-06-01">1 June 2026</time><span>· 1 min</span></div><h2><a href="sinergie-2026-young-scholar-reviewer/">Sinergie 2026: Presenting on AI Literacy and Receiving the Outstanding Young Scholar Reviewer Award</a></h2><p>Notes from my first Sinergie-SIMA conference in Pavia, where I presented work in progress on AI literacy in project management recruitment and received the Outstanding Young Scholar Reviewer award.</p><div class="blog-card-footer"><a href="sinergie-2026-young-scholar-reviewer/" class="blog-read-btn">Read <span aria-hidden="true">→</span></a></div></div></article>
+        <p class="card blog-empty-state" aria-live="polite" hidden>No articles found in this category.</p>
       </section>
       <footer class="card site-footer" role="contentinfo">
         <div>© Alessandro Balbina (2026)</div>
@@ -127,7 +130,7 @@
       </footer>
     </main>
   </div>
-  <button class="back-to-top" aria-label="Back to top" title="Skip to main content">
+  <button class="back-to-top" aria-label="Back to top" title="Back to top">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
       stroke-linejoin="round" aria-hidden="true" focusable="false">
       <polyline points="18 15 12 9 6 15"></polyline>
