@@ -45,6 +45,10 @@ jobs:
             --exclude='cv_english_academic.html' \
             --exclude='cv_italiano_europass.html' \
             --exclude='.DS_Store' \
+            --exclude='scripts' \
+            --exclude='tests' \
+            --exclude='content' \
+            --exclude='docs' \
             ./ _site/
           # Ensure search console verification file is retained
           if [ -f googleec8dc95242d137a6.html ]; then
