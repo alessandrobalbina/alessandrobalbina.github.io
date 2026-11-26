@@ -317,4 +317,37 @@ document.addEventListener('DOMContentLoaded', () => {
       highlightTargets.forEach(el => highlightObserver.observe(el));
     }
   }
+
+  // 10. Blog Category Filtering (Safe DOM manipulation, no innerHTML)
+  const blogFilterBtns = document.querySelectorAll('.blog-filter-btn');
+  if (blogFilterBtns.length > 0) {
+    const blogCards = document.querySelectorAll('.blog-card[data-category]');
+    const emptyState = document.querySelector('.blog-empty-state');
+
+    blogFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const filter = (btn.getAttribute('data-filter') || 'all').toLowerCase();
+        blogFilterBtns.forEach(b => {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        btn.classList.add('is-active');
+        btn.setAttribute('aria-pressed', 'true');
+
+        let visibleCount = 0;
+        blogCards.forEach(card => {
+          const cat = (card.getAttribute('data-category') || '').toLowerCase();
+          const show = filter === 'all' || cat === filter;
+          card.hidden = !show;
+          if (show) {
+            visibleCount += 1;
+          }
+        });
+
+        if (emptyState) {
+          emptyState.hidden = visibleCount > 0;
+        }
+      });
+    });
+  }
 });
