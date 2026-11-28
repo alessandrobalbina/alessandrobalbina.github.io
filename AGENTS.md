@@ -35,7 +35,7 @@ Per mantenere massima velocità, reattività e minimizzare il consumo di token s
 | `it/other-projects/index.html` | Pagina progetti extracurricolari (IT) | Mirroring della pagina altri progetti |
 | `blog/` & `it/blog/` | Sezione Blog bilingue (EN / IT) | Generata staticamente; nascosta automaticamente finché non ci sono post pubblicati (`draft: false`) |
 | `content/blog/<slug>/` | Sorgenti Markdown degli articoli | Coppia obbligatoria `en.md` + `it.md` con frontmatter YAML (esclusa dal deploy) |
-| `scripts/build_blog.py` | Generatore statico zero-dipendenze | Genera HTML blog, `feed.xml`, `it/feed.xml`, aggiorna nav, homepage e `sitemap.xml` |
+| `scripts/build_blog.py` | Generatore statico zero-dipendenze | Genera HTML blog (`NewsArticle`/`BlogPosting`, `CollectionPage`), `feed.xml`, `it/feed.xml`, nav, homepage e `sitemap.xml` |
 | `tests/test_build_blog.py` | Suite `unittest` del generatore | Verifica parser, escape XSS, parità EN/IT, SEO, RSS e visibilità automatica |
 | `cv_english_academic.html` | CV Accademico formato Web (EN) | Layout tipografico pulito per stampa/schermo (offline) |
 | `cv_italiano_europass.html` | CV Europass formato Web (IT) | Formato Europass standard (offline) |
@@ -52,7 +52,7 @@ Per mantenere massima velocità, reattività e minimizzare il consumo di token s
 
 Per evitare letture integrali, consultare questi riferimenti di riga esatti prima di invocare `read_file`:
 
-### 3.1 [`styles.css`](file:///Users/alessandrobalbina/Documents/Repo/alessandrobalbina.github.io/styles.css) (~2.700 righe)
+### 3.1 [`styles.css`](file:///Users/alessandrobalbina/Documents/Repo/alessandrobalbina.github.io/styles.css) (~3.412 righe)
 | Intervallo Righe | Sezione / Componente | Descrizione |
 | :---: | :--- | :--- |
 | `1 – 420` | `@font-face` statici | **DA SALTARE**: 42 definizioni font. Non toccare né leggere. |
@@ -71,7 +71,7 @@ Per evitare letture integrali, consultare questi riferimenti di riga esatti prim
 | `2519 – 2565` | Floating Back-to-Top | Pulsante circolare flottante con blur backdrop |
 | `2566 – 2654` | Toast Suggerimento Lingua | Banner discreto per utenti browser italiani |
 | `2655 – 2700` | Responsive & Reduced Motion | Media queries per tablet/mobile e `@media (prefers-reduced-motion)` |
-| `2959 – 3400` | Sezione Blog & Grafici | Griglia blog, card con CTA `Read`/`Leggi`, prose, `<figure>`, grafici `.blog-chart` |
+| `2959 – 3412` | Sezione Blog & Grafici | Griglia blog, card con CTA `Read`/`Leggi`, `.blog-prose` a larghezza piena, `.blog-figure.blog-cover` e `.blog-chart` |
 
 ### 3.2 [`theme.js`](file:///Users/alessandrobalbina/Documents/Repo/alessandrobalbina.github.io/theme.js) (258 righe)
 | Intervallo Righe | Feature / Funzione | Descrizione |
@@ -140,4 +140,5 @@ flowchart LR
 1. **Sorgenti**: Ogni articolo vive in `content/blog/<slug>/en.md` e `content/blog/<slug>/it.md` (entrambe obbligatorie).
 2. **Stato Bozza / Visibilità**: Con `draft: true` (o zero articoli pubblicati), `scripts/build_blog.py` nasconde automaticamente il link `Blog` nella navbar, la sezione anteprima in Homepage, gli URL in `sitemap.xml` e imposta `noindex, follow` su `/blog/`.
 3. **Pubblicazione**: Impostare `draft: false` su entrambi i file, eseguire `python3 scripts/build_blog.py` e verificare con `python3 -m unittest discover -s tests -v`.
-4. **Immagini e Grafici**: Inserire immagini statiche in `assets/blog/<slug>/` usando `![alt](path "didascalia")` oppure blocchi `<figure class="blog-figure"><div class="blog-chart"><svg>...</svg></div><figcaption>...</figcaption></figure>` adattivi al tema tramite `currentColor` e variabili CSS (zero `<script>` inline per rispettare la CSP).
+4. **Immagini e Grafici**: Inserire immagini statiche locali in `assets/blog/<slug>/` (mai URL esterni per la CSP `img-src 'self' data:`) usando `cover:` nel frontmatter o `![alt](path "didascalia")` / `<figure class="blog-figure"><div class="blog-chart"><svg>...</svg></div><figcaption>...</figcaption></figure>` (zero `<script>` inline).
+5. **SEO & UI News**: Ogni articolo genera JSON-LD `["NewsArticle", "BlogPosting"]` con timestamp ISO-8601 (`+01:00`), `og:image`/`twitter:image` dalla `cover` e `priority: 0.8` in `sitemap.xml`. La hero di `/blog/` e `/it/blog/` usa `.hero.card.hero--full-width` senza pulsante RSS visibile (feed collegati solo nell'`<head>`).
